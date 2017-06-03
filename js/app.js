@@ -1,13 +1,14 @@
 
 var app = angular.module("myApp", [
-    "ngRoute"
+    "ngRoute",
+    "ngMaterial"
 ]);
 
 // load configuration from files
 app.constant('config', window.config);
 
 // ROUTING ===============================================
-app.config(function ($routeProvider, $locationProvider) { 
+app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) { 
 
     $locationProvider.hashPrefix('');
     
@@ -24,6 +25,13 @@ app.config(function ($routeProvider, $locationProvider) {
         .otherwise({ 
             redirectTo: '/' 
         }); 
+
+
+    // color theme
+    $mdThemingProvider.theme('default')
+        .primaryPalette('blue')
+        .accentPalette('pink')
+        .warnPalette('red');
 
 });
 

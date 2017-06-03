@@ -14,12 +14,20 @@
 </head>
 <body ng-app="myApp">
 
+    <header>
+        
+    </header>
+
     <nav>
-        <a href="#">Home</a>
-        <a href="#contact">Contact</a>
+        <md-button class="md-raised" href="#">Home</md-button>
+        <md-button class="md-raised" href="#contact">Contact</md-button>
     </nav>
 
-	<div ng-view></div>
+	<main ng-view></main>
+
+    <footer>
+        
+    </footer>
 
 
 	<!-- Le javascript -->
@@ -32,6 +40,7 @@
     <script src="js/libraries/angular-animate/angular-animate.min.js"></script>
     <script src="js/libraries/angular-aria/angular-aria.min.js"></script>
     <script src="js/libraries/angular-messages/angular-messages.min.js"></script>
+    <script src="js/libraries/angular-material/angular-material.min.js"></script>
     <script src="js/config/webservice.js"></script>
     <script src="js/app.js"></script>
 

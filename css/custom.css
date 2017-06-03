@@ -1,18 +1,9 @@
 
-/************************************************
- Bootstrap 3 Grid Breakpints (http://getbootstrap.com/css/#grid)
-
- xs - Extra small devices 	< 768 px
- sm - Small devices			< 992 px
- md - Medium devices		< 1200 px
- lg - Large devices			>= 1200 px
-
-************************************************/
-
-
 /***********************************************/
 /* Fonts                                       */
 /***********************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700');
 
 
 /***********************************************/
@@ -36,7 +27,7 @@ a:active {
 }
 
 /***********************************************/
-/* Overwritten Bootstrap Styles                */
+/* Overwritten Angular Material Styles         */
 /***********************************************/
 
 

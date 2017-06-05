@@ -1,7 +1,8 @@
 
 var app = angular.module("myApp", [
     "ngRoute",
-    "ngMaterial"
+    "ngMaterial",
+    'ArtisterilIntervalService'
 ]);
 
 // load configuration from files
@@ -15,12 +16,12 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     $routeProvider 
 
         .when('/', { 
-            controller: 'HomeController', 
-            templateUrl: 'js/pages/home/index.html' 
+            controller: 'DatosDelSGAController', 
+            templateUrl: 'js/pages/datos-del-sga/index.html'
         })     
-        .when('/contact', { 
-            controller: 'ContactController', 
-            templateUrl: 'js/pages/contact/index.html' 
+        .when('/datos-del-sga', { 
+            controller: 'DatosDelSGAController', 
+            templateUrl: 'js/pages/datos-del-sga/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/' 
@@ -28,10 +29,36 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
 
 
     // color theme
+    $mdThemingProvider.definePalette('blue', {
+        '50': 'E1EFF5',
+        '100': 'B3D6E7',
+        '200': '81BBD7',
+        '300': '4E9FC7',
+        '400': '288BBB',
+        '500': '0276AF',
+        '600': '026EA8',
+        '700': '01639F',
+        '800': '015996',
+        '900': '014686',
+        'A100': 'B3D5FF',
+        'A200': '80B9FF',
+        'A400': '4D9DFF',
+        'A700': '338FFF',
+        'contrastDefaultColor': 'light',    // whether, by default, text (contrast)
+                                            // on this palette should be dark or light
+
+        'contrastDarkColors': ['50', '100', //hues which contrast should be 'dark' by default
+         '200', '300', '400', 'A100'],
+        'contrastLightColors': undefined    // could also specify this if default was 'dark'
+    });   
+
+
     $mdThemingProvider.theme('default')
         .primaryPalette('blue')
         .accentPalette('pink')
         .warnPalette('red');
+
+
 
 });
 
@@ -42,11 +69,47 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location) {
+app.run(function($rootScope, $sce, $http, $location, $interval) {
+
+
+
+    $rootScope.$on('$routeChangeStart', function (event, next, prev) 
+    {
+
+        // set body class "page-slug"
+        var slug = '';
+        if (next.originalPath && next.originalPath.substring(1)) {
+            slug = next.originalPath.substring(1);
+        }
+        if (slug) {
+            $("body")
+            .removeClass(function (index, className) {
+                return (className.match (/(^|\s)page-\S+/g) || []).join(' ');
+            })
+            .addClass("page-"+slug);
+        }
+
+    });
+
+
+
+
+    // clock
+
+    $interval(function(){
+        var date = new Date();
+        $rootScope.date = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + '/' +
+                          (date.getMonth() < 9 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1)  + '/' +
+                          date.getUTCFullYear() + ' ' +
+                          date.toLocaleTimeString('en-US', { hour12: false, 
+                                             hour: "numeric", 
+                                             minute: "numeric", 
+                                             second: "numeric"});
+    }, 1000);
+
+
 
 });
-
-
 
     
 

@@ -1,0 +1,37 @@
+[
+	{
+		"title": "Lorem ipsum",
+		"message": "dolor sit amet, consectetur adipiscing elit",
+		"color": "danger"
+	},
+	{
+		"title": "Sed do eiusmod tempor",
+		"message": "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+		"color": "primary"
+	},
+	{
+		"title": "Quis nostrud exercitation",
+		"message": "ullamco laboris nisi ut aliquip ex ea commodo consequat",
+		"color": "successo"
+	},
+	{
+		"title": "eu fugiat nulla pariatur",
+		"message": "Excepteur sint occaecat cupidatat non proident",
+		"color": "info"
+	},
+	{
+		"title": "sunt in culpa qui",
+		"message": "officia deserunt mollit anim id est laborum.",
+		"color": "warning"
+	},
+	{
+		"title": "Magna aliqua",
+		"message": "Ut enim ad minim veniam, quis nostrud exercitation",
+		"color": "muted"
+	},
+	{
+		"title": "Consectetur adipiscing elit",
+		"message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
+		"color": "white"
+	}
+]

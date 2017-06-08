@@ -1,5 +1,5 @@
 app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService) {  
-	
+
     // Alerts
 
 	$scope.alertsData = [];
@@ -15,8 +15,7 @@ app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $rou
             $scope.alertsData = response.data;
         });
     }
-    $scope.getAlertsData();
-    ArtisterilIntervalService.setInterval($scope.getAlertsData);
+    ArtisterilIntervalService.start($scope.getAlertsData);
 
 
 
@@ -36,7 +35,6 @@ app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $rou
             $scope.blockedProductsData = response.data;
         });
     }
-    $scope.getBlockedProductsData();
-    ArtisterilIntervalService.setInterval($scope.getBlockedProductsData, null, false);
+    ArtisterilIntervalService.start($scope.getBlockedProductsData);
 
 });

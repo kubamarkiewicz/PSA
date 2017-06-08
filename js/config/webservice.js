@@ -11,7 +11,9 @@ window.config.webservice = {
         "user_has_access" 		: "dummy-webservice/user_has_access.json",
 
         "get_alerts"    		: "dummy-webservice/get_alerts.json",
-        "get_blocked_products" 	: "dummy-webservice/get_blocked_products.json"
+        "get_blocked_products" 	: "dummy-webservice/get_blocked_products.json",
+
+        "get_agvs" 				: "dummy-webservice/get_agvs.php"
 
 	}
 

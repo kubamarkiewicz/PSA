@@ -80,7 +80,7 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthService) {
+app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthService, ArtisterilIntervalService) {
 
     $("body").removeClass('loading');
 
@@ -99,6 +99,9 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
 
         // auth
         ArtisterilAuthService.auth(page_slug);
+
+        // stop loading data
+        ArtisterilIntervalService.stopAll();
         
     });
 

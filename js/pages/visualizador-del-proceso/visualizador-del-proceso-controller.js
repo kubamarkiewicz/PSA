@@ -1,4 +1,7 @@
-app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService) {  
+app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate) {  
+
+
+	/* mapa *********************************************************************************/
 
 	$scope.zoom = 1;
 
@@ -20,7 +23,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 	
 	$scope.zoomOut = function(focal) 
 	{
-		$scope.zoom = 0.8333333 * $scope.zoom;
+		$scope.zoom = 1 / 1.2 * $scope.zoom;
 		if ($scope.zoom < 1) {
 			$scope.zoom = 1;
 		}
@@ -29,7 +32,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 			'focal': focal === undefined ? defaultFocal : focal
 		});
 	}
-
 
 	var $panzoom = mapaElement.panzoom({
         contain: 'invert'
@@ -46,12 +48,37 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         else {
         	$scope.zoomIn(e);
         }
-/*        $panzoom.panzoom('zoom', zoomOut, {
-            increment: 0.1,
-            animate: true,
-            focal: e
-        });*/
     });
+
+
+
+	/* AGVs *********************************************************************************/
+
+    $scope.AGVData = {};
+
+	$animate.enabled($('.agvs'), false);
+
+    $scope.loadAGVData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_agvs
+         })
+        .then(function(response) {
+        	var mapWidth = $('#mapa img').width();
+        	var mapHeight = $('#mapa img').height();
+        	// console.log(response.data);
+        	// add data manually, otherwise animation does not work ...
+            $scope.AGVData = {};
+            for (i in response.data) {
+                $scope.AGVData[response.data[i].id] = response.data[i];
+                $scope.AGVData[response.data[i].id].x *= (mapWidth / 100);
+                $scope.AGVData[response.data[i].id].y *= (mapHeight / 100);
+            }
+        });
+    }
+    // $scope.loadAGVData();
+    ArtisterilIntervalService.start($scope.loadAGVData);
 
 
 });

@@ -2,7 +2,8 @@
 var app = angular.module("myApp", [
     "ngRoute",
     "ngMaterial",
-    'ArtisterilIntervalService'
+    'ArtisterilIntervalService',
+    'ArtisterilAuthService'
 ]);
 
 // load configuration from files
@@ -19,6 +20,14 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'DatosDelSGAController', 
             templateUrl: 'js/pages/datos-del-sga/index.html'
         })     
+        .when('/login', { 
+            controller: 'LoginController', 
+            templateUrl: 'js/pages/login/index.html' 
+        })     
+        .when('/visualizador-del-proceso', { 
+            controller: 'VisualizadorDelProcesoController', 
+            templateUrl: 'js/pages/visualizador-del-proceso/index.html' 
+        })      
         .when('/datos-del-sga', { 
             controller: 'DatosDelSGAController', 
             templateUrl: 'js/pages/datos-del-sga/index.html' 
@@ -58,7 +67,9 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .accentPalette('pink')
         .warnPalette('red');
 
-
+    $mdThemingProvider.theme('dark', 'default')
+        .primaryPalette('blue')
+        .dark();
 
 });
 
@@ -69,33 +80,36 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location, $interval) {
+app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthService) {
 
-
+    $("body").removeClass('loading');
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
-
         // set body class "page-slug"
-        var slug = '';
+        var page_slug = 'datos-del-sga';
         if (next.originalPath && next.originalPath.substring(1)) {
-            slug = next.originalPath.substring(1);
+            page_slug = next.originalPath.substring(1);
         }
-        if (slug) {
-            $("body")
-            .removeClass(function (index, className) {
-                return (className.match (/(^|\s)page-\S+/g) || []).join(' ');
-            })
-            .addClass("page-"+slug);
-        }
+        $("body")
+        .removeClass(function (index, className) {
+            return (className.match (/(^|\s)page-\S+/g) || []).join(' ');
+        })
+        .addClass("page-"+page_slug);
 
+        // auth
+        ArtisterilAuthService.auth(page_slug);
+        
     });
 
 
+    $rootScope.logout = function() 
+    {
+        ArtisterilAuthService.logout();
+    }
 
 
     // clock
-
     $interval(function(){
         var date = new Date();
         $rootScope.date = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate()) + '/' +

@@ -1,0 +1,7 @@
+{
+    "visualizador-del-proceso" : true,
+    "datos-del-sga" : true,
+    "configuracion-de-parametros" : true,
+    "bloqueos" : true,
+    "modo-manual" : true
+}

@@ -366,7 +366,6 @@ body.page-visualizador-del-proceso #mapa {
 	display: block;
 }
 body.page-visualizador-del-proceso #mapa img {
-	height: 100%;
 	position: relative;
 	z-index: 1;
 }
@@ -378,15 +377,15 @@ body.page-visualizador-del-proceso .agvs .agv {
     position: absolute;
     transition: transform 1s ease-out;
 	cursor: pointer;
-	font-size: 18px;
-	width: 60px;
-	height: 25px;
-	line-height: 25px;
+	font-size: 9px;
+	width: 30px;
+	height: 12px;
+	line-height: 12px;
 	text-align: center;
-	border-radius: 0 15px 15px 0;
+	border-radius: 0 7px 7px 0;
 	transform: translate(-50%, -50%);
 	transform-origin: 50% 50%;
-	box-shadow: 0px 0 15px 1px rgba(0,0,0,0.45);
+	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
 	background-color: #72bd00;
 	color: #ffffff;
 	z-index: 15;

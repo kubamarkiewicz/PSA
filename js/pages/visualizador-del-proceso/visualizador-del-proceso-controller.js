@@ -4,6 +4,8 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 	/* mapa *********************************************************************************/
 
 	$scope.zoom = 1;
+	$scope.minZoom = 1;
+	$scope.maxZoom = 5;
 
 	var mapaElement = $('#mapa');
 
@@ -12,23 +14,26 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 		'clientY': mapaElement.parent().height()/2
 	}
 	
-	$scope.zoomIn = function(focal) 
+	$scope.zoomIn = function(focal, animate) 
 	{
 		$scope.zoom = 1.2 * $scope.zoom;
+		if ($scope.zoom > $scope.maxZoom) {
+			$scope.zoom = $scope.maxZoom;
+		}
 		mapaElement.panzoom("zoom", $scope.zoom, {
-			'animate':focal === undefined, 
+			'animate':animate === undefined ? true : animate, 
 			'focal': focal === undefined ? defaultFocal : focal
 		});
 	}
 	
-	$scope.zoomOut = function(focal) 
+	$scope.zoomOut = function(focal, animate) 
 	{
 		$scope.zoom = 1 / 1.2 * $scope.zoom;
-		if ($scope.zoom < 1) {
-			$scope.zoom = 1;
+		if ($scope.zoom < $scope.minZoom) {
+			$scope.zoom = $scope.minZoom;
 		}
 		mapaElement.panzoom("zoom", $scope.zoom, {
-			'animate':focal === undefined, 
+			'animate':animate === undefined ? true : animate, 
 			'focal': focal === undefined ? defaultFocal : focal
 		});
 	}
@@ -43,12 +48,18 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         var delta = e.delta || e.originalEvent.wheelDelta;
         var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
         if (zoomOut) {
-        	$scope.zoomOut(e);
+        	$scope.zoomOut(e, false);
         }
         else {
-        	$scope.zoomIn(e);
+        	$scope.zoomIn(e, false);
         }
     });
+
+    // double click to zoom in
+    mapaElement.dblclick(function(e) {
+    	$scope.zoomIn(e, true);
+    	$scope.zoomIn(e, true);
+	});
 
 
 

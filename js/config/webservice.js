@@ -13,7 +13,10 @@ window.config.webservice = {
         "get_alerts"    		: "dummy-webservice/get_alerts.json",
         "get_blocked_products" 	: "dummy-webservice/get_blocked_products.json",
 
-        "get_agvs" 				: "dummy-webservice/get_agvs.php"
+        "get_agvs" 				: "dummy-webservice/get_agvs.php",
+
+        "block_products" 		: "dummy-webservice/block_products.json",
+        "unblock_products" 		: "dummy-webservice/unblock_products.json"
 
 	}
 

@@ -36,10 +36,10 @@
                     <md-button ng-href="#configuracion-de-parametros" md-colors="{background: 'blue'}">CONFIGURACIÓN DE PARÁMETROS</md-button>
                 </md-menu-item>
                 <md-menu-item ng-hide="!user_permissions['bloqueos']">
-                    <md-button ng-href="#bloqueos" md-colors="{background: 'blue'}">Pantalla de bloqueos</md-button>
+                    <md-button ng-href="#bloqueos" md-colors="{background: 'blue'}">Bloqueos</md-button>
                 </md-menu-item>
                 <md-menu-item ng-hide="!user_permissions['modo-manual']">
-                    <md-button ng-href="#modo-manual" md-colors="{background: 'blue'}">Pantalla de modo manual</md-button>
+                    <md-button ng-href="#modo-manual" md-colors="{background: 'blue'}">Modo manual</md-button>
                 </md-menu-item>
                 <md-menu-item>
                     <md-button ng-click="logout()" md-colors="{background: 'blue'}">Salir</md-button>
@@ -82,6 +82,7 @@
     <script src="js/pages/login/login-controller.js"></script>
     <script src="js/pages/visualizador-del-proceso/visualizador-del-proceso-controller.js"></script>
     <script src="js/pages/datos-del-sga/datos-del-sga-controller.js"></script>
+    <script src="js/pages/bloqueos/bloqueos-controller.js"></script>
 
     <!-- Services -->
     <script src="js/services/artisteril-auth-service.js"></script>

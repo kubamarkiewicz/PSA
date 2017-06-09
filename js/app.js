@@ -31,6 +31,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/datos-del-sga', { 
             controller: 'DatosDelSGAController', 
             templateUrl: 'js/pages/datos-del-sga/index.html' 
+        })    
+        .when('/bloqueos', { 
+            controller: 'BloqueosController', 
+            templateUrl: 'js/pages/bloqueos/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/' 

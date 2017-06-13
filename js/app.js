@@ -32,9 +32,9 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'DatosDelSGAController', 
             templateUrl: 'js/pages/datos-del-sga/index.html' 
         })    
-        .when('/bloqueos', { 
-            controller: 'BloqueosController', 
-            templateUrl: 'js/pages/bloqueos/index.html' 
+        .when('/bloqueo-de-productos', { 
+            controller: 'BloqueoDeProductosController', 
+            templateUrl: 'js/pages/bloqueo-de-productos/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/' 
@@ -90,19 +90,33 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
-        // set body class "page-slug"
-        var page_slug = 'datos-del-sga';
+        // get page slug
+        $rootScope.pageSlug = 'datos-del-sga';
         if (next.originalPath && next.originalPath.substring(1)) {
-            page_slug = next.originalPath.substring(1);
+            $rootScope.pageSlug = next.originalPath.substring(1);
         }
+
+        // auth
+        ArtisterilAuthService.auth($rootScope.pageSlug);
+
+        // set body class "page-slug"
         $("body")
         .removeClass(function (index, className) {
             return (className.match (/(^|\s)page-\S+/g) || []).join(' ');
         })
-        .addClass("page-"+page_slug);
+        .addClass("page-"+$rootScope.pageSlug);
 
-        // auth
-        ArtisterilAuthService.auth(page_slug);
+        // select menu item
+        var selectedItem = $('#menu-dropdown .md-button[href="#' + $rootScope.pageSlug + '"]');
+        $('#menu-dropdown .md-button').not(selectedItem).removeClass('selected');
+        selectedItem.addClass('selected');
+
+        // page title
+        $rootScope.pageTitle = selectedItem.text();
+        
+    });
+
+    $rootScope.$on('$routeChangeSuccess', function() {
 
         // stop loading data
         ArtisterilIntervalService.stopAll();

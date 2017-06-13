@@ -2,18 +2,18 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
 
 	$scope.loading = false;
 
+    // page title
+    $rootScope.pageTitle = 'Login';
+
 
     // SUBMIT FORM
     $scope.submit = function () 
     {
-    	var formData = new FormData(document.getElementById('login-form'));
 
         $http({
-            // method  : 'POST',
             method  : 'GET',
             url     : config.webservice.urls.user_login,
-            data 	: formData,
-    		headers : {'Content-Type': undefined}
+            params 	: {'username' : $scope.username, 'password' : $scope.password}
         })
         .then(function(response) {
             // console.log(response.data);

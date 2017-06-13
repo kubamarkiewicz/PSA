@@ -2,6 +2,7 @@
     "visualizador-del-proceso" : true,
     "datos-del-sga" : true,
     "configuracion-de-parametros" : true,
-    "bloqueos" : true,
-    "modo-manual" : true
+    "bloqueo-de-productos" : true,
+    "modo-manual" : true,
+    "recepcioin-de-productos" : true
 }

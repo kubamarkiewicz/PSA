@@ -1,12 +1,4 @@
-app.controller('BloqueoDeProductosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast) {  
-
-    $scope.action = '';
-
-    $scope.setAction = function(value)
-    {
-        $scope.action = value;
-    }
-
+app.controller('RecepcionDeProductosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast) {  
     
     var toast = $mdToast.simple()
             .hideDelay(3000)
@@ -15,17 +7,17 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
 
 
-    // block product
+    // insert product
 
     $scope.productId = '';
 
-    $scope.blockProductByInput = function()
+    $scope.insertProductByInput = function()
     {
         $('button.block-product').attr("disabled", true).addClass('loading');
 
         $http({
             method  : 'POST',
-            url     : $scope.action == 'block' ? config.webservice.urls.block_products : config.webservice.urls.unblock_products,
+            url     : config.webservice.urls.insert_products,
             data    : $.param({"products" : JSON.stringify([$scope.productId])}),
             headers : {'Content-Type': 'application/x-www-form-urlencoded'}
          })
@@ -36,7 +28,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
                     .toastClass('toast-success');
                 $scope.productId = '';
                 $('input[name=productId]').focus();
-                $scope.getBlockedProductsData();
             }
             else {
                 toast.content('Error')
@@ -108,7 +99,7 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
         $http({
             method  : 'POST',
-            url     : $scope.action == 'block' ? config.webservice.urls.block_products_from_file : config.webservice.urls.unblock_products_from_file,
+            url     : config.webservice.urls.insert_products_from_file,
             data    : formData,
             transformRequest: angular.identity,
              headers: {'Content-Type': undefined,'Process-Data': false}
@@ -130,48 +121,4 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     }
 
 
-
-    // get Blocked products
-
-    $scope.blockedProductsData = [];
-    
-    $scope.getBlockedProductsData = function()
-    {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_blocked_products
-         })
-        .then(function(response) {
-            // console.log(response.data);
-            $scope.blockedProductsData = response.data;
-        });
-    }
-    ArtisterilIntervalService.start($scope.getBlockedProductsData);
-
-
-
-    // unblock product
-
-    $scope.unblockProductById = function(productId)
-    {
-        $http({
-            method  : 'POST',
-            url     : config.webservice.urls.unblock_products,
-            data    : $.param({"products" : JSON.stringify([productId])}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
-         })
-        .then(function(response) {
-            // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.getBlockedProductsData();
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
-            $mdToast.show(toast);
-        });
-    }
 });

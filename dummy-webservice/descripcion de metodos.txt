@@ -1,0 +1,107 @@
+
+LOGIN DE USUARIOS
+ 
+POST user_login (username, password)
+    return: boolean
+
+ 
+GET user_has_access (username)
+    return:            //Object Access
+    {
+        "visualisador-del-proceso" : true,
+        "datos-del-sga" : true,
+        "configuracion-de-parametros" : true,
+        "bloqueos" : true,
+        "modo-manual" : true
+    }
+
+
+
+PANTALLA DATOS DEL SGA
+  
+GET get_alerts()
+    return: 			//array<Alert>
+    [
+        {
+            "title": "string",
+            "message": "string",
+            "color": "danger"   // possible values: danger, primary, success, info, warning, muted, white 
+        }
+	]
+
+GET get_blocked_products()
+    return: 			//array<string>
+    [
+        "string"
+    ]
+
+
+
+
+
+PANTALLA DE BLOQUEO DE PRODUCTOS
+
+GET get_blocked_products() - es el mismo metodo que en la PANTALLA DATOS DEL SGA
+
+POST block_products(products)
+    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
+    return: boolean
+
+POST unblock_products(products])
+    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
+    return: boolean
+
+GET get_readers()
+    return: [string]            //array of strings
+
+POST select_reader_for_blocking(reader_id)
+    return: boolean
+
+POST select_reader_for_unblocking(reader_id)
+    return: boolean
+
+POST block_products_from_file(file)
+    return: boolean
+
+POST unblock_products_from_file(file)
+    return: boolean
+
+
+
+
+
+PANTALLA DE RECEPCIÓN DE PRODUCTOS
+
+POST insert_products(products)
+    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
+    return: boolean
+
+POST select_reader_for_inserting(reader_id)
+    return: boolean
+
+POST insert_products_from_file(file)
+    return: boolean
+
+
+
+
+PANTALLA MODO MANUAL
+
+
+GET get_actions()
+    return: [string]            //array of strings
+
+POST select_action(action) 
+    return: string              // message  
+
+POST select_reader_for_manual_mode(reader_id)
+    return: string              // message  
+
+GET get_reader_reading(reader_id)
+    return: object {
+                "value" : "12345678",
+                "message" : "Confirme que la lectura del Nefab es correcta."
+            }
+
+POST execute_action(action, reader_id, product_id)
+    return: boolean

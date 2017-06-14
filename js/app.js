@@ -35,6 +35,14 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/bloqueo-de-productos', { 
             controller: 'BloqueoDeProductosController', 
             templateUrl: 'js/pages/bloqueo-de-productos/index.html' 
+        })    
+        .when('/recepcion-de-productos', { 
+            controller: 'RecepcionDeProductosController', 
+            templateUrl: 'js/pages/recepcion-de-productos/index.html' 
+        })    
+        .when('/modo-manual', { 
+            controller: 'ModoManualProductosController', 
+            templateUrl: 'js/pages/modo-manual/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/' 
@@ -143,6 +151,10 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
     }, 1000);
 
 
+    // custom file input
+    $('label.file-input input').change(function(){
+        $(this).parent().find('span').text($(this).val().split(/[\\/]/).pop());
+    });
 
 });
 

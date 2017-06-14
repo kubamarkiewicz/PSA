@@ -22,19 +22,11 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
 
                 ArtisterilAuthService.setUsername($scope.username);
             	
-                // get user permissions
-                $http({
-                    method  : 'GET',
-                    url     : config.webservice.urls.user_has_access,
-                    data    : {'username': $scope.username}
-                })
-                .then(function(response) {
-                    // set permissions
-                    ArtisterilAuthService.setUserPermissions(response.data);
+                // load user permissions
+                ArtisterilAuthService.loadUserPermissions(response.data);
 
-                    // redirect
-                    $location.url('/');
-                });
+                // redirect
+                $location.url('/');
             }
             else { // incorrect password
         		$scope.loading = false;

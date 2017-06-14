@@ -60,7 +60,7 @@
 
     </header>
 
-	<main ng-view></main>
+	<main ng-view ng-show="user_permissions[pageSlug] || pageSlug == 'login'"></main>
 
     <footer layout="row" layout-align="space-between center">
         <div class="user">{{username}}</div>

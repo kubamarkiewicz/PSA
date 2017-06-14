@@ -1,30 +1,27 @@
 var ArtisterilAuthService = angular.module('ArtisterilAuthService', [])
-.service('ArtisterilAuthService', function ($rootScope, $location) 
+.service('ArtisterilAuthService', function ($rootScope, $location, $http) 
 {
 
     // load user from localStorage
     $rootScope.username = localStorage.username;
-    if (localStorage.user_permissions) {
-        $rootScope.user_permissions = $.parseJSON(localStorage.user_permissions);
-    }
-    else {
-        $rootScope.user_permissions = [];
-    }
+    $rootScope.user_permissions = [];
 
     this.setUsername = function(username) 
     {
         $rootScope.username = localStorage.username = username;
     };
 
-    this.setUserPermissions = function(user_permissions) 
+    this.loadUserPermissions = function(username) 
     {
-        localStorage.user_permissions = JSON.stringify(user_permissions);
-        $rootScope.user_permissions = user_permissions;
-    };
-
-	this.userHasAccessToPage = function(page_slug) 
-    {
-        return $rootScope.user_permissions[page_slug] === true;
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.user_has_access,
+            data    : {'username': username}
+        })
+        .then(function(response) {
+            // set permissions
+            $rootScope.user_permissions = response.data;
+        });
     };
 
     this.auth = function(page_slug) 
@@ -34,19 +31,18 @@ var ArtisterilAuthService = angular.module('ArtisterilAuthService', [])
             console.log("please log in");
             $location.url('/login');
         }
-        // user do not have permission to access a page
-        else if(!this.userHasAccessToPage(page_slug)) {
-            console.log("you do not have access to this page");
-            $location.url('/');
-        }
     }
 
     this.logout = function()
     {
         $rootScope.username = localStorage.username = '';
     	$rootScope.user_permissions = [];
-        localStorage.user_permissions = '';
 		$location.url('/login');
+    }
+    
+    // load user permisions
+    if ($rootScope.username) {
+        this.loadUserPermissions($rootScope.username);
     }
 
 });

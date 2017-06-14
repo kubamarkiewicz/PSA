@@ -62,6 +62,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         });
     }
     ArtisterilIntervalService.start($scope.getReadersData);
+    // $scope.getReadersData();
 
 
     // select reader
@@ -102,6 +103,8 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             $scope.productId = response.data.value;
             $scope.productIdMessage = response.data.message;
 
+            $('p.product-id').removeClass('loading');
+        }, function(){
             $('p.product-id').removeClass('loading');
         });
     }

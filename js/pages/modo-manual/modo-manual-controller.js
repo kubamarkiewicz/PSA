@@ -103,6 +103,10 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             $scope.productId = response.data.value;
             $scope.productIdMessage = response.data.message;
 
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $mdToast.show(toast);
+
             $('p.product-id').removeClass('loading');
         }, function(){
             $('p.product-id').removeClass('loading');

@@ -47,7 +47,7 @@ POST block_products(products)
     parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
     return: boolean
 
-POST unblock_products(products])
+POST unblock_products(products)
     parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
     return: boolean
 

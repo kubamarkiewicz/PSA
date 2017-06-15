@@ -29,7 +29,7 @@ a:active {
 
 h1, h2, h3, h4 {
 	text-transform: uppercase;
-	font-weight: 500;
+	font-weight: 700;
 }
 
 h2 { 
@@ -475,8 +475,7 @@ body.page-visualizador-del-proceso > main {
 	padding: 0;
 	overflow: hidden;
 }
-body.page-visualizador-del-proceso #mapa {
-	height: 99%;;
+body.page-visualizador-del-proceso #mapa {;
 	position: relative;
 	transition: transform 0.15s ease-out;
 	z-index: 1;
@@ -487,27 +486,7 @@ body.page-visualizador-del-proceso #mapa img {
 	position: relative;
 	z-index: 1;
 }
-body.page-visualizador-del-proceso .agvs {
-    position: absolute;
-    z-index: 5;
-}
-body.page-visualizador-del-proceso .agvs .agv {
-    position: absolute;
-    transition: transform 1s ease-out;
-	cursor: pointer;
-	font-size: 9px;
-	width: 30px;
-	height: 12px;
-	line-height: 12px;
-	text-align: center;
-	border-radius: 0 7px 7px 0;
-	transform: translate(-50%, -50%);
-	transform-origin: 50% 50%;
-	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
-	background-color: #72bd00;
-	color: #ffffff;
-	z-index: 15;
-}
+
 
 body.page-visualizador-del-proceso .zoom-controls {
 	position: fixed;
@@ -516,17 +495,94 @@ body.page-visualizador-del-proceso .zoom-controls {
 	z-index: 10;
 }
 body.page-visualizador-del-proceso .zoom-controls .md-button {
-	background: none;
-	font-size: 24px;
+	font-size: 32px;
 	padding: 0;
 	display: block;
 	min-width: 36px;
+	background-color: #00557f;
+	color: #ffffff;
+	font-weight: 500;
 }
 body.page-visualizador-del-proceso .zoom-controls .zoom-in {
 }
 body.page-visualizador-del-proceso .zoom-controls .zoom-out {
 }
 
+
+
+body.page-visualizador-del-proceso .popup {
+	position: absolute;
+	z-index: 20;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s linear 0.25s, opacity 0.25s ease-out, transform 0.25s ease-out;
+	background-color: #00557f;
+	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
+	transform: scale(0.95) translate(-3%, -3%);
+	border-radius: 4px;
+	color: #ffffff;
+	font-size: 14px;
+	padding: 3px 0px;
+	/*margin-left: 21px;*/
+	margin-top: -18px;
+	margin-left: 12px;
+}
+body.page-visualizador-del-proceso .popup.open {
+    visibility: visible;
+	opacity: 1;
+	transform: translate(0);
+    transition-delay:0s;
+}
+body.page-visualizador-del-proceso .popup h3 {
+	font-size: 16px;
+	padding: 10px 26px;
+	margin: 0;
+}
+body.page-visualizador-del-proceso .popup p {
+	padding: 10px 26px;
+	border-top: 1px solid #ffffff;
+	margin: 0;
+}
+/*body.page-visualizador-del-proceso .popup:before {
+	content: '';
+	position: absolute;
+	border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    border-right: 21px solid #00557f;
+	transform: translate(-100%, 10px);
+}*/
+
+
+body.page-visualizador-del-proceso .agv {
+    position: absolute;
+    transition: transform 1s ease-out;
+	cursor: pointer;
+	font-size: 9px;
+	width: 28px;
+	height: 11px;
+	line-height: 12px;
+	text-align: center;
+	border-radius: 0 7px 7px 0;
+	transform: translate(-50%, -50%);
+	transform-origin: 50% 50%;
+	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
+	background-color: #7dbd01;
+	color: #ffffff;
+	z-index: 15;
+}
+body.page-visualizador-del-proceso #avg-popup {
+	background-color: #00557f;
+}
+
+
+body.page-visualizador-del-proceso .position {
+    position: absolute;
+    width: 15px;
+    height: 7px;
+    z-index: 4;
+    cursor: pointer;
+    background: rgba(255,0,0,0.25);
+}
 
 
 

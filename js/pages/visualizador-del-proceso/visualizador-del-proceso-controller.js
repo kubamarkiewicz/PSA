@@ -1,6 +1,8 @@
 app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate) {  
 
 
+    var mainPos = $('body.page-visualizador-del-proceso > main').offset();
+
 	/* mapa *********************************************************************************/
 
 	$scope.zoom = 1;
@@ -62,6 +64,12 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 	});
 
 
+    $scope.mapClick = function() 
+    {
+        console.log('mapClick');
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
+    }
+
 
 	/* AGVs *********************************************************************************/
 
@@ -88,8 +96,70 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             }
         });
     }
-    // $scope.loadAGVData();
     ArtisterilIntervalService.start($scope.loadAGVData);
 
+
+    
+
+    $scope.openAGVPopup = function(event, agv) 
+    {
+        event.stopPropagation();
+
+        $scope.selectedAGV = agv;
+        var popup = $('body.page-visualizador-del-proceso #agv-popup');
+        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
+        popup.addClass('open')
+            .css('left', (event.clientX - mainPos.left) + 'px')
+            .css('top', (event.clientY - mainPos.top) + 'px');
+    }
+
+
+
+	/* Storage Positions *********************************************************************************/
+
+    $scope.loadStoragePositionsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_storage_positions
+         })
+        .then(function(response) {
+        	// console.log(response.data);
+            $scope.storagePositionsData = response.data;
+        });
+    }
+    $scope.loadStoragePositionsData();
+
+
+    
+
+    $scope.openPositionPopup = function(event, position) 
+    {
+        event.stopPropagation();
+
+    	$scope.selectedPosition = position;
+    	var popup = $('body.page-visualizador-del-proceso #position-popup');
+        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
+        popup.addClass('open')
+    		.css('left', (event.clientX - mainPos.left) + 'px')
+    		.css('top', (event.clientY - mainPos.top) + 'px');
+
+        $scope.loadStoragePositionNichesData(position.id);
+    }
+
+
+    $scope.loadStoragePositionNichesData = function(storage_position_id)
+    {
+        $scope.storagePositionNichesData = [];
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_storage_position_niches,
+            params  : {'storage_position_id' : storage_position_id}
+         })
+        .then(function(response) {
+            // console.log(response.data);
+            $scope.storagePositionNichesData = response.data;
+        });
+    }
 
 });

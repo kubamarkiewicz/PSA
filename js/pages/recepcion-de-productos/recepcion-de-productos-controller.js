@@ -55,7 +55,7 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
             $scope.readersData = response.data;
         });
     }
-    ArtisterilIntervalService.start($scope.getReadersData);
+    $scope.getReadersData();
 
 
     // select reader
@@ -94,22 +94,26 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
     {
         $('form.upload-file button').attr("disabled", true).addClass('loading');
 
-        var formData = new FormData();
-        formData.append('file', document.getElementById('uploadFileInput').files[0]);
+        // read file as text
+        var reader = new FileReader();
+        reader.onload = function(){
+            $scope.insertProductsFromFile(reader.result);
+        };
+        reader.readAsText(document.getElementById('uploadFileInput').files[0]);
+    }
 
+    $scope.insertProductsFromFile = function(fileContent)
+    {
         $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : config.webservice.urls.insert_products_from_file,
-            data    : formData,
-            transformRequest: angular.identity,
-             headers: {'Content-Type': undefined,'Process-Data': false}
+            params  : {'file' : fileContent}
         })
         .then(function(response) {
             // console.log(response.data);
             if (response.data === true) {
                 toast.content('Éxito')
                     .toastClass('toast-success');
-                $scope.myFile = '';
             }
             else {
                 toast.content('Error')

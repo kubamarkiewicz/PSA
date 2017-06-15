@@ -1,19 +1,41 @@
 
 <div class="zoom-controls">
-	<md-button class="md-raised zoom-in" ng-click="zoomIn()">&#43;</md-button>
-	<md-button class="md-raised zoom-out" ng-click="zoomOut()">&#8722;</md-button>
+	<md-button class="md-raised md-primary zoom-in" ng-click="zoomIn()">&#43;</md-button>
+	<md-button class="md-raised md-primary zoom-out" ng-click="zoomOut()">&#8722;</md-button>
 </div>
 
-<div id="mapa">
+<div id="agv-popup" class="popup" md-theme="dark">
+	<h3>AVG {{ selectedAGV.id }}</h3>
+</div>
+
+<div id="position-popup" class="popup" md-theme="dark">
+	<h3>POSICIÓN {{ selectedPosition.id }}</h3>
+	<p ng-show="!storagePositionNichesData.length" layout="row" layout-align="center">
+		<md-progress-circular md-diameter="20px"></md-progress-circular>
+	</p>
+	<p ng-repeat="niche in storagePositionNichesData">
+		Nicho {{ niche.id }}<br>
+		{{ niche.product ? 'Producto ' + niche.product : '-' }}
+	</p>
+</div>
+
+<div id="mapa" ng-click="mapClick()">
 	
-	<div class="agvs">
-		<div 
-			ng-repeat="agv in AGVData"  
-			id="agv-{{ agv.id }}"
-			class="agv" 
-			style="transform: translate({{ agv.x }}px, {{ agv.y }}px) rotate({{ agv.orientation }}deg)">
-			{{ agv.id }}
-		</div>
+	<div 
+		ng-repeat="agv in AGVData"  
+		id="agv-{{ agv.id }}"
+		class="agv" 
+		style="transform: translate({{ agv.x }}px, {{ agv.y }}px) rotate({{ agv.orientation }}deg)"
+		ng-click="openAGVPopup($event, agv)">
+		{{ agv.id }}
+	</div>
+
+	<div 
+		ng-repeat="position in storagePositionsData"  
+		id="position-{{ position.id }}"
+		class="position" 
+		style="left: {{ position.x }}%; top: {{ position.y }}%"
+		ng-click="openPositionPopup($event, position)">
 	</div>
 
 

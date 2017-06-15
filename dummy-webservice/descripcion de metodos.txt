@@ -1,11 +1,14 @@
 
+Todos los metodos usan HTTP GET.
+
+
 LOGIN DE USUARIOS
  
-POST user_login (username, password)
+user_login (user, password)
     return: boolean
 
  
-GET user_has_access (username)
+user_has_access (user)
     return:            //Object Access
     {
         "visualisador-del-proceso" : true,
@@ -17,9 +20,79 @@ GET user_has_access (username)
 
 
 
+PANTALLA VISUALIZADOR DEL PROCESO
+
+get_agvs()
+    return:             //List<AGV>
+    [
+        {
+            id: string,
+            x: number,
+            y: number,
+            orientation: number (degrees)
+        }
+    ]
+
+get_semaphores()
+    return:             //List<Semaphore>
+    [
+        {
+            id: string,
+            x: number,
+            y: number,
+            state: string
+        }
+    ]
+
+update_semaphore(id, [state, x, y]) // parametros state, x, y - son opcionales
+    (actualizar o si ID no existe, crear un semaforo)
+    return: boolean
+
+get_transport_belts()
+    return:             //List<TransportBelt>
+    [
+        {
+            id: string,
+            x: number,
+            y: number,
+            state: string
+        }
+    ]
+
+update_transport_belt(id, [state, x, y]) 
+    (actualizar o si ID no existe, crear un TransportBelt)
+    return: boolean
+
+
+get_storage_positions()
+    return:             //List<StoragePosition>
+    [
+        {
+            id: string,
+            x: number,
+            y: number
+        }
+    ]
+
+update_storage_position(id, x, y) 
+    (actualizar o si ID no existe, crear un StoragePosition)
+
+get_storage_position_niches(storage_position_id)
+    return:             //List<StoragePositionNiche>
+    [
+        {
+            id: string,
+            product: string
+        }
+    ]
+
+
+
+
+
 PANTALLA DATOS DEL SGA
   
-GET get_alerts()
+get_alerts()
     return: 			//array<Alert>
     [
         {
@@ -29,8 +102,8 @@ GET get_alerts()
         }
 	]
 
-GET get_blocked_products()
-    return: 			//array<string>
+get_blocked_products()
+    return: 			//array
     [
         "string"
     ]
@@ -41,30 +114,30 @@ GET get_blocked_products()
 
 PANTALLA DE BLOQUEO DE PRODUCTOS
 
-GET get_blocked_products() - es el mismo metodo que en la PANTALLA DATOS DEL SGA
+get_blocked_products() - es el mismo metodo que en la PANTALLA DATOS DEL SGA
 
-POST block_products(products)
-    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
-    return: boolean
+block_products(productlist)
+    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
+    
 
-POST unblock_products(products)
-    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
-    return: boolean
+unblock_products(productlist)
+    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
+    
 
-GET get_readers()
+get_readers()
     return: [string]            //array of strings
 
-POST select_reader_for_blocking(reader_id)
-    return: boolean
+select_reader_for_blocking(id)
+    
 
-POST select_reader_for_unblocking(reader_id)
-    return: boolean
+select_reader_for_unblocking(id)
+    
 
-POST block_products_from_file(file)
-    return: boolean
+block_products_from_file(productlist)
+    
 
-POST unblock_products_from_file(file)
-    return: boolean
+unblock_products_from_file(productlist)
+    
 
 
 
@@ -72,15 +145,15 @@ POST unblock_products_from_file(file)
 
 PANTALLA DE RECEPCIÓN DE PRODUCTOS
 
-POST insert_products(products)
-    parameters: products - string containig JSON array of strings eg.: ['aaa','bbb']
-    return: boolean
+receive_products(productlist)
+    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
+    
 
-POST select_reader_for_inserting(reader_id)
-    return: boolean
+select_reader_for_receiving(id)
+    
 
-POST insert_products_from_file(file)
-    return: boolean
+receive_products_from_file(productlist)
+    
 
 
 
@@ -88,20 +161,44 @@ POST insert_products_from_file(file)
 PANTALLA MODO MANUAL
 
 
-GET get_actions()
+get_actions()
     return: [string]            //array of strings
 
-POST select_action(action) 
+select_reader_for_manual_mode(reader_id)
     return: string              // message  
 
-POST select_reader_for_manual_mode(reader_id)
-    return: string              // message  
-
-GET get_reader_reading(reader_id)
+get_reader_reading(reader_id)
     return: object {
                 "value" : "12345678",
                 "message" : "Confirme que la lectura del Nefab es correcta."
             }
 
-POST execute_action(action, reader_id, product_id)
-    return: boolean
+select_action(action, reader, product) 
+    
+
+
+upload_actions_file(actionlist)
+    
+
+
+
+
+
+
+
+PANTALLA CONFIGURACIÓN DE PARÁMETROS
+
+
+get_parameters()
+    return:             //Object
+    {
+        'parameter_name' : {  
+            'Options' : [array],
+            'Values' : [array],
+            'Type' : string (RadioButton/TextBox/Checkbox/NumericUpDown/Combobox)
+         }
+    }
+
+save_parameters(parameters)
+
+

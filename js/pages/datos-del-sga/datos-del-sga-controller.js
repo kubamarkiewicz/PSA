@@ -12,7 +12,7 @@ app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $rou
          })
         .then(function(response) {
         	// console.log(response.data);
-            $scope.alertsData = response.data;
+            $scope.alertsData = response.data.get_alertsResult;
         });
     }
     ArtisterilIntervalService.start($scope.getAlertsData);
@@ -32,7 +32,7 @@ app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $rou
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.blockedProductsData = response.data;
+            $scope.blockedProductsData = response.data.get_blocked_productsResult;
         });
     }
     ArtisterilIntervalService.start($scope.getBlockedProductsData);

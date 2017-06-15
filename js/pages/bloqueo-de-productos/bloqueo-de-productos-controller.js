@@ -15,6 +15,29 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
 
 
+    
+
+
+
+    // get Blocked products
+
+    $scope.blockedProductsData = [];
+    
+    $scope.getBlockedProductsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_blocked_products
+         })
+        .then(function(response) {
+            // console.log(response.data);
+            $scope.blockedProductsData = response.data.get_blocked_productsResult;
+        });
+    }
+    $scope.getBlockedProductsData();
+
+
+
     // block product
 
     $scope.productId = '';
@@ -24,24 +47,17 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $('button.block-product').attr("disabled", true).addClass('loading');
 
         $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.block_products : config.webservice.urls.unblock_products,
-            data    : $.param({"products" : JSON.stringify([$scope.productId])}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"productlist" : [$scope.productId]}
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.productId = '';
-                $('input[name=productId]').focus();
-                $scope.getBlockedProductsData();
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $scope.productId = '';
+            $('input[name=productId]').focus();
+            $scope.getBlockedProductsData();
             $mdToast.show(toast);
             $('button.block-product').attr("disabled", false).removeClass('loading');
         });
@@ -61,10 +77,10 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.readersData = response.data;
+            $scope.readersData = response.data.get_readersResult;
         });
     }
-    ArtisterilIntervalService.start($scope.getReadersData);
+    $scope.getReadersData();
 
 
     // select reader
@@ -76,25 +92,20 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $('form.reader button').attr("disabled", true).addClass('loading');
 
         return $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.select_reader_for_blocking : config.webservice.urls.select_reader_for_unblocking,
-            data    : $.param({"reader_id" : $scope.readerId}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
             $mdToast.show(toast);
             $('form.reader button').attr("disabled", false).removeClass('loading');
         });
     }
+
+
 
 
     // upload file
@@ -103,50 +114,31 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     {
         $('form.upload-file button').attr("disabled", true).addClass('loading');
 
-        var formData = new FormData();
-        formData.append('file', document.getElementById('uploadFileInput').files[0]);
-
-        $http({
-            method  : 'POST',
-            url     : $scope.action == 'block' ? config.webservice.urls.block_products_from_file : config.webservice.urls.unblock_products_from_file,
-            data    : formData,
-            transformRequest: angular.identity,
-             headers: {'Content-Type': undefined,'Process-Data': false}
-        })
-        .then(function(response) {
-            // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.myFile = '';
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
-            $mdToast.show(toast);
-            $('form.upload-file button').attr("disabled", false).removeClass('loading');
-        });
+        // read file as text
+        var reader = new FileReader();
+        reader.onload = function(){
+            $scope.blockProductsFromFile(reader.result);
+        };
+        reader.readAsText(document.getElementById('uploadFileInput').files[0]);
     }
 
-
-
-    // get Blocked products
-
-    $scope.blockedProductsData = [];
-    
-    $scope.getBlockedProductsData = function()
+    $scope.blockProductsFromFile = function(fileContent)
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_blocked_products
-         })
+            url     : $scope.action == 'block' ? config.webservice.urls.block_products_from_file : config.webservice.urls.unblock_products_from_file,
+            params  : {'productlist' : fileContent}
+        })
         .then(function(response) {
             // console.log(response.data);
-            $scope.blockedProductsData = response.data;
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $mdToast.show(toast);
+            $('form.upload-file button').attr("disabled", false).removeClass('loading');
+            $('#uploadFileInput').val('');
         });
     }
-    ArtisterilIntervalService.start($scope.getBlockedProductsData);
+
 
 
 
@@ -155,22 +147,15 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     $scope.unblockProductById = function(productId)
     {
         $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : config.webservice.urls.unblock_products,
-            data    : $.param({"products" : JSON.stringify([productId])}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"productlist" : [productId]}
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.getBlockedProductsData();
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $scope.getBlockedProductsData();
             $mdToast.show(toast);
         });
     }

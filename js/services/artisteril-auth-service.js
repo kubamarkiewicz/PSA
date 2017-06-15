@@ -16,11 +16,17 @@ var ArtisterilAuthService = angular.module('ArtisterilAuthService', [])
         $http({
             method  : 'GET',
             url     : config.webservice.urls.user_has_access,
-            data    : {'username': username}
+            params  : {'user': username}
         })
         .then(function(response) {
             // set permissions
-            $rootScope.user_permissions = response.data;
+            $rootScope.user_permissions = {};
+            $rootScope.user_permissions['visualizador-del-proceso'] = response.data.user_has_accessResult['Visualizador_del_proceso'];
+            $rootScope.user_permissions['datos-del-sga'] = response.data.user_has_accessResult['Datos_del_sga'];
+            $rootScope.user_permissions['configuracion-de-parametros'] = response.data.user_has_accessResult['Configuracion_de_parametros'];
+            $rootScope.user_permissions['bloqueo-de-productos'] = response.data.user_has_accessResult['Bloqueos'];
+            $rootScope.user_permissions['recepcion-de-productos'] = response.data.user_has_accessResult['Recepcion_de_productos'];
+            $rootScope.user_permissions['modo-manual'] = response.data.user_has_accessResult['Modo_manual'];
         });
     };
 

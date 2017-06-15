@@ -27,15 +27,15 @@ window.config.webservice = {
         "block_products_from_file"      : "dummy-webservice/block_products_from_file.json",
         "unblock_products_from_file" 	: "dummy-webservice/unblock_products_from_file.json",
 
-        "insert_products"               : "dummy-webservice/insert_products.json",
-        "select_reader_for_inserting"   : "dummy-webservice/select_reader_for_inserting.json",
-        "insert_products_from_file"     : "dummy-webservice/insert_products_from_file.json",
-
+        "insert_products"               : "dummy-webservice/receive_products.json",
+        "select_reader_for_inserting"   : "dummy-webservice/select_reader_for_receiving.json",
+        "insert_products_from_file"     : "dummy-webservice/receive_products_from_file.json",
+        
         "get_actions"                   : "dummy-webservice/get_actions.json",
-        "select_action"                 : "dummy-webservice/select_action.json",
         "select_reader_for_manual_mode" : "dummy-webservice/select_reader_for_manual_mode.json",
-        "get_reader_reading"            : "dummy-webservice/get_reader_reading.php",
-        "execute_action"                : "dummy-webservice/execute_action.json",
+        "get_reader_reading"            : "dummy-webservice/get_reader_reading.json",
+        "select_action"                 : "dummy-webservice/select_action.json",
+
 	}
 
 }

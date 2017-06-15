@@ -18,31 +18,10 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.actionsData = response.data;
+            $scope.actionsData = response.data.get_actionsResult;
         });
     }
     $scope.getActionsData();
-
-
-    // select action 
-
-    $scope.selectAction = function()
-    {
-        $('p.action').addClass('loading');
-        $scope.actionMessage = '';
-
-        $http({
-            method  : 'POST',
-            url     : config.webservice.urls.select_action,
-            data    : $.param({"action" : $scope.action}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
-         })
-        .then(function(response) {
-            // console.log(response.data);
-            $scope.actionMessage = response.data;
-            $('p.action').removeClass('loading');
-        });
-    }
 
 
 
@@ -58,11 +37,10 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.readersData = response.data;
+            $scope.readersData = response.data.get_readersResult;
         });
     }
-    ArtisterilIntervalService.start($scope.getReadersData);
-    // $scope.getReadersData();
+    $scope.getReadersData();
 
 
     // select reader
@@ -75,18 +53,18 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         $scope.readerMessage = '';
 
         $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : config.webservice.urls.select_reader_for_manual_mode,
-            data    : $.param({"reader_id" : $scope.readerId}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"reader_id" : $scope.readerId}
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.readerMessage = response.data;
+            $scope.readerMessage = response.data.Message;
             $('p.reader').removeClass('loading');
             // receive reading from reader
             $scope.getReaderReading($scope.readerId);
         });
+        
     }
 
     $scope.getReaderReading = function(readerId)
@@ -102,10 +80,6 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             // console.log(response.data);
             $scope.productId = response.data.value;
             $scope.productIdMessage = response.data.message;
-
-            toast.content('Éxito')
-                .toastClass('toast-success');
-            $mdToast.show(toast);
 
             $('p.product-id').removeClass('loading');
         }, function(){
@@ -126,23 +100,15 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         $('button.execute-acton').attr("disabled", true).addClass('loading');
 
         $http({
-            method  : 'POST',
-            url     : config.webservice.urls.execute_action,
-            data    : $.param({"action" : $scope.action, "reader_id" : $scope.readerId, "product_id" : $scope.productId}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            method  : 'GET',
+            url     : config.webservice.urls.select_action,
+            params  : {"action" : $scope.action, "reader" : $scope.readerId, "product" : $scope.productId},
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.productId = '';
-                $scope.productIdMessage = '';
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $scope.productId = '';
             $mdToast.show(toast);
 
             $('button.execute-acton').attr("disabled", false).removeClass('loading');

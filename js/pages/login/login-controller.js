@@ -13,12 +13,12 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
         $http({
             method  : 'GET',
             url     : config.webservice.urls.user_login,
-            params 	: {'username' : $scope.username, 'password' : $scope.password}
+            params 	: {'user' : $scope.username, 'password' : $scope.password}
         })
         .then(function(response) {
             // console.log(response.data);
             // console.log(response.data === true);
-            if (response.data === true) {
+            if (response.data.user_loginResult === true) {
 
                 ArtisterilAuthService.setUsername($scope.username);
             	

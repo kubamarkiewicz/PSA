@@ -16,23 +16,16 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
         $('button.block-product').attr("disabled", true).addClass('loading');
 
         $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : config.webservice.urls.insert_products,
-            data    : $.param({"products" : JSON.stringify([$scope.productId])}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"productlist" : JSON.stringify([$scope.productId])}
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-                $scope.productId = '';
-                $('input[name=productId]').focus();
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $scope.productId = '';
+            $('input[name=productId]').focus();
             $mdToast.show(toast);
             $('button.block-product').attr("disabled", false).removeClass('loading');
         });
@@ -52,7 +45,7 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.readersData = response.data;
+            $scope.readersData = response.data.get_readersResult;
         });
     }
     $scope.getReadersData();
@@ -67,21 +60,14 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
         $('form.reader button').attr("disabled", true).addClass('loading');
 
         return $http({
-            method  : 'POST',
+            method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.select_reader_for_blocking : config.webservice.urls.select_reader_for_unblocking,
-            data    : $.param({"reader_id" : $scope.readerId}),
-            headers : {'Content-Type': 'application/x-www-form-urlencoded'}
+            params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
             $mdToast.show(toast);
             $('form.reader button').attr("disabled", false).removeClass('loading');
         });
@@ -107,20 +93,15 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
         $http({
             method  : 'GET',
             url     : config.webservice.urls.insert_products_from_file,
-            params  : {'file' : fileContent}
+            params  : {'productlist' : fileContent}
         })
         .then(function(response) {
             // console.log(response.data);
-            if (response.data === true) {
-                toast.content('Éxito')
-                    .toastClass('toast-success');
-            }
-            else {
-                toast.content('Error')
-                    .toastClass('toast-error');
-            };
+            toast.content('Éxito')
+                .toastClass('toast-success');
             $mdToast.show(toast);
             $('form.upload-file button').attr("disabled", false).removeClass('loading');
+            $('#uploadFileInput').val('');
         });
     }
 

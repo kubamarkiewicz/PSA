@@ -629,6 +629,22 @@ body.page-visualizador-del-proceso #semaphore-popup {
 	background-color: #760303;
 }
 
+body.page-visualizador-del-proceso .transport-belt {
+    position: absolute;
+	cursor: pointer;
+	width: 18px;
+	height: 9px;
+	border-radius: 2px;
+	background-color: #FFEB3B;
+	z-index: 12;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
+    font-size: 8px;
+    text-align: center;
+}
+body.page-visualizador-del-proceso #transport-belt-popup {
+	background-color: #760303;
+}
+
 
 /* Page bloqueo-de-productos *******************************************************************************/
 

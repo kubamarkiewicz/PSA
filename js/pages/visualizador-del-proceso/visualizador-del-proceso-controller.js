@@ -127,7 +127,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 
 
-	/* Semaphores *********************************************************************************/
+    /* Semaphores *********************************************************************************/
 
     $scope.semaphoresData = {};
 
@@ -138,8 +138,8 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_semaphores
          })
         .then(function(response) {
-        	// console.log(response.data);
-        	$scope.semaphoresData = response.data.get_semaphoresResult;
+            // console.log(response.data);
+            $scope.semaphoresData = response.data.get_semaphoresResult;
         });
     }
     // ArtisterilIntervalService.start($scope.loadSemaphoresData);
@@ -159,6 +159,49 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     }
 
     $scope.updateSemaphore = function(id) 
+    {
+        toast.content('Éxito')
+            .toastClass('toast-success');
+        $mdToast.show(toast);
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
+    }
+
+
+
+
+
+	/* Transport belts *********************************************************************************/
+
+    $scope.transportBeltsData = {};
+
+    $scope.loadTransportBeltsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_transport_belts
+         })
+        .then(function(response) {
+        	// console.log(response.data);
+        	$scope.transportBeltsData = response.data.get_transport_beltsResult;
+        });
+    }
+    // ArtisterilIntervalService.start($scope.loadTransportBeltsData);
+    $scope.loadTransportBeltsData();
+
+
+    $scope.openTransportBeltPopup = function(event, transportBelt) 
+    {
+        event.stopPropagation();
+
+        $scope.selectedTransportBelt = transportBelt;
+        var popup = $('body.page-visualizador-del-proceso #transport-belt-popup');
+        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
+        popup.addClass('open')
+            .css('left', (event.clientX - mainPos.left) + 'px')
+            .css('top', (event.clientY - mainPos.top) + 'px');
+    }
+
+    $scope.updateTransportBelt = function(id) 
     {
         toast.content('Éxito')
             .toastClass('toast-success');

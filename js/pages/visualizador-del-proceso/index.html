@@ -16,6 +16,13 @@
 	<p class="clickable" ng-click="updateSemaphore(selectedSemaphore.id)">Rearme</p>
 </div>
 
+<div id="transport-belt-popup" class="popup" md-theme="dark">
+	<h3>Cinta transportadora {{ selectedTransportBelt.id }}</h3>
+	<p class="clickable" ng-click="updateTransportBelt(selectedTransportBelt.id)">Paro</p>
+	<p class="clickable" ng-click="updateTransportBelt(selectedTransportBelt.id)">Marcha</p>
+	<p class="clickable" ng-click="updateTransportBelt(selectedTransportBelt.id)">Rearme</p>
+</div>
+
 <div id="position-popup" class="popup" md-theme="dark">
 	<h3>POSICIÓN {{ selectedPosition.id }}</h3>
 	<p ng-show="!storagePositionNichesData.length" layout="row" layout-align="center">
@@ -26,6 +33,7 @@
 		{{ niche.product ? 'Producto ' + niche.product : '-' }}
 	</p>
 </div>
+
 
 <div id="mapa" ng-click="mapClick()">
 	
@@ -44,6 +52,15 @@
 		class="semaphore" 
 		style="transform: translate({{ xPercentToPx(semaphore.x) }}px, {{ yPercentToPx(semaphore.y) }}px)"
 		ng-click="openSemaphorePopup($event, semaphore)">
+	</div>
+	
+	<div 
+		ng-repeat="transportBelt in transportBeltsData"  
+		id="transport-belt-{{ transportBelt.id }}"
+		class="transport-belt" 
+		style="transform: translate({{ xPercentToPx(transportBelt.x) }}px, {{ yPercentToPx(transportBelt.y) }}px)"
+		ng-click="openTransportBeltPopup($event, transportBelt)">
+		CT{{ transportBelt.id }}
 	</div>
 
 	<div 

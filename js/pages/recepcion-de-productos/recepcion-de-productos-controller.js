@@ -10,27 +10,51 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
     // receive product
 
     $scope.productId = '';
+    $scope.selectedProducts = [];
 
     $scope.receiveProductByInput = function()
     {
-        $('button.block-product').attr("disabled", true).addClass('loading');
+        if (!$scope.productId) {
+            return;
+        }
+
+        $scope.selectedProducts.push($scope.productId);
+        $scope.productId = '';
+    }
+
+
+    $scope.receiveProducts = function()
+    {
+        if (!$scope.selectedProducts) {
+            return;
+        }
+
+        $('button.receive-products').attr("disabled", true).addClass('loading');
 
         $http({
             method  : 'GET',
             url     : config.webservice.urls.receive_products,
-            params  : {"productlist" : JSON.stringify([$scope.productId])}
+            params  : {"productlist" : JSON.stringify($scope.selectedProducts)}
          })
         .then(function(response) {
             // console.log(response.data);
             toast.content('Éxito')
                 .toastClass('toast-success');
-            $scope.productId = '';
-            $('input[name=productId]').focus();
+            $scope.selectedProducts = [];
             $mdToast.show(toast);
-            $('button.block-product').attr("disabled", false).removeClass('loading');
+            $('button.receive-products').attr("disabled", false).removeClass('loading');
         });
     }
 
+
+
+    $scope.removeFromSelection = function(item) 
+    {
+        var index = $scope.selectedProducts.indexOf(item);
+        if (index > -1) {
+            $scope.selectedProducts.splice(index, 1);
+        }
+    }
 
 
     // get readers

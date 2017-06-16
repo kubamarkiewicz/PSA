@@ -33,8 +33,8 @@ window.config.webservice = {
         
         "get_actions"                   : "dummy-webservice/get_actions.json",
         "select_reader_for_manual_mode" : "dummy-webservice/select_reader_for_manual_mode.json",
-        "get_reader_reading"            : "dummy-webservice/get_reader_reading.json",
         "select_action"                 : "dummy-webservice/select_action.json",
+        "upload_actions_file"           : "dummy-webservice/upload_actions_file.json",
 
 	}
 

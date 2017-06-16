@@ -37,5 +37,20 @@
 
 	</form>
 
+	<hr>
+	<br>
+
+	<form ng-submit="uploadFile()" class="upload-file">
+		<p>
+			<label>CARGAR ARCHIVO</label>
+			<md-input-container md-no-float>
+		        <span class="file-input">
+		        	<input type="file" id="uploadFileInput" placeholder="Seleccionar archivo" required>
+		        </span>
+		    </md-input-container>
+		    <md-button type="submit" class="md-raised md-primary">Enviar <md-progress-circular></md-progress-circular></md-button>
+		</p>
+   	</form>
+
 
 </div>

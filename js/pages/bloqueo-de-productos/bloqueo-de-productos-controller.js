@@ -38,26 +38,52 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     // block product
 
     $scope.productId = '';
+    $scope.selectedProducts = [];
 
     $scope.blockProductByInput = function()
     {
-        $('button.block-product').attr("disabled", true).addClass('loading');
+        if (!$scope.productId) {
+            return;
+        }
+
+        $scope.selectedProducts.push($scope.productId);
+        $scope.productId = '';
+        $('input[name=productId]').focus();
+    }
+
+
+    $scope.blockProducts = function()
+    {
+        if (!$scope.selectedProducts) {
+            return;
+        }
+
+        $('button.block-products').attr("disabled", true).addClass('loading');
 
         $http({
             method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.block_products : config.webservice.urls.unblock_products,
-            params  : {"productlist" : JSON.stringify([$scope.productId])}
+            params  : {"productlist" : JSON.stringify($scope.selectedProducts)}
          })
         .then(function(response) {
             // console.log(response.data);
             toast.content('Éxito')
                 .toastClass('toast-success');
-            $scope.productId = '';
-            $('input[name=productId]').focus();
-            $scope.getBlockedProductsData();
             $mdToast.show(toast);
-            $('button.block-product').attr("disabled", false).removeClass('loading');
+            $scope.selectedProducts = [];
+            $scope.getBlockedProductsData();
+            $('button.block-products').attr("disabled", false).removeClass('loading');
         });
+    }
+
+
+
+    $scope.removeFromSelection = function(item) 
+    {
+        var index = $scope.selectedProducts.indexOf(item);
+        if (index > -1) {
+            $scope.selectedProducts.splice(index, 1);
+        }
     }
 
 

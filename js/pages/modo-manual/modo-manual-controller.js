@@ -95,4 +95,38 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
     }
 
 
+
+
+    // upload file
+
+    $scope.uploadFile = function()
+    {
+        $('form.upload-file button').attr("disabled", true).addClass('loading');
+
+        // read file as text
+        var reader = new FileReader();
+        reader.onload = function(){
+            $scope.uploadActionsFile(reader.result);
+        };
+        reader.readAsText(document.getElementById('uploadFileInput').files[0]);
+    }
+
+    $scope.uploadActionsFile = function(fileContent)
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.upload_actions_file,
+            params  : {'actionlist' : fileContent}
+        })
+        .then(function(response) {
+            // console.log(response.data);
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $mdToast.show(toast);
+            $('form.upload-file button').attr("disabled", false).removeClass('loading');
+            $('#uploadFileInput').val('');
+        });
+    }
+
+
 });

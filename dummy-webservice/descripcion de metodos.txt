@@ -161,8 +161,6 @@ select_reader_for_manual_mode(id)
 
 select_action(action, reader, product) 
     
-
-
 upload_actions_file(actionlist)
     
 

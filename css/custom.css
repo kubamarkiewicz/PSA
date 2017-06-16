@@ -519,7 +519,7 @@ body.page-visualizador-del-proceso .popup {
 	z-index: 20;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s linear 0.25s, opacity 0.25s ease-out, transform 0.25s ease-out;
+    transition: visibility 0s linear 0.2s, opacity .2s cubic-bezier(.55,0,.55,.2), transform .2s cubic-bezier(.55,0,.55,.2);
 	background-color: #00557f;
 	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
 	transform: scale(0.95) translate(-3%, -3%);
@@ -547,6 +547,13 @@ body.page-visualizador-del-proceso .popup p {
 	border-top: 1px solid #ffffff;
 	margin: 0;
 }
+body.page-visualizador-del-proceso .popup p.clickable {
+	cursor: pointer;
+	transition: all .3s cubic-bezier(.55,0,.55,.2);
+}
+body.page-visualizador-del-proceso .popup p.clickable:hover {
+	background-color: #343434;
+}
 /*body.page-visualizador-del-proceso .popup:before {
 	content: '';
 	position: absolute;
@@ -569,7 +576,7 @@ body.page-visualizador-del-proceso .agv {
 	border-radius: 0 7px 7px 0;
 	transform: translate(-50%, -50%);
 	transform-origin: 50% 50%;
-	box-shadow: 0px 0 7px 1px rgba(0,0,0,0.45);
+	box-shadow: 0px 0 3px 1px rgba(0,0,0,0.20);
 	background-color: #7dbd01;
 	color: #ffffff;
 	z-index: 15;
@@ -583,12 +590,44 @@ body.page-visualizador-del-proceso .position {
     position: absolute;
     width: 15px;
     height: 7px;
-    z-index: 4;
+    z-index: 10;
     cursor: pointer;
     background: rgba(255,0,0,0.25);
 }
 
-
+body.page-visualizador-del-proceso .semaphore {
+    position: absolute;
+	cursor: pointer;
+	width: 8px;
+	height: 15px;
+	border-radius: 2px;
+	background-color: #272727;
+	z-index: 12;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
+}
+body.page-visualizador-del-proceso .semaphore:before {
+	content: '';
+    position: absolute;
+	cursor: pointer;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #cc0b0b;
+	margin: 1px 0 0 1px;
+}
+body.page-visualizador-del-proceso .semaphore:after {
+	content: '';
+    position: absolute;
+	cursor: pointer;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #04da0c;
+	margin: 8px 0 0 1px;
+}
+body.page-visualizador-del-proceso #semaphore-popup {
+	background-color: #760303;
+}
 
 
 /* Page bloqueo-de-productos *******************************************************************************/

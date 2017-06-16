@@ -5,7 +5,15 @@
 </div>
 
 <div id="agv-popup" class="popup" md-theme="dark">
-	<h3>AVG {{ selectedAGV.id }}</h3>
+	<h3>AGV {{ selectedAGV.id }}</h3>
+	<p>Estado: {{ selectedAGV.state }}</p>
+</div>
+
+<div id="semaphore-popup" class="popup" md-theme="dark">
+	<h3>Semaphore {{ selectedSemaphore.id }}</h3>
+	<p class="clickable" ng-click="updateSemaphore()">Paro</p>
+	<p class="clickable" ng-click="updateSemaphore()">Marcha</p>
+	<p class="clickable" ng-click="updateSemaphore()">Rearme</p>
 </div>
 
 <div id="position-popup" class="popup" md-theme="dark">
@@ -25,9 +33,17 @@
 		ng-repeat="agv in AGVData"  
 		id="agv-{{ agv.id }}"
 		class="agv" 
-		style="transform: translate({{ agv.x }}px, {{ agv.y }}px) rotate({{ agv.orientation }}deg)"
+		style="transform: translate({{ xPercentToPx(agv.x) }}px, {{ yPercentToPx(agv.y) }}px) rotate({{ agv.orientation }}deg)"
 		ng-click="openAGVPopup($event, agv)">
 		{{ agv.id }}
+	</div>
+	
+	<div 
+		ng-repeat="semaphore in semaphoresData"  
+		id="semaphore-{{ semaphore.id }}"
+		class="semaphore" 
+		style="transform: translate({{ xPercentToPx(semaphore.x) }}px, {{ yPercentToPx(semaphore.y) }}px)"
+		ng-click="openSemaphorePopup($event, semaphore)">
 	</div>
 
 	<div 

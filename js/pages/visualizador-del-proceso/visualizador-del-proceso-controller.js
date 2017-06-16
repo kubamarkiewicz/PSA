@@ -1,7 +1,10 @@
-app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate) {  
+app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate, $mdToast) {  
 
+    var toast = $mdToast.simple()
+            .hideDelay(3000)
+            .position('top left')
+            .parent($('body > main'));
 
-    var mainPos = $('body.page-visualizador-del-proceso > main').offset();
 
 	/* mapa *********************************************************************************/
 
@@ -71,11 +74,24 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     }
 
 
-	/* AGVs *********************************************************************************/
+    // calculate position on map (% to px)
+    var mainPos = $('body.page-visualizador-del-proceso > main').offset();
+
+    $scope.xPercentToPx = function(percent) 
+    {
+        return percent * $('#mapa img').width() / 100;
+    }
+    $scope.yPercentToPx = function(percent) 
+    {
+        return percent * $('#mapa img').height() / 100;
+    }
+
+
+    /* AGVs *********************************************************************************/
 
     $scope.AGVData = {};
 
-	$animate.enabled($('.agvs'), false);
+    $animate.enabled($('.agvs'), false);
 
     $scope.loadAGVData = function()
     {
@@ -84,16 +100,11 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_agvs
          })
         .then(function(response) {
-        	var mapWidth = $('#mapa img').width();
-        	var mapHeight = $('#mapa img').height();
-        	// console.log(response.data);
-        	// add keys to array, otherwise animation does not work ...
+            // console.log(response.data);
+            // add keys to array, otherwise animation does not work ...
             $scope.AGVData = {};
             for (i in response.data.get_agvsResult) {
-                var item = response.data.get_agvsResult[i];
-                item.x *= mapWidth / 100;
-                item.y *= mapHeight / 100;
-                $scope.AGVData[item.id] = item;
+                $scope.AGVData[response.data.get_agvsResult[i].id] = response.data.get_agvsResult[i];
             }
         });
     }
@@ -116,6 +127,47 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 
 
+	/* Semaphores *********************************************************************************/
+
+    $scope.semaphoresData = {};
+
+    $scope.loadSemaphoresData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_semaphores
+         })
+        .then(function(response) {
+        	// console.log(response.data);
+        	$scope.semaphoresData = response.data.get_semaphoresResult;
+        });
+    }
+    // ArtisterilIntervalService.start($scope.loadSemaphoresData);
+    $scope.loadSemaphoresData();
+
+
+    $scope.openSemaphorePopup = function(event, semaphore) 
+    {
+        event.stopPropagation();
+
+        $scope.selectedSemaphore = semaphore;
+        var popup = $('body.page-visualizador-del-proceso #semaphore-popup');
+        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
+        popup.addClass('open')
+            .css('left', (event.clientX - mainPos.left) + 'px')
+            .css('top', (event.clientY - mainPos.top) + 'px');
+    }
+
+    $scope.updateSemaphore = function(id) 
+    {
+        toast.content('Éxito')
+            .toastClass('toast-success');
+        $mdToast.show(toast);
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
+    }
+
+
+
 	/* Storage Positions *********************************************************************************/
 
     $scope.loadStoragePositionsData = function()
@@ -126,7 +178,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
          })
         .then(function(response) {
         	// console.log(response.data);
-            $scope.storagePositionsData = response.data;
+            $scope.storagePositionsData = response.data.get_storage_positionsResult;
         });
     }
     $scope.loadStoragePositionsData();
@@ -159,7 +211,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.storagePositionNichesData = response.data;
+            $scope.storagePositionNichesData = response.data.get_storage_position_nichesResult;
         });
     }
 

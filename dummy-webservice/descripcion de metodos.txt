@@ -29,7 +29,8 @@ get_agvs()
             id: string,
             x: number,
             y: number,
-            orientation: number (degrees)
+            orientation: number (degrees),
+            state: string
         }
     ]
 
@@ -38,50 +39,36 @@ get_semaphores()
     [
         {
             id: string,
-            x: number,
-            y: number,
             state: string
         }
     ]
 
-update_semaphore(id, [state, x, y]) // parametros state, x, y - son opcionales
-    (actualizar o si ID no existe, crear un semaforo)
-    return: boolean
+update_semaphore(id, state)
 
 get_transport_belts()
     return:             //List<TransportBelt>
     [
         {
             id: string,
-            x: number,
-            y: number,
             state: string
         }
     ]
 
-update_transport_belt(id, [state, x, y]) 
-    (actualizar o si ID no existe, crear un TransportBelt)
-    return: boolean
-
+update_transport_belt(id, state) 
 
 get_storage_positions()
     return:             //List<StoragePosition>
     [
         {
-            id: string,
-            x: number,
-            y: number
+            id: string
         }
     ]
-
-update_storage_position(id, x, y) 
-    (actualizar o si ID no existe, crear un StoragePosition)
 
 get_storage_position_niches(storage_position_id)
     return:             //List<StoragePositionNiche>
     [
         {
-            id: string,
+            niche_id: string,
             product: string
         }
     ]

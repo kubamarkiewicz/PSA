@@ -99,7 +99,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
         // get page slug
-        $rootScope.pageSlug = 'datos-del-sga';
+        var prevSlug = $rootScope.pageSlug = 'datos-del-sga';
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
         }
@@ -121,6 +121,29 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
 
         // page title
         $rootScope.pageTitle = selectedItem.text();
+
+        // call enter exit web service methods
+        if (prev) {
+            switch(prev.originalPath.substring(1)) {
+                case "":
+                case "visualizador-del-proceso"     : $http.get(config.webservice.urls.exit_Process); break;
+                case "datos-del-sga"                : $http.get(config.webservice.urls.exit_Data); break;
+                case "bloqueo-de-productos"         : $http.get(config.webservice.urls.exit_Lockings); break;
+                case "recepcion-de-productos"       : $http.get(config.webservice.urls.exit_Reception); break;
+                case "modo-manual"                  : $http.get(config.webservice.urls.exit_Manual); break;
+                case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
+            }
+        }
+        switch($rootScope.pageSlug) {
+            case "":
+            case "visualizador-del-proceso"     : $http.get(config.webservice.urls.enter_Process); break;
+            case "datos-del-sga"                : $http.get(config.webservice.urls.enter_Data); break;
+            case "bloqueo-de-productos"         : $http.get(config.webservice.urls.enter_Lockings); break;
+            case "recepcion-de-productos"       : $http.get(config.webservice.urls.enter_Reception); break;
+            case "modo-manual"                  : $http.get(config.webservice.urls.enter_Manual); break;
+            case "configuracion-de-parametros"  : $http.get(config.webservice.urls.enter_Parameters); break;
+            case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
+        }
         
     });
 

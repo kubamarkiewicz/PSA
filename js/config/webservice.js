@@ -36,6 +36,21 @@ window.config.webservice = {
         "select_action"                 : "dummy-webservice/select_action.json",
         "upload_actions_file"           : "dummy-webservice/upload_actions_file.json",
 
+        "enter_Data"                    : "dummy-webservice/enter_Data.json",
+        "enter_Reception"               : "dummy-webservice/enter_Reception.json",
+        "enter_Lockings"                : "dummy-webservice/enter_Lockings.json",
+        "enter_Manual"                  : "dummy-webservice/enter_Manual.json",
+        "enter_Process"                 : "dummy-webservice/enter_Process.json",
+        "enter_Parameters"              : "dummy-webservice/enter_Parameters.json",
+        "enter_Login"                   : "dummy-webservice/enter_Login.json",
+
+        "exit_Data"                     : "dummy-webservice/exit_Data.json",
+        "exit_Reception"                : "dummy-webservice/exit_Reception.json",
+        "exit_Lockings"                 : "dummy-webservice/exit_Lockings.json",
+        "exit_Manual"                   : "dummy-webservice/exit_Manual.json",
+        "exit_Process"                  : "dummy-webservice/exit_Process.json",
+        "exit_Parameters"               : "dummy-webservice/exit_Parameters.json",
+
 	}
 
 }

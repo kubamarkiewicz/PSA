@@ -117,24 +117,19 @@ PANTALLA DE BLOQUEO DE PRODUCTOS
 get_blocked_products() - es el mismo metodo que en la PANTALLA DATOS DEL SGA
 
 block_products(productlist)
-    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
+    parameters: productlist - JSON string containig array of strings eg.: ['aaa','bbb']
     
-
 unblock_products(productlist)
-    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
-    
+    parameters: productlist - JSON string containig array of strings eg.: ['aaa','bbb']
 
 get_readers()
     return: [string]            //array of strings
 
-select_reader_for_blocking(id)
-    
+select_reader_for_blocking(id)   
 
 select_reader_for_unblocking(id)
-    
 
 block_products_from_file(productlist)
-    
 
 unblock_products_from_file(productlist)
     
@@ -148,9 +143,7 @@ PANTALLA DE RECEPCIÓN DE PRODUCTOS
 receive_products(productlist)
     parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
     
-
 select_reader_for_receiving(id)
-    
 
 receive_products_from_file(productlist)
     
@@ -164,14 +157,7 @@ PANTALLA MODO MANUAL
 get_actions()
     return: [string]            //array of strings
 
-select_reader_for_manual_mode(reader_id)
-    return: string              // message  
-
-get_reader_reading(reader_id)
-    return: object {
-                "value" : "12345678",
-                "message" : "Confirme que la lectura del Nefab es correcta."
-            }
+select_reader_for_manual_mode(id)
 
 select_action(action, reader, product) 
     

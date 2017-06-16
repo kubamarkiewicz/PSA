@@ -49,44 +49,19 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
 
     $scope.selectReader = function()
     {
-        $('p.reader').addClass('loading');
-        $scope.readerMessage = '';
-
         $http({
             method  : 'GET',
             url     : config.webservice.urls.select_reader_for_manual_mode,
-            params  : {"reader_id" : $scope.readerId}
+            params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
             // console.log(response.data);
-            $scope.readerMessage = response.data.Message;
-            $('p.reader').removeClass('loading');
-            // receive reading from reader
-            $scope.getReaderReading($scope.readerId);
-        });
-        
-    }
-
-    $scope.getReaderReading = function(readerId)
-    {
-        $('p.product-id').addClass('loading');
-
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_reader_reading,
-            params  : {"reader_id" : readerId}
-         })
-        .then(function(response) {
-            // console.log(response.data);
-            $scope.productId = response.data.value;
-            $scope.productIdMessage = response.data.message;
-
-            $('p.product-id').removeClass('loading');
-        }, function(){
-            $('p.product-id').removeClass('loading');
+            toast.content('Éxito')
+                .toastClass('toast-success');
+            $mdToast.show(toast);
         });
     }
-    
+
 
 
     // execute action 

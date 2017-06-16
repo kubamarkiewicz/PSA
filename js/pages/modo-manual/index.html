@@ -21,13 +21,12 @@
     				<md-option ng-repeat="reader in readersData" ng-value="reader">{{ reader }}</md-option>
   				</md-select>
 			</md-input-container>
-			<span class="message"><md-progress-circular md-diameter="20px"></md-progress-circular>{{ readerMessage }}</span>
 		</p>
 
 		<p class="product-id">
 			<label>LECTURA (opcionalmente manual)</label>
 			<md-input-container md-no-float>
-		        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto" required>
+		        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto">
 		    </md-input-container>
 			<span class="message"><md-progress-circular md-diameter="20px"></md-progress-circular>{{ productIdMessage }}</span>
 		</p>

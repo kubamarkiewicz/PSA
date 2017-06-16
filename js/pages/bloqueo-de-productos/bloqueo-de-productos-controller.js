@@ -15,9 +15,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
 
 
-    
-
-
 
     // get Blocked products
 
@@ -49,7 +46,7 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $http({
             method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.block_products : config.webservice.urls.unblock_products,
-            params  : {"productlist" : [$scope.productId]}
+            params  : {"productlist" : JSON.stringify([$scope.productId])}
          })
         .then(function(response) {
             // console.log(response.data);

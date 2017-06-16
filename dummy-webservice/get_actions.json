@@ -1,5 +1,8 @@
-[
-    "Acción 1",
-    "Acción 2",
-    "Acción 3"
-]
+{
+	"get_actionsResult" :
+	[
+	    "Acción 1",
+	    "Acción 2",
+	    "Acción 3"
+	]
+}

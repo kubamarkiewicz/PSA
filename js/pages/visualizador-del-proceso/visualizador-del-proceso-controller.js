@@ -87,12 +87,13 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         	var mapWidth = $('#mapa img').width();
         	var mapHeight = $('#mapa img').height();
         	// console.log(response.data);
-        	// add data manually, otherwise animation does not work ...
+        	// add keys to array, otherwise animation does not work ...
             $scope.AGVData = {};
-            for (i in response.data) {
-                $scope.AGVData[response.data[i].id] = response.data[i];
-                $scope.AGVData[response.data[i].id].x *= (mapWidth / 100);
-                $scope.AGVData[response.data[i].id].y *= (mapHeight / 100);
+            for (i in response.data.get_agvsResult) {
+                var item = response.data.get_agvsResult[i];
+                item.x *= mapWidth / 100;
+                item.y *= mapHeight / 100;
+                $scope.AGVData[item.id] = item;
             }
         });
     }

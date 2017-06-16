@@ -1,37 +1,40 @@
-[
-	{
-		"title": "Lorem ipsum",
-		"message": "dolor sit amet, consectetur adipiscing elit",
-		"color": "danger"
-	},
-	{
-		"title": "Sed do eiusmod tempor",
-		"message": "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-		"color": "primary"
-	},
-	{
-		"title": "Quis nostrud exercitation",
-		"message": "ullamco laboris nisi ut aliquip ex ea commodo consequat",
-		"color": "success"
-	},
-	{
-		"title": "eu fugiat nulla pariatur",
-		"message": "Excepteur sint occaecat cupidatat non proident",
-		"color": "info"
-	},
-	{
-		"title": "sunt in culpa qui",
-		"message": "officia deserunt mollit anim id est laborum.",
-		"color": "warning"
-	},
-	{
-		"title": "Magna aliqua",
-		"message": "Ut enim ad minim veniam, quis nostrud exercitation",
-		"color": "muted"
-	},
-	{
-		"title": "Consectetur adipiscing elit",
-		"message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
-		"color": "white"
-	}
-]
+{
+	"get_alertsResult" : 
+	[
+		{
+			"Title": "Lorem ipsum",
+			"Message": "dolor sit amet, consectetur adipiscing elit",
+			"Color": "danger"
+		},
+		{
+			"Title": "Sed do eiusmod tempor",
+			"Message": "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+			"Color": "primary"
+		},
+		{
+			"Title": "Quis nostrud exercitation",
+			"Message": "ullamco laboris nisi ut aliquip ex ea commodo consequat",
+			"Color": "success"
+		},
+		{
+			"Title": "eu fugiat nulla pariatur",
+			"Message": "Excepteur sint occaecat cupidatat non proident",
+			"Color": "info"
+		},
+		{
+			"Title": "sunt in culpa qui",
+			"Message": "officia deserunt mollit anim id est laborum.",
+			"Color": "warning"
+		},
+		{
+			"Title": "Magna aliqua",
+			"Message": "Ut enim ad minim veniam, quis nostrud exercitation",
+			"Color": "muted"
+		},
+		{
+			"Title": "Consectetur adipiscing elit",
+			"Message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
+			"Color": "white"
+		}
+	]
+}

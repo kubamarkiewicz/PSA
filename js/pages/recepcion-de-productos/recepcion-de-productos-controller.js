@@ -7,17 +7,17 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
 
 
 
-    // insert product
+    // receive product
 
     $scope.productId = '';
 
-    $scope.insertProductByInput = function()
+    $scope.receiveProductByInput = function()
     {
         $('button.block-product').attr("disabled", true).addClass('loading');
 
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.insert_products,
+            url     : config.webservice.urls.receive_products,
             params  : {"productlist" : JSON.stringify([$scope.productId])}
          })
         .then(function(response) {
@@ -61,7 +61,7 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
 
         return $http({
             method  : 'GET',
-            url     : $scope.action == 'block' ? config.webservice.urls.select_reader_for_blocking : config.webservice.urls.select_reader_for_unblocking,
+            url     : config.webservice.urls.select_reader_for_receiving,
             params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
@@ -83,16 +83,16 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
         // read file as text
         var reader = new FileReader();
         reader.onload = function(){
-            $scope.insertProductsFromFile(reader.result);
+            $scope.receiveProductsFromFile(reader.result);
         };
         reader.readAsText(document.getElementById('uploadFileInput').files[0]);
     }
 
-    $scope.insertProductsFromFile = function(fileContent)
+    $scope.receiveProductsFromFile = function(fileContent)
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.insert_products_from_file,
+            url     : config.webservice.urls.receive_products_from_file,
             params  : {'productlist' : fileContent}
         })
         .then(function(response) {

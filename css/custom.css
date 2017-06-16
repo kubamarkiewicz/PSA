@@ -138,6 +138,10 @@ span.file-input {
 	padding: 7px 0 5px;
 	background-color: #ffffff;
 	height: 38px;
+	outline: none;
+}
+span.file-input:focus {
+	outline: none;
 }
 md-input-container input[type="file"].md-input {
 	padding-top: 0;

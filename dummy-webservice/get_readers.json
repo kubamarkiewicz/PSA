@@ -1,5 +1,8 @@
-[
-    "reader_1",
-    "reader_2",
-    "reader_3"
-]
+{ 
+	"get_readersResult" : 
+	[
+	    "reader_1",
+	    "reader_2",
+	    "reader_3"
+	]
+}

@@ -13,7 +13,7 @@ window.config.webservice = {
         "get_alerts"    		        : "dummy-webservice/get_alerts.json",
         "get_blocked_products" 	        : "dummy-webservice/get_blocked_products.json",
 
-        "get_agvs"                      : "dummy-webservice/get_agvs.php",
+        "get_agvs"                      : "dummy-webservice/get_agvs.json",
         "get_storage_positions"         : "dummy-webservice/get_storage_positions.json",
         "get_storage_position_niches"	: "dummy-webservice/get_storage_position_niches.json",
 
@@ -27,9 +27,9 @@ window.config.webservice = {
         "block_products_from_file"      : "dummy-webservice/block_products_from_file.json",
         "unblock_products_from_file" 	: "dummy-webservice/unblock_products_from_file.json",
 
-        "insert_products"               : "dummy-webservice/receive_products.json",
-        "select_reader_for_inserting"   : "dummy-webservice/select_reader_for_receiving.json",
-        "insert_products_from_file"     : "dummy-webservice/receive_products_from_file.json",
+        "receive_products"              : "dummy-webservice/receive_products.json",
+        "select_reader_for_receiving"   : "dummy-webservice/select_reader_for_receiving.json",
+        "receive_products_from_file"    : "dummy-webservice/receive_products_from_file.json",
         
         "get_actions"                   : "dummy-webservice/get_actions.json",
         "select_reader_for_manual_mode" : "dummy-webservice/select_reader_for_manual_mode.json",

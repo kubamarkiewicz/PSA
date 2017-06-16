@@ -51,6 +51,15 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $('input[name=productId]').focus();
     }
 
+    $scope.selectProduct = function(productId)
+    {
+        if (!productId) {
+            return;
+        }
+
+        $scope.selectedProducts.push(productId);
+    }
+
 
     $scope.blockProducts = function()
     {

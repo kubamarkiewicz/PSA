@@ -79,7 +79,7 @@
 
 		<div class="list" ng-show="action">
 			<div class="item" ng-repeat="item in blockedProductsData track by $index">
-				<div class="unblock" ng-click="unblockProductById(item)" ng-show="action == 'unblock'"><md-tooltip>DESBLOQUEAR</md-tooltip></div>
+				<div class="unblock" ng-click="selectProduct(item)" ng-show="action == 'unblock'"></div>
 				{{ item }}
 			</div>
 		</div>

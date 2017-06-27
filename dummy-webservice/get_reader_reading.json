@@ -1,4 +1,7 @@
 {
-	"value" : "12345678",
-	"message" : "Confirme que la lectura del Nefab es correcta."
+    "get_reader_readingResult" : 
+    [
+        "00000",
+        "11111"
+    ]
 }

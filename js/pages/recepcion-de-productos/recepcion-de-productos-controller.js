@@ -38,11 +38,16 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content('Éxito')
-                .toastClass('toast-success');
-            $scope.selectedProducts = [];
+            toast.content(response.data.receive_productsResult.Message);
+            if (response.data.receive_productsResult.Result === true) {
+                toast.toastClass('toast-success');
+            }
+            else {
+                toast.toastClass('toast-error');
+            }
             $mdToast.show(toast);
             $('button.receive-products').attr("disabled", false).removeClass('loading');
+            $scope.selectedProducts = [];
         });
     }
 
@@ -65,14 +70,15 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_readers
+            url     : config.webservice.urls.get_readers_for_receiving
          })
         .then(function(response) {
             // console.log(response.data);
             $scope.readersData = response.data.get_readersResult;
         });
     }
-    $scope.getReadersData();
+    // $scope.getReadersData();
+    ArtisterilIntervalService.start($scope.getReadersData, 5000);
 
 
     // select reader
@@ -94,6 +100,25 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
                 .toastClass('toast-success');
             $mdToast.show(toast);
             $('form.reader button').attr("disabled", false).removeClass('loading');
+
+            // start recieving data from reader
+            ArtisterilIntervalService.start($scope.getReaderReading);
+        });
+    }
+
+    $scope.getReaderReading = function()
+    {
+        return $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_reader_reading
+         })
+        .then(function(response) {
+            // console.log(response.data);
+
+            // add products to selection
+            for (i in response.data.get_reader_readingResult) {
+                $scope.selectedProducts.push(response.data.get_reader_readingResult[i]);
+            }
         });
     }
 

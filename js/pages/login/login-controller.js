@@ -23,7 +23,7 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
                 ArtisterilAuthService.setUsername($scope.username);
             	
                 // load user permissions
-                ArtisterilAuthService.loadUserPermissions(response.data);
+                ArtisterilAuthService.loadUserPermissions($scope.username);
 
                 // redirect
                 $location.url('/');

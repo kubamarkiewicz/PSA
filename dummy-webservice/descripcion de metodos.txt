@@ -22,6 +22,16 @@ user_has_access (user)
 
 PANTALLA VISUALIZADOR DEL PROCESO
 
+get_alerts
+    return:             //List
+    [
+        {
+            title: string,
+            message: number
+        }
+    ]
+
+
 get_agvs()
     return:             //List<AGV>
     [
@@ -132,6 +142,12 @@ receive_products(productlist)
     
 select_reader_for_receiving(id)
 
+get_reader_reading()
+    return:             //List
+    [
+        string product
+    ]
+
 receive_products_from_file(productlist)
     
 
@@ -147,6 +163,7 @@ get_actions()
 select_reader_for_manual_mode(id)
 
 select_action(action, reader, product) 
+
     
 upload_actions_file(actionlist)
     

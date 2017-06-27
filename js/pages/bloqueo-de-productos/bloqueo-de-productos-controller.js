@@ -5,6 +5,10 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     $scope.setAction = function(value)
     {
         $scope.action = value;
+
+        // reset reader
+        $scope.readerId = null;
+        ArtisterilIntervalService.stop($scope.getReaderReading);
     }
 
     
@@ -76,12 +80,17 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content('Éxito')
-                .toastClass('toast-success');
+            toast.content(response.data[$scope.action + "_productsResult"].Message);
+            if (response.data[$scope.action + "_productsResult"].Result === true) {
+                toast.toastClass('toast-success');
+            }
+            else {
+                toast.toastClass('toast-error');
+            }
             $mdToast.show(toast);
+            $('button.block-products').attr("disabled", false).removeClass('loading');
             $scope.selectedProducts = [];
             $scope.getBlockedProductsData();
-            $('button.block-products').attr("disabled", false).removeClass('loading');
         });
     }
 
@@ -105,14 +114,14 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_readers
+            url     : config.webservice.urls.get_readers_for_blocking
          })
         .then(function(response) {
             // console.log(response.data);
             $scope.readersData = response.data.get_readersResult;
         });
     }
-    $scope.getReadersData();
+    ArtisterilIntervalService.start($scope.getReadersData, 5000);
 
 
     // select reader
@@ -134,10 +143,27 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
                 .toastClass('toast-success');
             $mdToast.show(toast);
             $('form.reader button').attr("disabled", false).removeClass('loading');
+
+            // start recieving data from reader
+            ArtisterilIntervalService.start($scope.getReaderReading);
         });
     }
 
+    $scope.getReaderReading = function()
+    {
+        return $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_reader_reading
+         })
+        .then(function(response) {
+            // console.log(response.data);
 
+            // add products to selection
+            for (i in response.data.get_reader_readingResult) {
+                $scope.selectedProducts.push(response.data.get_reader_readingResult[i]);
+            }
+        });
+    }
 
 
     // upload file

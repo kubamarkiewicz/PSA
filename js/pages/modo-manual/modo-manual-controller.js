@@ -33,14 +33,15 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_readers
+            url     : config.webservice.urls.get_readers_for_manual_mode
          })
         .then(function(response) {
             // console.log(response.data);
             $scope.readersData = response.data.get_readersResult;
         });
     }
-    $scope.getReadersData();
+    // $scope.getReadersData();
+    ArtisterilIntervalService.start($scope.getReadersData, 5000);
 
 
     // select reader
@@ -81,9 +82,13 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content('Éxito')
-                .toastClass('toast-success');
-            $scope.productId = '';
+            toast.content(response.data.select_actionResult.Message);
+            if (response.data.select_actionResult.Result === true) {
+                toast.toastClass('toast-success');
+            }
+            else {
+                toast.toastClass('toast-error');
+            }
             $mdToast.show(toast);
 
             $('button.execute-acton').attr("disabled", false).removeClass('loading');
@@ -120,9 +125,15 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         })
         .then(function(response) {
             // console.log(response.data);
-            toast.content('Éxito')
-                .toastClass('toast-success');
+            toast.content(response.data.upload_actions_fileResult.Message);
+            if (response.data.upload_actions_fileResult.Result === true) {
+                toast.toastClass('toast-success');
+            }
+            else {
+                toast.toastClass('toast-error');
+            }
             $mdToast.show(toast);
+            
             $('form.upload-file button').attr("disabled", false).removeClass('loading');
             $('#uploadFileInput').val('');
         });

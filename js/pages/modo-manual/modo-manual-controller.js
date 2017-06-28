@@ -74,8 +74,8 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             console.log(response.data);
 
             // add product to input
-            if (response.data.get_reading_for_manual_modeResult) {
-                $scope.productId = response.data.get_reading_for_manual_modeResult;
+            if (response.data.get_reader_readingResult) {
+                $scope.productId = response.data.get_reader_readingResult;
 
                 // stop interval
                 ArtisterilIntervalService.stop('getReaderReading');

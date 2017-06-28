@@ -6,7 +6,7 @@ window.config = window.config || {};
 window.config.webservice = {
 
     "urls" : {
-/*
+
         "user_login"                    : "dummy-webservice/user_login.json",
         "user_has_access"               : "dummy-webservice/user_has_access.json",
 
@@ -18,7 +18,9 @@ window.config.webservice = {
         "get_storage_positions"         : "dummy-webservice/get_storage_positions.json",
         "get_storage_position_niches"   : "dummy-webservice/get_storage_position_niches.json",
         "get_semaphores"                : "dummy-webservice/get_semaphores.json",
-        "get_transport_belts"           : "dummy-webservice/get_transport_belts.json",
+        "update_semaphore"              : "dummy-webservice/empty.json",
+        "update_transport_belt"         : "dummy-webservice/empty.json",
+        "get_popup_alerts"              : "dummy-webservice/get_popup_alerts.json",
 
         "get_readers_for_blocking"      : "dummy-webservice/get_readers.json",
         "block_products"                : "dummy-webservice/block_products.json",
@@ -59,8 +61,8 @@ window.config.webservice = {
         "exit_Process"                  : "dummy-webservice/empty.json",
         "exit_Parameters"               : "dummy-webservice/empty.json",
 
-*/
 
+/*
 
         "user_login"                    : "http://192.168.0.82:8888/SAS/Login/api/user_login",
         "user_has_access"               : "http://192.168.0.82:8888/SAS/Login/api/user_has_access",
@@ -117,7 +119,7 @@ window.config.webservice = {
         "exit_Manual"                   : "http://192.168.0.82:8888/SAS/Manual/api/exit_Manual",
         "exit_Process"                  : "http://192.168.0.82:8888/SAS/Process/api/exit_Process",
         "exit_Parameters"               : "http://192.168.0.82:8888/SAS/Parameters/api/exit_Parameters",
-
+*/
 
     }
 

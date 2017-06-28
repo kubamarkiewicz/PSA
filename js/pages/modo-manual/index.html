@@ -27,6 +27,7 @@
 			<label>LECTURA (opcionalmente manual)</label>
 			<md-input-container md-no-float>
 		        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto">
+		        <md-button class="clear" ng-click="clearReading()"></md-button>
 		    </md-input-container>
 			<span class="message"><md-progress-circular md-diameter="20px"></md-progress-circular>{{ productIdMessage }}</span>
 		</p>

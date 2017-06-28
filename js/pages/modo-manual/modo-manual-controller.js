@@ -6,6 +6,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             .parent($('body > main'));
 
 
+
     // get actions
 
     $scope.actionsData = [];
@@ -60,7 +61,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         });
 
         // start recieving data from reader
-        ArtisterilIntervalService.start($scope.getReaderReading);
+        ArtisterilIntervalService.start($scope.getReaderReading, 1000, 'getReaderReading');
     }
 
     $scope.getReaderReading = function()
@@ -75,6 +76,9 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             // add product to input
             if (response.data.get_reading_for_manual_modeResult) {
                 $scope.productId = response.data.get_reading_for_manual_modeResult;
+
+                // stop interval
+                ArtisterilIntervalService.stop('getReaderReading');
             }
         });
     }
@@ -119,6 +123,11 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         });
     }
 
+
+    $scope.clearReading = function() 
+    {
+        $scope.productId = '';
+    }
 
 
 

@@ -11,7 +11,7 @@
 				<p>
 					<label>Por teclado</label>
 					<md-input-container md-no-float>
-				        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto">
+				        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto"maxlength="{{ product_code_length }}" minlength="{{ product_code_length }}">
 				    </md-input-container>
 				    <md-button type="submit" class="receive-product"></md-button>
 				</p>

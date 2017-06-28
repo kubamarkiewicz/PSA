@@ -2,6 +2,8 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
     $scope.action = '';
 
+    $scope.product_code_length = config.config.product_code_length;
+
     $scope.setAction = function(value)
     {
         $scope.action = value;

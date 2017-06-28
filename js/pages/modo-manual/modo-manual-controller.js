@@ -1,4 +1,6 @@
 app.controller('ModoManualProductosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast) {  
+
+    $scope.product_code_length = config.config.product_code_length;
     
     var toast = $mdToast.simple()
             .hideDelay(3000)

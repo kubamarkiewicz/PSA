@@ -9,7 +9,6 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
     {
         if (miliseconds === undefined || !miliseconds) miliseconds = this.defaultMilliseconds;
         if (name === undefined || !name) name = 'interval_' + (Object.keys(this.intervals).length + 1);
-        console.log(name);
 
         // call it now
         callback();

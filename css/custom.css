@@ -773,6 +773,17 @@ body.page-bloqueo-de-productos section.selected-products .list .item {
 	margin: 0 7.3% 4px 0;
 	height: 34px;
 }
+body.page-bloqueo-de-productos section.selected-products .list .item .remove {
+	position: absolute;
+	width: 21px;
+	height: 21px;;
+	cursor: pointer;
+	right: -24px;
+	top: 6px;
+	outline: none;
+	background-image: url(../images/remove.gif);
+	background-repeat: no-repeat;
+}
 body.page-bloqueo-de-productos section.selected-products button.block-products {
 	margin-bottom: 25px;
 }

@@ -3,7 +3,7 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
 {
     this.defaultMilliseconds = 1000;
 
-	this.intervals = {};
+	this.intervals = [];
 
     this.start = function(callback, miliseconds) 
     {
@@ -12,21 +12,8 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
         // call it now
         callback();
 
-        // stop interval if exists
-        if (this.intervals[callback.name]) {
-            clearInterval(this.intervals[callback.name]);
-        }
-
         // start interval
-        this.intervals[callback.name] = setInterval(callback, miliseconds);
-    };
-
-
-	this.stop = function(callback) 
-    {
-        if (this.intervals[callback.name]) {
-            clearInterval(this.intervals[callback.name]);
-        }
+        this.intervals.push(setInterval(callback, miliseconds));
     };
 
 
@@ -36,5 +23,11 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
         }
         this.intervals = [];
     };
+
+
+    this.functionToString = function(callback)
+    {
+
+    }
 
 });

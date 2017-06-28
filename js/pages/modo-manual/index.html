@@ -3,7 +3,7 @@
 		
 	<h2>Seleccione la acción y el lector</h2>
 
-	<form name="myForm" ng-submit="executeAction()">
+	<form name="actionForm" ng-submit="executeAction()">
 
 		<p class="action">
 			<label>ACCIÓN</label>
@@ -40,7 +40,7 @@
 	<hr>
 	<br>
 
-	<form ng-submit="uploadFile()" class="upload-file">
+	<form name="fileForm" ng-submit="uploadFile()" class="upload-file">
 		<p>
 			<label>CARGAR ARCHIVO</label>
 			<md-input-container md-no-float>

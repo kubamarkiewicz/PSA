@@ -9,6 +9,7 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
     // SUBMIT FORM
     $scope.submit = function () 
     {
+        $('#login-form button').attr("disabled", true).addClass('loading');
 
         $http({
             method  : 'GET',
@@ -39,9 +40,10 @@ app.controller('LoginController', function($scope, $rootScope, $http, $routePara
 				    .toastClass('toast-error');
 				$mdToast.show(toast);
             }
+
+            $('#login-form button').attr("disabled", false).removeClass('loading');
         });
          
-        $scope.loading = true;
     }
 
 });

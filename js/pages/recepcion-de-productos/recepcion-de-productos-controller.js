@@ -110,14 +110,14 @@ app.controller('RecepcionDeProductosController', function($scope, $rootScope, $h
     {
         return $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_reader_reading
+            url     : config.webservice.urls.get_reading_for_receiving
          })
         .then(function(response) {
             // console.log(response.data);
 
             // add products to selection
-            for (i in response.data.get_reader_readingResult) {
-                $scope.selectedProducts.push(response.data.get_reader_readingResult[i]);
+            if (response.data.get_reader_readingResult) {
+                $scope.selectedProducts.push(response.data.get_reader_readingResult);
             }
         });
     }

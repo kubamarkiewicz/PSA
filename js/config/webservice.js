@@ -6,63 +6,62 @@ window.config = window.config || {};
 window.config.webservice = {
 
     "urls" : {
-
-        "user_login" 			        : "dummy-webservice/user_login.json",
-        "user_has_access" 		        : "dummy-webservice/user_has_access.json",
+/*
+        "user_login"                    : "dummy-webservice/user_login.json",
+        "user_has_access"               : "dummy-webservice/user_has_access.json",
 
         "get_alerts"                    : "dummy-webservice/get_alerts.json",
-        "get_blocked_products" 	        : "dummy-webservice/get_blocked_products.json",
+        "get_blocked_products"          : "dummy-webservice/get_blocked_products.json",
         "get_popup_alerts"              : "dummy-webservice/get_popup_alerts.json",
 
         "get_agvs"                      : "dummy-webservice/get_agvs.php",
         "get_storage_positions"         : "dummy-webservice/get_storage_positions.json",
         "get_storage_position_niches"   : "dummy-webservice/get_storage_position_niches.json",
         "get_semaphores"                : "dummy-webservice/get_semaphores.json",
-        "get_transport_belts"	        : "dummy-webservice/get_transport_belts.json",
-
-        "block_products" 		        : "dummy-webservice/block_products.json",
-        "unblock_products" 		        : "dummy-webservice/unblock_products.json",
+        "get_transport_belts"           : "dummy-webservice/get_transport_belts.json",
 
         "get_readers_for_blocking"      : "dummy-webservice/get_readers.json",
-        "select_reader_for_blocking"    : "dummy-webservice/select_reader_for_blocking.json",
-        "select_reader_for_unblocking"  : "dummy-webservice/select_reader_for_unblocking.json",
-
+        "block_products"                : "dummy-webservice/block_products.json",
+        "unblock_products"              : "dummy-webservice/unblock_products.json",
+        "select_reader_for_blocking"    : "dummy-webservice/select_reader.json",
+        "get_reading_for_blocking"      : "dummy-webservice/get_reader_reading.json",
         "block_products_from_file"      : "dummy-webservice/block_products_from_file.json",
-        "unblock_products_from_file" 	: "dummy-webservice/unblock_products_from_file.json",
+        "unblock_products_from_file"    : "dummy-webservice/unblock_products_from_file.json",
 
         "get_readers_for_receiving"     : "dummy-webservice/get_readers.json",
         "receive_products"              : "dummy-webservice/receive_products.json",
-        "select_reader_for_receiving"   : "dummy-webservice/select_reader_for_receiving.json",
-        "get_reader_reading"            : "dummy-webservice/get_reader_reading.json",
+        "select_reader_for_receiving"   : "dummy-webservice/select_reader.json",
+        "get_reading_for_receiving"     : "dummy-webservice/get_reader_reading.json",
         "receive_products_from_file"    : "dummy-webservice/receive_products_from_file.json",
         
         "get_readers_for_manual_mode"   : "dummy-webservice/get_readers.json",
         "get_actions"                   : "dummy-webservice/get_actions.json",
-        "select_reader_for_manual_mode" : "dummy-webservice/select_reader_for_manual_mode.json",
+        "select_reader_for_manual_mode" : "dummy-webservice/select_reader.json",
+        "get_reading_for_manual_mode"   : "dummy-webservice/get_reading_for_manual_mode.json",
         "select_action"                 : "dummy-webservice/select_action.json",
         "upload_actions_file"           : "dummy-webservice/upload_actions_file.json",
 
         "get_parameters"                : "dummy-webservice/get_parameters.json",
         "save_parameters"               : "dummy-webservice/save_parameters.json",
 
-        "enter_Data"                    : "dummy-webservice/enter_Data.json",
-        "enter_Reception"               : "dummy-webservice/enter_Reception.json",
-        "enter_Lockings"                : "dummy-webservice/enter_Lockings.json",
-        "enter_Manual"                  : "dummy-webservice/enter_Manual.json",
-        "enter_Process"                 : "dummy-webservice/enter_Process.json",
-        "enter_Parameters"              : "dummy-webservice/enter_Parameters.json",
-        "enter_Login"                   : "dummy-webservice/enter_Login.json",
+        "enter_Data"                    : "dummy-webservice/empty.json",
+        "enter_Reception"               : "dummy-webservice/empty.json",
+        "enter_Lockings"                : "dummy-webservice/empty.json",
+        "enter_Manual"                  : "dummy-webservice/empty.json",
+        "enter_Process"                 : "dummy-webservice/empty.json",
+        "enter_Parameters"              : "dummy-webservice/empty.json",
+        "enter_Login"                   : "dummy-webservice/empty.json",
 
-        "exit_Data"                     : "dummy-webservice/exit_Data.json",
-        "exit_Reception"                : "dummy-webservice/exit_Reception.json",
-        "exit_Lockings"                 : "dummy-webservice/exit_Lockings.json",
-        "exit_Manual"                   : "dummy-webservice/exit_Manual.json",
-        "exit_Process"                  : "dummy-webservice/exit_Process.json",
-        "exit_Parameters"               : "dummy-webservice/exit_Parameters.json",
+        "exit_Data"                     : "dummy-webservice/empty.json",
+        "exit_Reception"                : "dummy-webservice/empty.json",
+        "exit_Lockings"                 : "dummy-webservice/empty.json",
+        "exit_Manual"                   : "dummy-webservice/empty.json",
+        "exit_Process"                  : "dummy-webservice/empty.json",
+        "exit_Parameters"               : "dummy-webservice/empty.json",
+
+*/
 
 
-
-/*
         "user_login"                    : "http://192.168.0.82:8888/SAS/Login/api/user_login",
         "user_has_access"               : "http://192.168.0.82:8888/SAS/Login/api/user_has_access",
 
@@ -74,26 +73,30 @@ window.config.webservice = {
         "get_storage_positions"         : "http://192.168.0.82:8888/SAS/Process/api/get_storage_positions",
         "get_storage_position_niches"   : "http://192.168.0.82:8888/SAS/Process/api/get_storage_position_niches",
         "get_semaphores"                : "http://192.168.0.82:8888/SAS/Process/api/get_semaphores",
+        "update_semaphore"              : "http://192.168.0.82:8888/SAS/Process/api/update_semaphore",
         "get_transport_belts"           : "http://192.168.0.82:8888/SAS/Process/api/get_transport_belts",
-
-        "block_products"                : "http://192.168.0.82:8888/SAS/Lockings/api/block_products",
-        "unblock_products"              : "http://192.168.0.82:8888/SAS/Lockings/api/unblock_products",
+        "update_transport_belt"         : "http://192.168.0.82:8888/SAS/Process/api/update_transport_belt",
+        "get_popup_alerts"              : "http://192.168.0.82:8888/SAS/Process/api/get_popup_alerts",
 
         "get_readers_for_blocking"      : "http://192.168.0.82:8888/SAS/Lockings/api/get_readers",
-        "select_reader_for_blocking"    : "http://192.168.0.82:8888/SAS/Lockings/api/select_reader_for_blocking",
-        "select_reader_for_unblocking"  : "http://192.168.0.82:8888/SAS/Lockings/api/select_reader_for_unblocking",
+        "blockings_get_blocked_products": "http://192.168.0.82:8888/SAS/Lockings/api/get_blocked_products",
+        "block_products"                : "http://192.168.0.82:8888/SAS/Lockings/api/block_products",
+        "unblock_products"              : "http://192.168.0.82:8888/SAS/Lockings/api/unblock_products",
+        "select_reader_for_blocking"    : "http://192.168.0.82:8888/SAS/Lockings/api/select_reader",
+        "get_reading_for_blocking"      : "http://192.168.0.82:8888/SAS/Lockings/api/get_reader_reading",
         "block_products_from_file"      : "http://192.168.0.82:8888/SAS/Lockings/api/block_products_from_file",
         "unblock_products_from_file"    : "http://192.168.0.82:8888/SAS/Lockings/api/unblock_products_from_file",
 
         "get_readers_for_receiving"     : "http://192.168.0.82:8888/SAS/Reception/api/get_readers",
         "receive_products"              : "http://192.168.0.82:8888/SAS/Reception/api/receive_products",
-        "select_reader_for_receiving"   : "http://192.168.0.82:8888/SAS/Reception/api/select_reader_for_receiving",
-        "get_reader_reading"            : "http://192.168.0.82:8888/SAS/Reception/api/get_reader_reading",
+        "select_reader_for_receiving"   : "http://192.168.0.82:8888/SAS/Reception/api/select_reader",
+        "get_reading_for_receiving"     : "http://192.168.0.82:8888/SAS/Reception/api/get_reader_reading",
         "receive_products_from_file"    : "http://192.168.0.82:8888/SAS/Reception/api/receive_products_from_file",
 
         "get_readers_for_manual_mode"   : "http://192.168.0.82:8888/SAS/Manual/api/get_readers",
         "get_actions"                   : "http://192.168.0.82:8888/SAS/Manual/api/get_actions",
-        "select_reader_for_manual_mode" : "http://192.168.0.82:8888/SAS/Manual/api/select_reader_for_manual_mode",
+        "select_reader_for_manual_mode" : "http://192.168.0.82:8888/SAS/Manual/api/select_reader",
+        "get_reading_for_manual_mode"   : "http://192.168.0.82:8888/SAS/Manual/api/get_reader_reading",
         "select_action"                 : "http://192.168.0.82:8888/SAS/Manual/api/select_action",
         "upload_actions_file"           : "http://192.168.0.82:8888/SAS/Manual/api/upload_actions_file",
 
@@ -115,7 +118,7 @@ window.config.webservice = {
         "exit_Process"                  : "http://192.168.0.82:8888/SAS/Process/api/exit_Process",
         "exit_Parameters"               : "http://192.168.0.82:8888/SAS/Parameters/api/exit_Parameters",
 
-*/
-	}
+
+    }
 
 }

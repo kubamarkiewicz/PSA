@@ -8,7 +8,7 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
         // reset reader
         $scope.readerId = null;
-        ArtisterilIntervalService.stop($scope.getReaderReading);
+        // ArtisterilIntervalService.stopAll();
     }
 
     
@@ -28,7 +28,7 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_blocked_products
+            url     : config.webservice.urls.blockings_get_blocked_products
          })
         .then(function(response) {
             // console.log(response.data);
@@ -153,14 +153,14 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     {
         return $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_reader_reading
+            url     : config.webservice.urls.get_reading_for_blocking
          })
         .then(function(response) {
             // console.log(response.data);
 
             // add products to selection
-            for (i in response.data.get_reader_readingResult) {
-                $scope.selectedProducts.push(response.data.get_reader_readingResult[i]);
+            if (response.data.get_reader_readingResult) {
+                $scope.selectedProducts.push(response.data.get_reader_readingResult);
             }
         });
     }

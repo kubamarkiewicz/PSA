@@ -57,9 +57,25 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content('Éxito')
-                .toastClass('toast-success');
-            $mdToast.show(toast);
+        });
+
+        // start recieving data from reader
+        ArtisterilIntervalService.start($scope.getReaderReading);
+    }
+
+    $scope.getReaderReading = function()
+    {
+        return $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_reading_for_manual_mode
+         })
+        .then(function(response) {
+            console.log(response.data);
+
+            // add product to input
+            if (response.data.get_reading_for_manual_modeResult) {
+                $scope.productId = response.data.get_reading_for_manual_modeResult;
+            }
         });
     }
 
@@ -82,8 +98,9 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content(response.data.select_actionResult.Message);
-            if (response.data.select_actionResult.Result === true) {
+            toast.content(response.data.add_warehouseOrderResult.Message)
+                .parent($('body > main'));
+            if (response.data.add_warehouseOrderResult.Result === true) {
                 toast.toastClass('toast-success');
             }
             else {
@@ -94,8 +111,11 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             $('button.execute-acton').attr("disabled", false).removeClass('loading');
 
             // reset form and disable error messages
-            $scope.myForm.$setPristine();
-            $scope.myForm.$setUntouched();
+            $scope.action = null;
+            $scope.readerId = null;
+            $scope.productId = '';
+            $scope.actionForm.$setPristine();
+            $scope.actionForm.$setUntouched();
         });
     }
 
@@ -125,8 +145,9 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         })
         .then(function(response) {
             // console.log(response.data);
-            toast.content(response.data.upload_actions_fileResult.Message);
-            if (response.data.upload_actions_fileResult.Result === true) {
+            toast.content(response.data.upload_warehouseOrders_fileResult.Message)
+                .parent($('form[name="fileForm"]'));
+            if (response.data.upload_warehouseOrders_fileResult.Result === true) {
                 toast.toastClass('toast-success');
             }
             else {

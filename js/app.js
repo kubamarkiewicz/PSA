@@ -16,10 +16,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     
     $routeProvider 
 
-        .when('/', { 
+/*        .when('/', { 
             controller: 'DatosDelSGAController', 
             templateUrl: 'js/pages/datos-del-sga/index.html'
-        })     
+        })    */ 
         .when('/login', { 
             controller: 'LoginController', 
             templateUrl: 'js/pages/login/index.html' 
@@ -45,7 +45,7 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             templateUrl: 'js/pages/modo-manual/index.html' 
         })   
         .otherwise({ 
-            redirectTo: '/' 
+            redirectTo: '/datos-del-sga' 
         }); 
 
 
@@ -123,9 +123,10 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
         $rootScope.pageTitle = selectedItem.text();
 
         // call enter exit web service methods
-        if (prev) {
+        // console.log(prev.originalPath);
+        if (prev && prev.originalPath) {
             switch(prev.originalPath.substring(1)) {
-                case "":
+                case "": break;
                 case "visualizador-del-proceso"     : $http.get(config.webservice.urls.exit_Process); break;
                 case "datos-del-sga"                : $http.get(config.webservice.urls.exit_Data); break;
                 case "bloqueo-de-productos"         : $http.get(config.webservice.urls.exit_Lockings); break;
@@ -135,7 +136,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
             }
         }
         switch($rootScope.pageSlug) {
-            case "":
+            case "": break;
             case "visualizador-del-proceso"     : $http.get(config.webservice.urls.enter_Process); break;
             case "datos-del-sga"                : $http.get(config.webservice.urls.enter_Data); break;
             case "bloqueo-de-productos"         : $http.get(config.webservice.urls.enter_Lockings); break;

@@ -324,15 +324,15 @@ section.popup-alerts {
 section.popup-alerts .alert {
 	background-color: #c40013;
 	color: #ffffff;
-	padding: 10px;
+	padding: 14px 18px;
 	margin-bottom: 10px;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
 	border-radius: 2px;;
 }
 section.popup-alerts .alert h3 {
 	padding: 0;
-	margin: 0 0 8px 0;
-	font-size: 18px;
+	margin: 0 0 6px 0;
+	font-size: 14px;
 }
 section.popup-alerts .alert main {
 	font-size: 14px;

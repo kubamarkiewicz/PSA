@@ -33,7 +33,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             url     : config.webservice.urls.blockings_get_blocked_products
          })
         .then(function(response) {
-            // console.log(response.data);
             $scope.blockedProductsData = response.data.get_blocked_productsResult;
         });
     }
@@ -81,7 +80,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"productlist" : JSON.stringify($scope.selectedProducts)}
          })
         .then(function(response) {
-            // console.log(response.data);
             toast.content(response.data[$scope.action + "_productsResult"].Message);
             if (response.data[$scope.action + "_productsResult"].Result === true) {
                 toast.toastClass('toast-success');
@@ -119,7 +117,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             url     : config.webservice.urls.get_readers_for_blocking
          })
         .then(function(response) {
-            // console.log(response.data);
             $scope.readersData = response.data.get_readersResult;
         });
     }
@@ -140,7 +137,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
-            // console.log(response.data);
             toast.content('Éxito')
                 .toastClass('toast-success');
             $mdToast.show(toast);
@@ -158,7 +154,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             url     : config.webservice.urls.get_reading_for_blocking
          })
         .then(function(response) {
-            // console.log(response.data);
 
             // add products to selection
             if (response.data.get_reader_readingResult) {
@@ -190,7 +185,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {'productlist' : fileContent}
         })
         .then(function(response) {
-            // console.log(response.data);
             toast.content('Éxito')
                 .toastClass('toast-success');
             $mdToast.show(toast);
@@ -212,7 +206,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"productlist" : [productId]}
          })
         .then(function(response) {
-            // console.log(response.data);
             toast.content('Éxito')
                 .toastClass('toast-success');
             $scope.getBlockedProductsData();

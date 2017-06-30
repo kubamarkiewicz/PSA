@@ -208,6 +208,10 @@ body > footer {
 }
 
 /***************************************************************************************************/
+/* Animations	               		                                                               */
+/***************************************************************************************************/
+
+/***************************************************************************************************/
 /* Components	               		                                                               */
 /***************************************************************************************************/
 
@@ -306,6 +310,32 @@ body > footer .user {
 }
 body > footer .clock {
 	font-weight: bold;
+}
+
+
+section.popup-alerts {
+	position: absolute;
+	z-index: 100;
+	width: 300px;
+	left: 10px;
+	top: 10px;
+	
+}
+section.popup-alerts .alert {
+	background-color: #c40013;
+	color: #ffffff;
+	padding: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	border-radius: 2px;;
+}
+section.popup-alerts .alert h3 {
+	padding: 0;
+	margin: 0 0 8px 0;
+	font-size: 18px;
+}
+section.popup-alerts .alert main {
+	font-size: 14px;
 }
 
 

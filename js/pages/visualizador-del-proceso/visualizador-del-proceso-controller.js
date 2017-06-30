@@ -6,6 +6,30 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             .parent($('body > main'));
 
 
+
+    // Popup Alerts
+
+    $scope.popupAlertsData = [];
+
+    $scope.getPopupAlertsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_popup_alerts
+         })
+        .then(function(response) {
+            $scope.popupAlertsData = {};
+            for (i in response.data.get_popup_alertsResult) {
+                $scope.popupAlertsData[response.data.get_popup_alertsResult[i].Title + response.data.get_popup_alertsResult[i].Message] = response.data.get_popup_alertsResult[i];
+            }
+        });
+    }
+    ArtisterilIntervalService.start($scope.getPopupAlertsData);
+
+
+
+
+
 	/* mapa *********************************************************************************/
 
 	$scope.zoom = 1;
@@ -176,14 +200,14 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     $scope.loadTransportBeltsData = function()
     {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_transport_belts
-         })
-        .then(function(response) {
-        	// console.log(response.data);
-        	$scope.transportBeltsData = response.data.get_transport_beltsResult;
-        });
+        // $http({
+        //     method  : 'GET',
+        //     url     : config.webservice.urls.get_transport_belts
+        //  })
+        // .then(function(response) {
+        // 	// console.log(response.data);
+        // 	$scope.transportBeltsData = response.data.get_transport_beltsResult;
+        // });
     }
     // ArtisterilIntervalService.start($scope.loadTransportBeltsData);
     $scope.loadTransportBeltsData();

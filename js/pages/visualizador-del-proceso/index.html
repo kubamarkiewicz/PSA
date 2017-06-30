@@ -1,4 +1,14 @@
 
+<section class="popup-alerts">
+	<div class="alert" ng-repeat="item in popupAlertsData">
+		<h3>{{ item.Title }}</h3>
+		<main>{{ item.Message }}</main>
+	</div>
+</section>
+
+
+
+
 <div class="zoom-controls">
 	<md-button ng-click="zoomIn()">&#43;</md-button>
 	<md-button class="md-raised md-primary zoom-out" ng-click="zoomOut()">&#8722;</md-button>

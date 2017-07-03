@@ -24,7 +24,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             }
         });
     }
-    ArtisterilIntervalService.start($scope.getPopupAlertsData);
+    // ArtisterilIntervalService.start($scope.getPopupAlertsData);
 
 
 
@@ -53,6 +53,9 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 			'animate':animate === undefined ? true : animate, 
 			'focal': focal === undefined ? defaultFocal : focal
 		});
+
+        // close popups
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
 	}
 	
 	$scope.zoomOut = function(focal, animate) 
@@ -65,6 +68,9 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 			'animate':animate === undefined ? true : animate, 
 			'focal': focal === undefined ? defaultFocal : focal
 		});
+
+        // close popups
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
 	}
 
 	var $panzoom = mapaElement.panzoom({
@@ -90,25 +96,43 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     	$scope.zoomIn(e, true);
 	});
 
-
-    $scope.mapClick = function() 
+    // on map click
+    $scope.mapClick = function(event) 
     {
-        console.log('mapClick');
+        // close all popups
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
+
+        console.log($scope.pxToMetersX(event.offsetX) + ' : ' + $scope.pxToMetersY(event.offsetY));
     }
 
-
-    // calculate position on map (% to px)
     var mainPos = $('body.page-visualizador-del-proceso > main').offset();
 
-    $scope.xPercentToPx = function(percent) 
+
+
+    /* calculate positions on map (convert meters to px) *******************************************/
+
+    var mapImg = $('#mapa img');
+
+    $scope.metersToPxX = function(x)
     {
-        return percent * $('#mapa img').width() / 100;
+        return (parseFloat(config.map.offset_x) + parseFloat(x)) * parseFloat(mapImg.width()) / parseFloat(config.map.width);
     }
-    $scope.yPercentToPx = function(percent) 
+    
+    $scope.metersToPxY = function(y) 
     {
-        return percent * $('#mapa img').height() / 100;
+        return (parseFloat(config.map.offset_y) + parseFloat(y)) * parseFloat(mapImg.height()) / parseFloat(config.map.height);
     }
+
+    $scope.pxToMetersX = function(x)
+    {
+        return parseFloat(x) * parseFloat(config.map.width) / parseFloat(mapImg.width()) - parseFloat(config.map.offset_x);
+    }
+
+    $scope.pxToMetersY = function(y) 
+    {
+        return parseFloat(y) * parseFloat(config.map.height) / parseFloat(mapImg.height()) - parseFloat(config.map.offset_y);
+    }
+
 
 
     /* AGVs *********************************************************************************/
@@ -124,7 +148,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_agvs
          })
         .then(function(response) {
-            // console.log(response.data);
             // add keys to array, otherwise animation does not work ...
             $scope.AGVData = {};
             for (i in response.data.get_agvsResult) {
@@ -162,7 +185,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_semaphores
          })
         .then(function(response) {
-            // console.log(response.data);
             $scope.semaphoresData = response.data.get_semaphoresResult;
         });
     }
@@ -244,11 +266,20 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_storage_positions
          })
         .then(function(response) {
-        	// console.log(response.data);
             $scope.storagePositionsData = response.data.get_storage_positionsResult;
         });
     }
     $scope.loadStoragePositionsData();
+
+
+    // load storage positions coordinates
+    $http({
+        method  : 'GET',
+        url     : config.map.coordinates_urls.storage_positions
+     })
+    .then(function(response) {
+        $scope.storagePositionsCoordinates = response.data;
+    });
 
 
     
@@ -277,7 +308,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             params  : {'storage_position_id' : storage_position_id}
          })
         .then(function(response) {
-            // console.log(response.data);
             $scope.storagePositionNichesData = response.data.get_storage_position_nichesResult;
         });
     }

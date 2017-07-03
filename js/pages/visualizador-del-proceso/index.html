@@ -70,7 +70,7 @@
 		ng-repeat="semaphore in semaphoresData"  
 		id="semaphore-{{ semaphore.id }}"
 		class="semaphore" 
-		style="transform: translate({{ metersToPxX(semaphore.x) }}px, {{ metersToPxY(semaphore.y) }}px)"
+		style="transform: translate({{ metersToPxX(semaphoresCoordinates[semaphore.id].x) }}px, {{ metersToPxX(semaphoresCoordinates[semaphore.id].y) }}px)"
 		ng-click="openSemaphorePopup($event, semaphore)">
 	</div>
 	
@@ -79,7 +79,7 @@
 		ng-repeat="transportBelt in transportBeltsData"  
 		id="transport-belt-{{ transportBelt.id }}"
 		class="transport-belt" 
-		style="transform: translate({{ metersToPxX(transportBelt.x) }}px, {{ metersToPxY(transportBelt.y) }}px)"
+		style="transform: translate({{ metersToPxX(transportBeltsCoordinates[transportBelt.id].x) }}px, {{ metersToPxY(transportBeltsCoordinates[transportBelt.id].y) }}px)"
 		ng-click="openTransportBeltPopup($event, transportBelt)">
 		CT{{ transportBelt.id }}
 	</div>

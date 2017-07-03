@@ -99,7 +99,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     // on map click
     $scope.mapClick = function(event) 
     {
-        // close all popups
+        // close popups
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
 
         console.log($scope.pxToMetersX(event.offsetX) + ' : ' + $scope.pxToMetersY(event.offsetY));
@@ -107,6 +107,14 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     var mainPos = $('body.page-visualizador-del-proceso > main').offset();
 
+
+    $scope.deselectAllObjects = function() 
+    {
+        // close all popups
+        $('body.page-visualizador-del-proceso .popup').removeClass('open');
+        // deselect all objects
+        $('body.page-visualizador-del-proceso #mapa > *').removeClass('selected');
+    }
 
 
     /* calculate positions on map (convert meters to px) *******************************************/
@@ -163,10 +171,10 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     $scope.openAGVPopup = function(event, agv) 
     {
         event.stopPropagation();
+        $scope.deselectAllObjects();
 
         $scope.selectedAGV = agv;
         var popup = $('body.page-visualizador-del-proceso #agv-popup');
-        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
         popup.addClass('open')
             .css('left', (event.clientX - mainPos.left) + 'px')
             .css('top', (event.clientY - mainPos.top) + 'px');
@@ -188,20 +196,32 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             $scope.semaphoresData = response.data.get_semaphoresResult;
         });
     }
-    // ArtisterilIntervalService.start($scope.loadSemaphoresData);
-    $scope.loadSemaphoresData();
+    ArtisterilIntervalService.start($scope.loadSemaphoresData);
+    // $scope.loadSemaphoresData();
+
+
+    // load semaphores coordinates
+    $http({
+        method  : 'GET',
+        url     : config.map.coordinates_urls.semaphores
+     })
+    .then(function(response) {
+        $scope.semaphoresCoordinates = response.data;
+    });
 
 
     $scope.openSemaphorePopup = function(event, semaphore) 
     {
         event.stopPropagation();
+        $scope.deselectAllObjects();
+        var target = $(event.target);
+        target.addClass('selected');
 
         $scope.selectedSemaphore = semaphore;
         var popup = $('body.page-visualizador-del-proceso #semaphore-popup');
-        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
         popup.addClass('open')
-            .css('left', (event.clientX - mainPos.left) + 'px')
-            .css('top', (event.clientY - mainPos.top) + 'px');
+            .css('left', target.offset().left + event.target.getBoundingClientRect().width + 'px')
+            .css('top', (target.offset().top - mainPos.top) + 'px');
     }
 
     $scope.updateSemaphore = function(id) 
@@ -222,29 +242,41 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     $scope.loadTransportBeltsData = function()
     {
-        // $http({
-        //     method  : 'GET',
-        //     url     : config.webservice.urls.get_transport_belts
-        //  })
-        // .then(function(response) {
-        // 	// console.log(response.data);
-        // 	$scope.transportBeltsData = response.data.get_transport_beltsResult;
-        // });
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_transport_belts
+         })
+        .then(function(response) {
+        	$scope.transportBeltsData = response.data.get_transport_beltsResult;
+        });
     }
-    // ArtisterilIntervalService.start($scope.loadTransportBeltsData);
-    $scope.loadTransportBeltsData();
+    ArtisterilIntervalService.start($scope.loadTransportBeltsData);
+    // $scope.loadTransportBeltsData();
+
+
+    // load transport belts coordinates
+    $http({
+        method  : 'GET',
+        url     : config.map.coordinates_urls.transport_belts
+     })
+    .then(function(response) {
+        $scope.transportBeltsCoordinates = response.data;
+    });
+
 
 
     $scope.openTransportBeltPopup = function(event, transportBelt) 
     {
         event.stopPropagation();
+        $scope.deselectAllObjects();
+        var target = $(event.target);
+        target.addClass('selected');
 
         $scope.selectedTransportBelt = transportBelt;
         var popup = $('body.page-visualizador-del-proceso #transport-belt-popup');
-        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
         popup.addClass('open')
-            .css('left', (event.clientX - mainPos.left) + 'px')
-            .css('top', (event.clientY - mainPos.top) + 'px');
+            .css('left', target.offset().left + event.target.getBoundingClientRect().width + 'px')
+            .css('top', (target.offset().top - mainPos.top) + 'px');
     }
 
     $scope.updateTransportBelt = function(id) 
@@ -287,13 +319,15 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     $scope.openPositionPopup = function(event, position) 
     {
         event.stopPropagation();
+        $scope.deselectAllObjects();
+        var target = $(event.target);
+        target.addClass('selected');
 
     	$scope.selectedPosition = position;
     	var popup = $('body.page-visualizador-del-proceso #position-popup');
-        $('body.page-visualizador-del-proceso .popup').not(popup).removeClass('open');
         popup.addClass('open')
-    		.css('left', (event.clientX - mainPos.left) + 'px')
-    		.css('top', (event.clientY - mainPos.top) + 'px');
+    		.css('left', target.offset().left + event.target.getBoundingClientRect().width + 'px')
+    		.css('top', (target.offset().top - mainPos.top) + 'px');
 
         $scope.loadStoragePositionNichesData(position.id);
     }

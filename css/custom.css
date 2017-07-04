@@ -595,18 +595,21 @@ body.page-visualizador-del-proceso .agv {
     position: absolute;
     transition: transform 1s ease-out;
 	cursor: pointer;
-	font-size: 9px;
-	width: 28px;
-	height: 11px;
-	line-height: 12px;
+	font-size: 0.75vw;
+	width: 0.75vw;
+	height: 1.5vw;
+	line-height: 1.5vw;
 	text-align: center;
-	border-radius: 0 7px 7px 0;
+	border-radius: 0.75vw 0.75vw 0 0;
 	transform: translate(-50%, -50%);
 	transform-origin: 50% 50%;
-	box-shadow: 0px 0 3px 1px rgba(0,0,0,0.20);
-	background-color: #7dbd01;
-	color: #ffffff;
+	/*background-color: #7dbd01;*/
 	z-index: 15;
+	color: #ffffff;
+	background-image: url(../images/agv.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0px 0 3px 1px rgba(0,0,0,0.20);
 }
 body.page-visualizador-del-proceso #avg-popup {
 	background-color: #00557f;
@@ -666,16 +669,21 @@ body.page-visualizador-del-proceso #semaphore-popup {
 body.page-visualizador-del-proceso .transport-belt {
     position: absolute;
 	cursor: pointer;
-	width: 18px;
-	height: 9px;
-	line-height: 9px;
-	border-radius: 2px;
+	width: 5vw;
+	height: 0.5vw;
 	z-index: 12;
-    box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
-    font-size: 7px;
+    font-size: 0.35vw;
     text-align: center;
-    background-color: #760304;
-    color: #ffffff;
+	background-image: url(../images/cinta_transportadora.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
+    line-height: 0.65vw;
+	transition: all .05s ease-out;
+}
+body.page-visualizador-del-proceso .transport-belt:hover,
+body.page-visualizador-del-proceso .transport-belt.selected {
+	background-color: #760304;
 }
 body.page-visualizador-del-proceso #transport-belt-popup {
 	background-color: #760304;

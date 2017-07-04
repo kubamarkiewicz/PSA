@@ -34,7 +34,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 	$scope.zoom = 1;
 	$scope.minZoom = 1;
-	$scope.maxZoom = 5;
+	$scope.maxZoom = 6;
 
 	var mapaElement = $('#mapa');
 
@@ -164,7 +164,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         });
     }
     ArtisterilIntervalService.start($scope.loadAGVData);
-
+    // $scope.loadAGVData();
 
     
 
@@ -193,7 +193,11 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_semaphores
          })
         .then(function(response) {
-            $scope.semaphoresData = response.data.get_semaphoresResult;
+            // add keys to array
+            $scope.semaphoresData = {};
+            for (i in response.data.get_semaphoresResult) {
+                $scope.semaphoresData[response.data.get_semaphoresResult[i].id] = response.data.get_semaphoresResult[i];
+            }
         });
     }
     ArtisterilIntervalService.start($scope.loadSemaphoresData);
@@ -247,7 +251,11 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             url     : config.webservice.urls.get_transport_belts
          })
         .then(function(response) {
-        	$scope.transportBeltsData = response.data.get_transport_beltsResult;
+            // add keys to array
+            $scope.transportBeltsData = {};
+            for (i in response.data.get_transport_beltsResult) {
+                $scope.transportBeltsData[response.data.get_transport_beltsResult[i].id] = response.data.get_transport_beltsResult[i];
+            }
         });
     }
     ArtisterilIntervalService.start($scope.loadTransportBeltsData);

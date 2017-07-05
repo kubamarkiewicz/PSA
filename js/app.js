@@ -96,7 +96,7 @@ app.config(['$httpProvider', function($httpProvider) {
     }
 ]);
 
-app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthService, ArtisterilIntervalService) {
+app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthService, ArtisterilIntervalService, $mdToast) {
 
     $("body").removeClass('loading');
 
@@ -183,6 +183,14 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
     $('label.file-input input').change(function(){
         $(this).parent().find('span').text($(this).val().split(/[\\/]/).pop());
     });
+
+
+
+
+    $rootScope.toast = $mdToast.simple()
+        .hideDelay(3000);
+        // .position('bottom left');
+        // .parent($('body > main'));
 
 });
 

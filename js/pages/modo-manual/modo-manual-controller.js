@@ -1,13 +1,7 @@
 app.controller('ModoManualProductosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast) {  
 
     $scope.product_code_length = config.config.product_code_length;
-    
-    var toast = $mdToast.simple()
-            .hideDelay(3000)
-            .position('top left')
-            .parent($('body > main'));
-
-
+   
 
     // get actions
 
@@ -104,15 +98,15 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            toast.content(response.data.add_warehouseOrderResult.Message)
+            $rootScope.toast.content(response.data.add_warehouseOrderResult.Message)
                 .parent($('body > main'));
             if (response.data.add_warehouseOrderResult.Result === true) {
-                toast.toastClass('toast-success');
+                $rootScope.toast.toastClass('toast-success');
             }
             else {
-                toast.toastClass('toast-error');
+                $rootScope.toast.toastClass('toast-error');
             }
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
 
             $('button.execute-acton').attr("disabled", false).removeClass('loading');
 
@@ -156,15 +150,15 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         })
         .then(function(response) {
             // console.log(response.data);
-            toast.content(response.data.upload_warehouseOrders_fileResult.Message)
+            $rootScope.toast.content(response.data.upload_warehouseOrders_fileResult.Message)
                 .parent($('form[name="fileForm"]'));
             if (response.data.upload_warehouseOrders_fileResult.Result === true) {
-                toast.toastClass('toast-success');
+                $rootScope.toast.toastClass('toast-success');
             }
             else {
-                toast.toastClass('toast-error');
+                $rootScope.toast.toastClass('toast-error');
             }
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
             
             $('form.upload-file button').attr("disabled", false).removeClass('loading');
             $('#uploadFileInput').val('');

@@ -1,11 +1,5 @@
 app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate, $mdToast) {  
 
-    var toast = $mdToast.simple()
-            .hideDelay(3000)
-            .position('top left')
-            .parent($('body > main'));
-
-
 
     // Popup Alerts
 
@@ -230,9 +224,9 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     $scope.updateSemaphore = function(id) 
     {
-        toast.content('Éxito')
+        $rootScope.toast.content('Éxito')
             .toastClass('toast-success');
-        $mdToast.show(toast);
+        $mdToast.show($rootScope.toast);
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
     }
 
@@ -289,9 +283,9 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     $scope.updateTransportBelt = function(id) 
     {
-        toast.content('Éxito')
+        $rootScope.toast.content('Éxito')
             .toastClass('toast-success');
-        $mdToast.show(toast);
+        $mdToast.show($rootScope.toast);
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
     }
 

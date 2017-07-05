@@ -1,11 +1,5 @@
 app.controller('ConfiguracionDeParametrosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $animate, $mdToast) {  
 
-    var toast = $mdToast.simple()
-            .hideDelay(3000)
-            .position('top left')
-            .parent($('body > main'));
-
-
     $scope.data = {};
     
 
@@ -49,6 +43,24 @@ app.controller('ConfiguracionDeParametrosController', function($scope, $rootScop
             .replace(/\-\-+/g, '-')         // Replace multiple - with single -
             .replace(/^-+/, '')             // Trim - from start of text
             .replace(/-+$/, '');            // Trim - from end of text
+    }
+
+
+    $scope.saveParametersData = function()
+    {
+        $('body.page-configuracion-de-parametros .md-button.save').attr("disabled", true).addClass('loading');
+
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.save_parameters
+        })
+        .then(function(response) {
+            
+            $rootScope.toast.content('Éxito')
+                .toastClass('toast-success');
+            $mdToast.show($rootScope.toast);
+            $('body.page-configuracion-de-parametros .md-button.save').attr("disabled", false).removeClass('loading');
+        });
     }
 
 

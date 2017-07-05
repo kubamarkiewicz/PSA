@@ -48,6 +48,10 @@ body.page-configuracion-de-parametros section.parameters .parameter main md-chec
 	display: inline-block;
 }
 
+body.page-configuracion-de-parametros .md-button.save {
+    margin: 0;
+}
+
 
 /* mobile */
 @media screen and (max-width: 1150px) {

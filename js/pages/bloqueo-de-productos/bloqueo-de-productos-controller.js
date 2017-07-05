@@ -13,14 +13,6 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         // ArtisterilIntervalService.stopAll();
     }
 
-    
-    var toast = $mdToast.simple()
-            .hideDelay(3000)
-            .position('top left')
-            .parent($('body > main'));
-
-
-
 
     // get Blocked products
 
@@ -80,14 +72,14 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"productlist" : JSON.stringify($scope.selectedProducts)}
          })
         .then(function(response) {
-            toast.content(response.data[$scope.action + "_productsResult"].Message);
+            $rootScope.toast.content(response.data[$scope.action + "_productsResult"].Message);
             if (response.data[$scope.action + "_productsResult"].Result === true) {
-                toast.toastClass('toast-success');
+                $rootScope.toast.toastClass('toast-success');
             }
             else {
-                toast.toastClass('toast-error');
+                $rootScope.toast.toastClass('toast-error');
             }
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
             $('button.block-products').attr("disabled", false).removeClass('loading');
             $scope.selectedProducts = [];
             $scope.getBlockedProductsData();
@@ -137,9 +129,9 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"id" : $scope.readerId}
          })
         .then(function(response) {
-            toast.content('Éxito')
+            $rootScope.toast.content('Éxito')
                 .toastClass('toast-success');
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
             $('form.reader button').attr("disabled", false).removeClass('loading');
 
             // start recieving data from reader
@@ -185,9 +177,9 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {'productlist' : fileContent}
         })
         .then(function(response) {
-            toast.content('Éxito')
+            $rootScope.toast.content('Éxito')
                 .toastClass('toast-success');
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
             $('form.upload-file button').attr("disabled", false).removeClass('loading');
             $('#uploadFileInput').val('');
         });
@@ -206,10 +198,10 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
             params  : {"productlist" : [productId]}
          })
         .then(function(response) {
-            toast.content('Éxito')
+            $rootScope.toast.content('Éxito')
                 .toastClass('toast-success');
             $scope.getBlockedProductsData();
-            $mdToast.show(toast);
+            $mdToast.show($rootScope.toast);
         });
     }
 });

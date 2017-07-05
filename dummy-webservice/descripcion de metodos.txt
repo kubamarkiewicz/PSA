@@ -180,12 +180,14 @@ PANTALLA CONFIGURACIÓN DE PARÁMETROS
 get_parameters()
     return:             //Object
     {
-        'parameter_name' : {  
-            'Options' : [array],
-            'Values' : [array],
-            'Type' : string (RadioButton/TextBox/Checkbox/NumericUpDown/Combobox)
+        "parameter_name" : {  
+            "Options"   : [array],
+            "Values"    : [array],
+            "Type"      : string (RadioButton/TextBox/Checkbox/NumericUpDown/Combobox)
          }
     }
+
+
 
 save_parameters(parameters)
 

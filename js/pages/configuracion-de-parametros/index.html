@@ -1,0 +1,34 @@
+
+<section class="parameters" layout="row">
+
+	<div flex>
+
+		<div class="parameter" ng-repeat="(key, item) in parametersDataLeft">
+			<h2>{{ key }}</h2>
+			<main>
+
+				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(item.Type) + '.html'"></ng-include>
+
+			</main>
+
+		</div>
+
+	</div>
+
+	<div flex>
+
+		<div class="parameter" ng-repeat="(key, item) in parametersDataRight">
+			<h2>{{ key }}</h2>
+			<main>
+
+				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(item.Type) + '.html'"></ng-include>
+
+			</main>
+
+		</div>
+
+	</div>
+
+
+
+</section>

@@ -1,0 +1,44 @@
+{
+	"get_actionsResult" :
+	[
+	    {
+	    	"action" : "Acción 1",
+	    	"parameters" : [
+	    		{
+	    			"label" : "Parametro 1",
+	    			"required" : true
+	    		},
+	    		{
+	    			"label" : "Parametro 2",
+	    			"required" : false
+	    		}
+	    	]
+	    },
+	    {
+	    	"action" : "Acción 2",
+	    	"parameters" : [
+	    		{
+	    			"label" : "Parametro 1",
+	    			"required" : true
+	    		}
+	    	]
+	    },
+	    {
+	    	"action" : "Acción 2",
+	    	"parameters" : [
+	    		{
+	    			"label" : "Parametro 1",
+	    			"required" : true
+	    		},
+	    		{
+	    			"label" : "Parametro 2",
+	    			"required" : true
+	    		},
+	    		{
+	    			"label" : "Parametro 3",
+	    			"required" : true
+	    		}
+	    	]
+	    }
+	]
+}

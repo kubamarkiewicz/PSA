@@ -181,14 +181,15 @@ get_parameters()
     return:             //Object
     {
         "parameter_name" : {  
-            "Options"   : [array],
-            "Values"    : [array],
-            "Type"      : string (RadioButton/TextBox/Checkbox/NumericUpDown/Combobox)
+            "Options"   : array,
+            ["Values"    : array,]   // para TextBox, Checkbox
+            ["Value"     : string,]  // para RadioButton, NumericUpDown, Combobox
+            "Type"      : string     // RadioButton/TextBox/Checkbox/NumericUpDown/Combobox
          }
     }
 
 
 
-save_parameters(parameters)
+save_parameters(parameterlist)
 
 

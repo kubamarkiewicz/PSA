@@ -3,11 +3,11 @@
 
 	<div flex>
 
-		<div class="parameter" ng-repeat="(key, item) in parametersDataLeft">
+		<div class="parameter" ng-repeat="key in parametersDataLeftKeys">
 			<h2>{{ key }}</h2>
 			<main>
 
-				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(item.Type) + '.html'"></ng-include>
+				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(parametersData[key].Type) + '.html'"></ng-include>
 
 			</main>
 
@@ -17,11 +17,11 @@
 
 	<div flex>
 
-		<div class="parameter" ng-repeat="(key, item) in parametersDataRight">
+		<div class="parameter" ng-repeat="key in parametersDataRightKeys">
 			<h2>{{ key }}</h2>
 			<main>
 
-				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(item.Type) + '.html'"></ng-include>
+				<ng-include src="'js/pages/configuracion-de-parametros/partial-' + slugify(parametersData[key].Type) + '.html'"></ng-include>
 
 			</main>
 

@@ -67,7 +67,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             url     : config.webservice.urls.get_reading_for_manual_mode
          })
         .then(function(response) {
-            console.log(response.data);
+            // console.log(response.data);
 
             // add product to input
             if (response.data.get_reader_readingResult) {

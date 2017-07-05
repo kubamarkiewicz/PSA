@@ -1,0 +1,29 @@
+{
+	"SGA Mode": "Manual",
+	"Paths": [
+		"C:\/Artisteril\/Alarms",
+		"C:\/Artisteril\/Logs",
+		"C:\/Artisteril\/Notifications"
+	],
+	"Barcode Scanners": [
+		true,
+		false,
+		true
+	],
+	"Barcode Readers": [
+		true,
+		true,
+		false,
+		true,
+		false,
+		false,
+		true,
+		false
+	],
+	"Breaks for work shift": 2,
+	"Load Coordinates": [
+		"25.20",
+		"38.15"
+	],
+	"AGV": "FMX-02"
+}

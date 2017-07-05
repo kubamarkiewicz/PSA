@@ -94,7 +94,8 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     $scope.mapClick = function(event) 
     {
         // close popups
-        $('body.page-visualizador-del-proceso .popup').removeClass('open');
+        // $('body.page-visualizador-del-proceso .popup').removeClass('open');
+        $scope.deselectAllObjects();
 
         console.log($scope.pxToMetersX(event.offsetX) + ' : ' + $scope.pxToMetersY(event.offsetY));
     }

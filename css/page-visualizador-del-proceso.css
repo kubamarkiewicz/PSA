@@ -108,6 +108,7 @@ body.page-visualizador-del-proceso .agv {
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-shadow: 0px 0 3px 1px rgba(0,0,0,0.20);
+	outline: none;
 }
 body.page-visualizador-del-proceso #avg-popup {
 	background-color: #00557f;
@@ -139,6 +140,7 @@ body.page-visualizador-del-proceso .semaphore {
 	background-color: #272727;
 	z-index: 12;
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
+    outline: none;
 }
 body.page-visualizador-del-proceso .semaphore:before {
 	content: '';
@@ -178,10 +180,11 @@ body.page-visualizador-del-proceso .transport-belt {
 	box-shadow: 0 0 1px 0 rgba(0,0,0,0.35);
     line-height: 0.65vw;
 	transition: all .05s ease-out;
+    outline: none;
 }
 body.page-visualizador-del-proceso .transport-belt:hover,
 body.page-visualizador-del-proceso .transport-belt.selected {
-	background-color: #760304;
+	background-color: rgba(118,3,4,0.5);
 }
 body.page-visualizador-del-proceso #transport-belt-popup {
 	background-color: #760304;

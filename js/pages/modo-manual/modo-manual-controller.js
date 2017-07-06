@@ -98,8 +98,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
          })
         .then(function(response) {
             // console.log(response.data);
-            $rootScope.toast.content(response.data.add_warehouseOrderResult.Message)
-                .parent($('body > main'));
+            $rootScope.toast.content(response.data.add_warehouseOrderResult.Message);
             if (response.data.add_warehouseOrderResult.Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }
@@ -150,8 +149,7 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         })
         .then(function(response) {
             // console.log(response.data);
-            $rootScope.toast.content(response.data.upload_warehouseOrders_fileResult.Message)
-                .parent($('form[name="fileForm"]'));
+            $rootScope.toast.content(response.data.upload_warehouseOrders_fileResult.Message);
             if (response.data.upload_warehouseOrders_fileResult.Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }

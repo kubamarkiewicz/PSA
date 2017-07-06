@@ -3,7 +3,45 @@
 /* Fonts                                                                                           */
 /***************************************************************************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,700');
+/*@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,500i,700');*/
+
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('fonts/roboto-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('fonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-mediumitalic-webfont.woff2') format('woff2'),
+         url('fonts/roboto-mediumitalic-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto-bold-webfont.woff2') format('woff2'),
+         url('fonts/roboto-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 
 /***************************************************************************************************/
@@ -14,7 +52,7 @@
 	box-sizing: border-box;
 }
 
-body { 
+body {
 	-webkit-font-smoothing: antialiased; 
 	overflow: hidden; 
 	background-color: #f0f0f0;
@@ -220,6 +258,7 @@ body > footer {
 	}
 	body > footer {
 		height: 40px;
+		font-size: 14px;
 	}
 
 }
@@ -397,6 +436,12 @@ section.popup-alerts .alert main {
 	body > header .logos img {
 	    background-color: #00557f;
 	    height: 100%;
+	}
+
+	body > footer .user {
+		line-height: 14px;
+		background-size: contain;
+		padding-left: 26px;;
 	}
 
 }

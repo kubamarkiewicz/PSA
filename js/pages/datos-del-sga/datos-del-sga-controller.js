@@ -9,7 +9,7 @@ app.controller('DatosDelSGAController', function($scope, $rootScope, $http, $rou
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_popup_alerts
+            url     : config.webservice.urls.data_get_popup_alerts
          })
         .then(function(response) {
             $scope.popupAlertsData = {};

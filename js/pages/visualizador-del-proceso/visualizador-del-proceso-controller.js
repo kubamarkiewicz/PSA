@@ -9,7 +9,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     {
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.get_popup_alerts
+            url     : config.webservice.urls.process_get_popup_alerts
          })
         .then(function(response) {
             $scope.popupAlertsData = {};

@@ -360,21 +360,44 @@ body > footer .clock {
 }
 
 
+
 section.popup-alerts {
 	position: absolute;
 	z-index: 100;
-	width: 300px;
-	left: 10px;
 	top: 10px;
-	
+	height: calc(100% - 20px);
+	left: 0;
+}
+section.popup-alerts.hide {
+	visibility: hidden;
+}
+section.popup-alerts.closed {
+    width: 0;
+}
+section.popup-alerts .alerts {
+	position: absolute;
+	column-width: 300px;
+	height: calc(100% - 25px);
+	transition: transform 0.25s ease-out;
+	width: 100vw;
+	overflow: auto;
+	column-gap: 10px;
+	padding-top: 36px;
+	padding-left: 10px;
+	z-index: 11;
+}
+section.popup-alerts.closed .alerts {
+	transform: translateX(-100vw);
 }
 section.popup-alerts .alert {
 	background-color: #c40013;
 	color: #ffffff;
 	padding: 14px 18px;
 	margin-bottom: 10px;
+	border-radius: 2px;
+	width: 300px;
+	break-inside: avoid;
 	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-	border-radius: 2px;;
 }
 section.popup-alerts .alert h3 {
 	padding: 0;
@@ -383,6 +406,57 @@ section.popup-alerts .alert h3 {
 }
 section.popup-alerts .alert main {
 	font-size: 14px;
+}
+section.popup-alerts .close {
+	color: #ffffff;
+	background-color: #024160;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	cursor: pointer;
+	display: block;
+	margin-bottom: 8px;
+    visibility: visible;
+	opacity: 1;
+	transition: visibility 0s linear 0s, opacity 0.35s ease-out;
+	position: absolute;
+	margin-top: -36px;
+}
+section.popup-alerts.closed .close {
+    visibility: hidden;
+    opacity: 0;
+	transition: visibility 0s linear 0.35s, opacity 0.35s ease-out;
+	transform: translateX(-100%);
+}
+section.popup-alerts .open {
+	position: absolute;
+	top: 36px;
+	color: #ffffff;
+	background-color: #c40013;
+	border-radius: 0 2px 2px 0;
+	text-align: center;
+	line-height: 30px;
+	font-size: 13px;
+	box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+	cursor: pointer;
+	text-transform: uppercase;
+	padding: 23px 5px 0 5px;
+	background-image: url(../images/alert.png);
+	background-size: 20px;
+	background-repeat: no-repeat;
+	background-position: center 6px;
+	transition: transform 0.25s ease-out;
+	transform: translateX(-100%);
+	z-index: 10;
+}
+section.popup-alerts .open .count {
+}
+section.popup-alerts.closed .open {
+	transform: translateX(0%);
 }
 
 

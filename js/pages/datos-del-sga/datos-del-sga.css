@@ -21,29 +21,6 @@ body.page-datos-del-sga main section.alerts .alert {
 	padding: 18px 24px;
 	width: calc(25% - 34px);
 	margin: 0 34px 34px 0;
-	background-color: #bcb9b9;
-}
-body.page-datos-del-sga main section.alerts .alert-primary {
-	background-color: #0573da;
-}
-body.page-datos-del-sga main section.alerts .alert-success {
-	background-color: #5bb85f;
-}
-body.page-datos-del-sga main section.alerts .alert-info {
-	background-color: #57c3da;
-}
-body.page-datos-del-sga main section.alerts .alert-warning {
-	background-color: #efac51;
-}
-body.page-datos-del-sga main section.alerts .alert-danger {
-	background-color: #d9544f;
-}
-body.page-datos-del-sga main section.alerts .alert-muted {
-	background-color: #2a2b2d;
-}
-body.page-datos-del-sga main section.alerts .alert-white {
-	background-color: #f7f7f7;
-	color: #2a2b2d;
 }
 body.page-datos-del-sga main section.alerts .alert h3 {
 	font-weight: bold;

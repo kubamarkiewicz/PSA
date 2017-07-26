@@ -61,7 +61,7 @@ body.page-bloqueo-de-productos section.actions p md-input-container {
 }
 body.page-bloqueo-de-productos section.actions p input,
 body.page-bloqueo-de-productos section.actions p .md-select-value {
-	width: 290px;
+	width: 100px;
 }
 body.page-bloqueo-de-productos section.actions p .md-button {
 	width: 165px;

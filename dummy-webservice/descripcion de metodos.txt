@@ -111,26 +111,45 @@ get_blocked_products()
 
 PANTALLA DE BLOQUEO DE PRODUCTOS
 
-get_blocked_products() - es el mismo metodo que en la PANTALLA DATOS DEL SGA
+get_blocked_products() 
+    return:             //array of objects
+    [
+        {
+            "Passage": int,
+            "Position": int,
+            "Height": int
+        }
+    ]
 
 block_products(productlist)
-    parameters: productlist - JSON string containig array of strings eg.: ['aaa','bbb']
+    parameters: productlist - array of objects
+    [
+        {
+            "Passage": int,
+            "Position": int,
+            "Height": int
+        }
+    ]
+    return:     
+    {
+        "Result": bool,
+        "Message": string
+    }
     
 unblock_products(productlist)
-    parameters: productlist - JSON string containig array of strings eg.: ['aaa','bbb']
-
-get_readers()
-    return: [string]            //array of strings
-
-select_reader_for_blocking(id)   
-
-select_reader_for_unblocking(id)
-
-block_products_from_file(productlist)
-
-unblock_products_from_file(productlist)
-    
-
+    parameters: productlist - array of objects
+    [
+        {
+            "Passage": int,
+            "Position": int,
+            "Height": int
+        }
+    ]
+    return:     
+    {
+        "Result": bool,
+        "Message": string
+    }
 
 
 
@@ -156,17 +175,31 @@ receive_products_from_file(productlist)
 
 PANTALLA MODO MANUAL
 
-
 get_actions()
     return: [string]            //array of strings
 
-select_action(action, reader, product) 
+select_action(action, product, location) 
+    return:     
+    {
+        "Result": bool,
+        "Message": string
+    }
 
 manual_get_file_actions()
-upload_actions_file(actionlist)
+upload_actions_file(action, actionlist)
+    return:     
+    {
+        "Result": bool,
+        "Message": string
+    }
     
 manual_get_pdf_actions()
 manual_generate_pdf(action)
+    return:     
+    {
+        "Result": bool,
+        "Message": string
+    }
     
 
 

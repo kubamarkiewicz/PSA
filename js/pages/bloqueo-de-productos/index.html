@@ -18,37 +18,19 @@
 			
 			<h2>Selecciona los productos a {{action == 'block' ? 'bloquear' : 'desbloquear'}}</h2>
 
-			<form ng-submit="blockProductByInput()">
+			<form ng-submit="addProductToSelection()">
 				<p>
-					<label>Por teclado</label>
+					<!-- <label>Por teclado</label> -->
 					<md-input-container md-no-float>
-				        <input type="text" name="productId" ng-model="productId" placeholder="Código de producto" maxlength="{{ product_code_length }}" minlength="{{ product_code_length }}">
+				        <input type="text" name="passage" ng-model="passage" placeholder="Pasillo">
+				    </md-input-container>
+					<md-input-container md-no-float>
+				        <input type="text" name="position" ng-model="position" placeholder="Posición">
+				    </md-input-container>
+					<md-input-container md-no-float>
+				        <input type="text" name="height" ng-model="height" placeholder="Altura">
 				    </md-input-container>
 				    <md-button type="submit" class="block-product"></md-button>
-				</p>
-		   	</form>
-
-			<form ng-submit="selectReader()" class="reader">
-				<p>
-					<label>Por lector</label>
-					<md-input-container md-no-float>
-        				<md-select ng-model="readerId" placeholder="Seleccionar lector">
-            				<md-option ng-repeat="reader in readersData" ng-value="reader">{{ reader }}</md-option>
-          				</md-select>
-        			</md-input-container>
-				    <md-button type="submit" class="md-raised md-primary">Seleccionar <md-progress-circular></md-progress-circular></md-button>
-				</p>
-		   	</form>
-
-			<form ng-submit="uploadFile()" class="upload-file">
-				<p>
-					<label>Por archivo</label>
-					<md-input-container md-no-float>
-				        <span class="file-input">
-				        	<input type="file" id="uploadFileInput" placeholder="Seleccionar archivo" required>
-				        </span>
-				    </md-input-container>
-				    <md-button type="submit" class="md-raised md-primary">Enviar <md-progress-circular></md-progress-circular></md-button>
 				</p>
 		   	</form>
 
@@ -63,7 +45,7 @@
 			<div class="list" flex>
 				<div class="item" ng-repeat="item in selectedProducts track by $index">
 					<div class="remove" ng-click="removeFromSelection(item)"></div>
-					{{ item }}
+					{{ item.Passage }}, {{ item.Position }}, {{ item.Height }}
 				</div>
 			</div>
 
@@ -80,7 +62,7 @@
 		<div class="list" ng-show="action">
 			<div class="item" ng-repeat="item in blockedProductsData track by $index">
 				<div class="unblock" ng-click="selectProduct(item)" ng-show="action == 'unblock'"></div>
-				{{ item }}
+				{{ item.Passage }}, {{ item.Position }}, {{ item.Height }}
 			</div>
 		</div>
 	</section>

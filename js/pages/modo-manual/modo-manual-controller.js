@@ -161,7 +161,9 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         $http({
             method  : 'GET',
             url     : config.webservice.urls.manual_generate_pdf,
-            params  : {"action" : $scope.pdfAction}
+            params  : {
+                "action" : $scope.pdfAction
+            }
          })
         .then(function(response) {
             $rootScope.toast.content(response.data.generate_pdfResult.Message);

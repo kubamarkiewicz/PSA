@@ -1,8 +1,8 @@
 app.controller('BloqueoDeProductosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast) {  
 
+
     $scope.action = '';
 
-    $scope.product_code_length = config.config.product_code_length;
 
     $scope.setAction = function(value)
     {
@@ -34,18 +34,17 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
     // block product
 
-    $scope.productId = '';
     $scope.selectedProducts = [];
 
-    $scope.blockProductByInput = function()
+    $scope.addProductToSelection = function()
     {
-        if (!$scope.productId) {
-            return;
-        }
-
-        $scope.selectedProducts.push($scope.productId);
-        $scope.productId = '';
-        $('input[name=productId]').focus();
+        var product = {};
+        product.Passage = $scope.passage;
+        product.Position = $scope.position;
+        product.Height = $scope.height;
+        $scope.selectedProducts.push(product);
+        $scope.passage = $scope.position = $scope.height = '';
+        $('input[name=passage]').focus();
     }
 
     $scope.selectProduct = function(productId)
@@ -69,7 +68,9 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $http({
             method  : 'GET',
             url     : $scope.action == 'block' ? config.webservice.urls.block_products : config.webservice.urls.unblock_products,
-            params  : {"productlist" : JSON.stringify($scope.selectedProducts)}
+            params  : {
+                "productlist" : JSON.stringify($scope.selectedProducts)
+            }
          })
         .then(function(response) {
             $rootScope.toast.content(response.data[$scope.action + "_productsResult"].Message);
@@ -98,110 +99,5 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
 
 
-    // get readers
 
-    $scope.readersData = [];
-
-    $scope.getReadersData = function()
-    {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_readers_for_blocking
-         })
-        .then(function(response) {
-            $scope.readersData = response.data.get_readersResult;
-        });
-    }
-    ArtisterilIntervalService.start($scope.getReadersData, 5000);
-
-
-    // select reader
-
-    $scope.readerId = '';
-
-    $scope.selectReader = function()
-    {
-        $('form.reader button').attr("disabled", true).addClass('loading');
-
-        return $http({
-            method  : 'GET',
-            url     : $scope.action == 'block' ? config.webservice.urls.select_reader_for_blocking : config.webservice.urls.select_reader_for_unblocking,
-            params  : {"id" : $scope.readerId}
-         })
-        .then(function(response) {
-            $rootScope.toast.content('Éxito')
-                .toastClass('toast-success');
-            $mdToast.show($rootScope.toast);
-            $('form.reader button').attr("disabled", false).removeClass('loading');
-
-            // start recieving data from reader
-            ArtisterilIntervalService.start($scope.getReaderReading);
-        });
-    }
-
-    $scope.getReaderReading = function()
-    {
-        return $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_reading_for_blocking
-         })
-        .then(function(response) {
-
-            // add products to selection
-            if (response.data.get_reader_readingResult) {
-                $scope.selectedProducts.push(response.data.get_reader_readingResult);
-            }
-        });
-    }
-
-
-    // upload file
-
-    $scope.uploadFile = function()
-    {
-        $('form.upload-file button').attr("disabled", true).addClass('loading');
-
-        // read file as text
-        var reader = new FileReader();
-        reader.onload = function(){
-            $scope.blockProductsFromFile(reader.result);
-        };
-        reader.readAsText(document.getElementById('uploadFileInput').files[0]);
-    }
-
-    $scope.blockProductsFromFile = function(fileContent)
-    {
-        $http({
-            method  : 'GET',
-            url     : $scope.action == 'block' ? config.webservice.urls.block_products_from_file : config.webservice.urls.unblock_products_from_file,
-            params  : {'productlist' : fileContent}
-        })
-        .then(function(response) {
-            $rootScope.toast.content('Éxito')
-                .toastClass('toast-success');
-            $mdToast.show($rootScope.toast);
-            $('form.upload-file button').attr("disabled", false).removeClass('loading');
-            $('#uploadFileInput').val('');
-        });
-    }
-
-
-
-
-    // unblock product
-
-    $scope.unblockProductById = function(productId)
-    {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.unblock_products,
-            params  : {"productlist" : [productId]}
-         })
-        .then(function(response) {
-            $rootScope.toast.content('Éxito')
-                .toastClass('toast-success');
-            $scope.getBlockedProductsData();
-            $mdToast.show($rootScope.toast);
-        });
-    }
 });

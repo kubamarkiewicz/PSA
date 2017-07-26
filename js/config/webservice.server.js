@@ -23,14 +23,9 @@ window.config.webservice = {
         "update_transport_belt"         : "http://192.168.0.82:8888/SAS/Process/api/update_transport_belt",
         "process_get_popup_alerts"      : "http://192.168.0.82:8888/SAS/Process/api/get_popup_alerts",
 
-        "get_readers_for_blocking"      : "http://192.168.0.82:8888/SAS/Lockings/api/get_readers",
         "blockings_get_blocked_products": "http://192.168.0.82:8888/SAS/Lockings/api/get_blocked_products",
         "block_products"                : "http://192.168.0.82:8888/SAS/Lockings/api/block_products",
         "unblock_products"              : "http://192.168.0.82:8888/SAS/Lockings/api/unblock_products",
-        "select_reader_for_blocking"    : "http://192.168.0.82:8888/SAS/Lockings/api/select_reader",
-        "get_reading_for_blocking"      : "http://192.168.0.82:8888/SAS/Lockings/api/get_reader_reading",
-        "block_products_from_file"      : "http://192.168.0.82:8888/SAS/Lockings/api/block_products_from_file",
-        "unblock_products_from_file"    : "http://192.168.0.82:8888/SAS/Lockings/api/unblock_products_from_file",
 
         "get_readers_for_receiving"     : "http://192.168.0.82:8888/SAS/Reception/api/get_readers",
         "receive_products"              : "http://192.168.0.82:8888/SAS/Reception/api/receive_products",

@@ -3,20 +3,21 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
 {
     this.defaultMilliseconds = 1000;
 
-	this.intervals = {};
+    this.intervals = {};
 
-    this.start = function(callback, miliseconds, name) 
+    this.start = function(callback, miliseconds, name, doNotCallNow) 
     {
         if (miliseconds === undefined || !miliseconds) miliseconds = this.defaultMilliseconds;
         if (name === undefined || !name) name = 'interval_' + (Object.keys(this.intervals).length + 1);
+        if (doNotCallNow === undefined || !doNotCallNow) doNotCallNow = false;
 
         // call it now
-        callback();
+        if (!doNotCallNow) {
+            callback();
+        }
 
         // stop interval
-        if (this.intervals[name]) {
-            clearInterval(this.intervals[name]);
-        }
+        this.stop(name);
 
         // start interval
         this.intervals[name] = setInterval(callback, miliseconds);
@@ -24,15 +25,16 @@ var ArtisterilIntervalService = angular.module('ArtisterilIntervalService', [])
 
 
     this.stop = function(name) {
-        clearInterval(this.intervals[name]);
-        delete this.intervals[name];
+        if (this.intervals[name]) {
+            clearInterval(this.intervals[name]);
+            delete this.intervals[name];
+        }
     };
 
 
     this.stopAll = function() {
-        for (i in this.intervals) {
-            clearInterval(this.intervals[i]);
-            delete this.intervals[name];
+        for (name in this.intervals) {
+            this.stop(name);
         }
     };
 

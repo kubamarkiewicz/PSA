@@ -8,36 +8,31 @@
 
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
-         url('fonts/roboto-light-webfont.woff') format('woff');
+    src: url('fonts/roboto-light-webfont.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
-         url('fonts/roboto-regular-webfont.woff') format('woff');
+    src: url('fonts/roboto-regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/roboto-medium-webfont.woff2') format('woff2'),
-         url('fonts/roboto-medium-webfont.woff') format('woff');
+    src: url('fonts/roboto-medium-webfont.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/roboto-mediumitalic-webfont.woff2') format('woff2'),
-         url('fonts/roboto-mediumitalic-webfont.woff') format('woff');
+    src: url('fonts/roboto-mediumitalic-webfont.woff') format('woff');
     font-weight: 500;
     font-style: italic;
 }
 @font-face {
     font-family: 'Roboto';
-    src: url('fonts/roboto-bold-webfont.woff2') format('woff2'),
-         url('fonts/roboto-bold-webfont.woff') format('woff');
+    src: url('fonts/roboto-bold-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
@@ -390,6 +385,121 @@ section.popup-alerts .alert main {
 	font-size: 14px;
 }
 
+
+table.my-table {    
+    width: 100%;
+}
+table.my-table thead th,
+table.scroll-table thead th {
+	text-align: left;
+	background-color: #4b4b4b;
+	color: #ffffff;
+	font-size: 20px;
+	font-weight: 500;
+	padding: 0 20px;
+}
+table.my-table tbody td,
+table.scroll-table tbody td {
+    background-color: #ffffff;
+    padding: 0 20px;
+    vertical-align: top;
+}
+table.my-table tbody tr.grey td,
+table.scroll-table tbody tr.grey td {
+	background-color: #bdb9ba;
+}
+table.my-table td.status,
+table.my-table th.status,
+table.scroll-table td.status,
+table.scroll-table th.status {
+	width: 110px;
+}
+table.my-table td.status.green,
+table.scroll-table td.status.green {
+	background-color: #7dbe02;
+}
+table.my-table td.status.red,
+table.scroll-table td.status.red {
+	background-color: #c40112;
+}
+
+
+
+
+table.scroll-table {    
+	display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+table.scroll-table thead, 
+table.scroll-table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+table.scroll-table thead {
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+table.scroll-table tbody {
+    flex: 1 1 auto;
+    display: block;
+    overflow-y: scroll;
+}
+table.scroll-table tbody tr {
+    width: 100%;
+}
+
+.row {
+	display: flex;
+}
+.col-6 {
+	flex: 1;
+}
+.col-6:nth-child(1) {
+	margin-right: 15px;
+}
+.col-6:nth-child(2) {
+	margin-left: 15px;
+}
+.col-4 {
+	flex: 1;
+}
+.col-4:nth-child(1) {
+	margin-right: 15px;
+}
+.col-4:nth-child(2) {
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.col-4:nth-child(3) {
+	margin-left: 15px;
+}
+
+
+
+.alert-primary {
+	background-color: #00557e;
+}
+.alert-success {
+	background-color: #7dbe02;
+}
+.alert-info {
+	background-color: #0276af;
+}
+.alert-warning {
+	background-color: #ff7e00;
+}
+.alert-danger {
+	background-color: #c40112;
+}
+.alert-muted {
+	background-color: #4b4b4b;
+}
+.alert-white {
+	background-color: #ffffff;
+	color: #2a2b2d !important;
+}
 
 
 /* mobile */

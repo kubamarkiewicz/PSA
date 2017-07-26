@@ -35,7 +35,6 @@ body.page-modo-manual > main p .md-select-value {
 	margin-right: 15px;
 }
 body.page-modo-manual > main button.execute-action {
-	font-size: 18px;
 	display: block;
 }
 
@@ -54,4 +53,35 @@ body.page-modo-manual > main p.product-id button.clear {
     width: 21px;
     min-width: 21px;
 	margin: 0;
+}
+
+body.page-modo-manual > main form.pdfForm {
+}
+body.page-modo-manual > main form.pdfForm p.action {
+}
+body.page-modo-manual > main form.pdfForm p md-input-container {
+	width: 100%;
+}
+body.page-modo-manual > main form.pdfForm p .md-button.md-warn.md-raised {
+	margin-top: 0;
+}
+
+
+
+
+/* mobile */
+@media screen and (max-width: 1400px) {
+
+
+	body.page-modo-manual > main h2 {
+		margin-bottom: 20px;
+	}
+	body.page-modo-manual > main p label {
+		font-size: 16px;
+	}
+	body.page-modo-manual > main p {
+		margin-bottom: 20px;
+	}
+
+
 }

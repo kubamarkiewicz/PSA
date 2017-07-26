@@ -14,70 +14,10 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
             url     : config.webservice.urls.get_actions
          })
         .then(function(response) {
-            // console.log(response.data);
             $scope.actionsData = response.data.get_actionsResult;
         });
     }
     $scope.getActionsData();
-
-
-
-    // get readers
-
-    $scope.readersData = [];
-
-    $scope.getReadersData = function()
-    {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_readers_for_manual_mode
-         })
-        .then(function(response) {
-            // console.log(response.data);
-            $scope.readersData = response.data.get_readersResult;
-        });
-    }
-    // $scope.getReadersData();
-    ArtisterilIntervalService.start($scope.getReadersData, 5000);
-
-
-    // select reader
-
-    $scope.readerId = '';
-
-    $scope.selectReader = function()
-    {
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.select_reader_for_manual_mode,
-            params  : {"id" : $scope.readerId}
-         })
-        .then(function(response) {
-            // console.log(response.data);
-        });
-
-        // start recieving data from reader
-        ArtisterilIntervalService.start($scope.getReaderReading, 1000, 'getReaderReading');
-    }
-
-    $scope.getReaderReading = function()
-    {
-        return $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_reading_for_manual_mode
-         })
-        .then(function(response) {
-            // console.log(response.data);
-
-            // add product to input
-            if (response.data.get_reader_readingResult) {
-                $scope.productId = response.data.get_reader_readingResult;
-
-                // stop interval
-                ArtisterilIntervalService.stop('getReaderReading');
-            }
-        });
-    }
 
 
 
@@ -94,10 +34,13 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         $http({
             method  : 'GET',
             url     : config.webservice.urls.select_action,
-            params  : {"action" : $scope.action, "reader" : $scope.readerId, "product" : $scope.productId},
+            params  : {
+                "action"    : $scope.action, 
+                "product"   : $scope.productId,
+                "location"  : $scope.location
+            },
          })
         .then(function(response) {
-            // console.log(response.data);
             $rootScope.toast.content(response.data.add_warehouseOrderResult.Message);
             if (response.data.add_warehouseOrderResult.Result === true) {
                 $rootScope.toast.toastClass('toast-success');
@@ -109,10 +52,10 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
 
             $('button.execute-acton').attr("disabled", false).removeClass('loading');
 
-            // reset form and disable error messages
+            // reset fields
             $scope.action = null;
-            $scope.readerId = null;
             $scope.productId = '';
+            $scope.location = '';
             $scope.actionForm.$setPristine();
             $scope.actionForm.$setUntouched();
         });
@@ -125,6 +68,23 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
     }
 
 
+
+
+    // get file actions
+
+    $scope.fileActionsData = [];
+
+    $scope.getFileActionsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.manual_get_file_actions
+         })
+        .then(function(response) {
+            $scope.fileActionsData = response.data.get_file_actionsResult;
+        });
+    }
+    $scope.getFileActionsData();
 
     // upload file
 
@@ -145,12 +105,67 @@ app.controller('ModoManualProductosController', function($scope, $rootScope, $ht
         $http({
             method  : 'GET',
             url     : config.webservice.urls.upload_actions_file,
-            params  : {'actionlist' : fileContent}
+            params  : {
+                "action" : $scope.fileAction,
+                'actionlist' : fileContent
+            }
         })
         .then(function(response) {
-            // console.log(response.data);
             $rootScope.toast.content(response.data.upload_warehouseOrders_fileResult.Message);
             if (response.data.upload_warehouseOrders_fileResult.Result === true) {
+                $rootScope.toast.toastClass('toast-success');
+            }
+            else {
+                $rootScope.toast.toastClass('toast-error');
+            }
+            $mdToast.show($rootScope.toast);
+            
+            $('form.upload-file button').attr("disabled", false).removeClass('loading');
+            $('#uploadFileInput').val('');
+        });
+    }
+
+
+    $("button.clear").click(function(){
+        $(this).parent().find('input').val('');
+    });
+
+
+
+
+    // get PDF actions
+
+    $scope.pdfActionsData = [];
+
+    $scope.getPdfActionsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.manual_get_pdf_actions
+         })
+        .then(function(response) {
+            $scope.pdfActionsData = response.data.get_pdf_actionsResult;
+        });
+    }
+    $scope.getPdfActionsData();
+
+
+    // generate PDF 
+
+    $scope.generatePDF = function()
+    {
+        if (!$scope.pdfAction) {
+            return;
+        }
+
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.manual_generate_pdf,
+            params  : {"action" : $scope.pdfAction}
+         })
+        .then(function(response) {
+            $rootScope.toast.content(response.data.generate_pdfResult.Message);
+            if (response.data.generate_pdfResult.Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }
             else {

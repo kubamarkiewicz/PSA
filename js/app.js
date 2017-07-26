@@ -16,10 +16,6 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
     
     $routeProvider 
 
-/*        .when('/', { 
-            controller: 'DatosDelSGAController', 
-            templateUrl: 'js/pages/datos-del-sga/index.html'
-        })    */ 
         .when('/login', { 
             controller: 'LoginController', 
             templateUrl: 'js/pages/login/index.html' 
@@ -49,7 +45,7 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             templateUrl: 'js/pages/configuracion-de-parametros/index.html' 
         })   
         .otherwise({ 
-            redirectTo: '/datos-del-sga' 
+            redirectTo: '/visualizador-del-proceso' 
         }); 
 
 
@@ -137,6 +133,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
                 case "recepcion-de-productos"       : $http.get(config.webservice.urls.exit_Reception); break;
                 case "modo-manual"                  : $http.get(config.webservice.urls.exit_Manual); break;
                 case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
+                case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
             }
         }
         switch($rootScope.pageSlug) {
@@ -147,6 +144,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
             case "recepcion-de-productos"       : $http.get(config.webservice.urls.enter_Reception); break;
             case "modo-manual"                  : $http.get(config.webservice.urls.enter_Manual); break;
             case "configuracion-de-parametros"  : $http.get(config.webservice.urls.enter_Parameters); break;
+            case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
             case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
         }
         

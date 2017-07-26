@@ -70,7 +70,7 @@ body.page-bloqueo-de-productos section.actions p .md-button {
 	margin-bottom: 4px;
 }
 body.page-bloqueo-de-productos section.actions .md-button.block-product {
-	background-image: url(../images/plus.png);
+	background-image: url(../../../images/plus.png);
 	background-repeat: no-repeat;
 	background-position: center center;
 	width: 21px;
@@ -101,7 +101,7 @@ body.page-bloqueo-de-productos section.blocked-products .item .unblock {
 	right: -24px;
 	top: 6px;
 	outline: none;
-	background-image: url(../images/remove.gif);
+	background-image: url(../../../images/remove.gif);
 	background-repeat: no-repeat;
 }
 
@@ -135,7 +135,7 @@ body.page-bloqueo-de-productos section.selected-products .list .item .remove {
 	right: -24px;
 	top: 6px;
 	outline: none;
-	background-image: url(../images/remove.gif);
+	background-image: url(../../../images/remove.gif);
 	background-repeat: no-repeat;
 }
 body.page-bloqueo-de-productos section.selected-products button.block-products {

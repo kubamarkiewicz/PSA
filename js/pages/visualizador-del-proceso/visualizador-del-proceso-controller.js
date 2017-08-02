@@ -217,16 +217,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     // $scope.loadSemaphoresData();
 
 
-    // load semaphores coordinates
-    $http({
-        method  : 'GET',
-        url     : config.map.coordinates_urls.semaphores
-     })
-    .then(function(response) {
-        $scope.semaphoresCoordinates = response.data;
-    });
-
-
     $scope.openSemaphorePopup = function(event, semaphore) 
     {
         event.stopPropagation();
@@ -275,17 +265,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     // $scope.loadTransportBeltsData();
 
 
-    // load transport belts coordinates
-    $http({
-        method  : 'GET',
-        url     : config.map.coordinates_urls.transport_belts
-     })
-    .then(function(response) {
-        $scope.transportBeltsCoordinates = response.data;
-    });
-
-
-
     $scope.openTransportBeltPopup = function(event, transportBelt) 
     {
         event.stopPropagation();
@@ -328,7 +307,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     // load storage positions coordinates
     $http({
         method  : 'GET',
-        url     : config.map.coordinates_urls.storage_positions
+        url     : "js/pages/visualizador-del-proceso/storage_positions_coordinates.json"
      })
     .then(function(response) {
         $scope.storagePositionsCoordinates = response.data;

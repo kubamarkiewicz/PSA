@@ -1,5 +1,6 @@
 
 
+
 /* Page recepcion-de-productos *******************************************************************************/
 
 
@@ -18,6 +19,7 @@ body.page-recepcion-de-productos > main section {
 body.page-recepcion-de-productos > main section > h2 {
 	border-bottom: 8px solid #0276af;
 	padding-bottom: 8px;
+	margin-bottom: 24px;
 }
 
 body.page-recepcion-de-productos section.actions {
@@ -91,6 +93,7 @@ body.page-recepcion-de-productos .selected-products .list .item .remove {
 		display: block;
 	}
 }
+
 
 
 

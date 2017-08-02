@@ -17,7 +17,6 @@ body.page-modo-manual > main h2 {
 	margin-bottom: 40px;
 }
 body.page-modo-manual > main p {
-	margin-bottom: 40px;
 }
 body.page-modo-manual > main p label {
 	display: block;
@@ -62,7 +61,7 @@ body.page-modo-manual > main form.pdfForm p.action {
 body.page-modo-manual > main form.pdfForm p md-input-container {
 	width: 100%;
 }
-body.page-modo-manual > main form.pdfForm p .md-button.md-warn.md-raised {
+body.page-modo-manual > main form.pdfForm p .md-button.md-raised {
 	margin-top: 0;
 }
 

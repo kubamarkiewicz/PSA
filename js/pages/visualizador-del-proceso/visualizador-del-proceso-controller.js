@@ -346,4 +346,26 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         });
     }
 
+
+
+
+
+    // Alerts
+
+    $scope.alertsData = [];
+    
+    $scope.getAlertsData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.get_alerts
+         })
+        .then(function(response) {
+            $scope.alertsData = response.data.get_alertsResult;
+        });
+    }
+    // ArtisterilIntervalService.start($scope.getAlertsData);
+    $scope.getAlertsData();
+
+
 });

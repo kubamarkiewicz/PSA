@@ -9,32 +9,37 @@
 		{
 			"Title": "Sed do eiusmod tempor",
 			"Message": "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-			"Color": "primary"
+			"Color": "danger"
 		},
 		{
 			"Title": "Quis nostrud exercitation",
 			"Message": "ullamco laboris nisi ut aliquip ex ea commodo consequat",
-			"Color": "success"
+			"Color": "danger"
 		},
 		{
 			"Title": "eu fugiat nulla pariatur",
 			"Message": "Excepteur sint occaecat cupidatat non proident",
-			"Color": "info"
+			"Color": "danger"
 		},
 		{
 			"Title": "sunt in culpa qui",
 			"Message": "officia deserunt mollit anim id est laborum.",
-			"Color": "warning"
+			"Color": "danger"
 		},
 		{
 			"Title": "Magna aliqua",
 			"Message": "Ut enim ad minim veniam, quis nostrud exercitation",
-			"Color": "muted"
+			"Color": "danger"
 		},
 		{
 			"Title": "Consectetur adipiscing elit",
 			"Message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
-			"Color": "white"
+			"Color": "danger"
+		},
+		{
+			"Title": "Consectetur adipiscing danger",
+			"Message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
+			"Color": "danger"
 		}
 	]
 }

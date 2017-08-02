@@ -19,7 +19,7 @@ body.page-visualizador-del-proceso #mapa {;
 	z-index: 1;
 	transform-origin: 50% 50%;
 	display: block;;
-	margin-right: 300px;;
+	padding: 10px 0;
 }
 body.page-visualizador-del-proceso #mapa img {
 	position: relative;

@@ -38,10 +38,17 @@ save_parameters(parameterlist)
 
 
 
-
 PANTALLA INFORMES
 
 informes_get_actions()
 informes_generate_informe(action)
+
+
+
+
+PANTALLA MAESTRO ARTICULOS
+
+get_articles()
+save_articles(articlelist)
 
 

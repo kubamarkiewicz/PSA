@@ -36,6 +36,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'InformesController', 
             templateUrl: 'js/pages/informes/index.html' 
         })   
+        .when('/maestro-articulos', { 
+            controller: 'MaestroArticulosController', 
+            templateUrl: 'js/pages/maestro-articulos/index.html' 
+        })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 
         }); 

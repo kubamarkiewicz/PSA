@@ -7,27 +7,30 @@ window.config.webservice = {
 
     "urls" : {
 
-        "user_login"                    : "dummy-webservice/user_login.json",
-        "user_has_access"               : "dummy-webservice/user_has_access.json",
+        "user_login"                    : "dummy-webservice/user/user_login.json",
+        "user_has_access"               : "dummy-webservice/user/user_has_access.json",
 
-        "get_alerts"                    : "dummy-webservice/get_alerts.json",
-        "get_agvs"                      : "dummy-webservice/get_agvs.json",
-        "get_storage_positions"         : "dummy-webservice/get_storage_positions.json",
-        "get_storage_position_niches"   : "dummy-webservice/get_storage_position_niches.json",
-        "get_semaphores"                : "dummy-webservice/get_semaphores.json",
+        "get_alerts"                    : "dummy-webservice/proceso/get_alerts.json",
+        "get_agvs"                      : "dummy-webservice/proceso/get_agvs.json",
+        "get_storage_positions"         : "dummy-webservice/proceso/get_storage_positions.json",
+        "get_storage_position_niches"   : "dummy-webservice/proceso/get_storage_position_niches.json",
+        "get_semaphores"                : "dummy-webservice/proceso/get_semaphores.json",
         "update_semaphore"              : "dummy-webservice/empty.json",
-        "get_transport_belts"           : "dummy-webservice/get_transport_belts.json",
+        "get_transport_belts"           : "dummy-webservice/proceso/get_transport_belts.json",
         "update_transport_belt"         : "dummy-webservice/empty.json",
 
-        "blockings_get_blocked_products": "dummy-webservice/blockings_get_blocked_products.json",
-        "block_products"                : "dummy-webservice/block_products.json",
-        "unblock_products"              : "dummy-webservice/unblock_products.json",
+        "blockings_get_blocked_products": "dummy-webservice/bloqueos/get_blocked_products.json",
+        "block_products"                : "dummy-webservice/bloqueos/block_products.json",
+        "unblock_products"              : "dummy-webservice/bloqueos/unblock_products.json",
 
-        "get_parameters"                : "dummy-webservice/get_parameters.json",
-        "save_parameters"               : "dummy-webservice/save_parameters.json",
+        "get_parameters"                : "dummy-webservice/parameters/get_parameters.json",
+        "save_parameters"               : "dummy-webservice/parameters/save_parameters.json",
 
-        "informes_get_actions"          : "dummy-webservice/informes_get_actions.json",
-        "informes_generate_informe"     : "dummy-webservice/informes_generate_informe.json",
+        "informes_get_actions"          : "dummy-webservice/informes/get_actions.json",
+        "informes_generate_informe"     : "dummy-webservice/informes/generate_informe.json",
+
+        "maestro_articles_get_articles" : "dummy-webservice/maestro_articles/get_articles.json",
+        "maestro_articles_save_articles": "dummy-webservice/empty.json",
 
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",

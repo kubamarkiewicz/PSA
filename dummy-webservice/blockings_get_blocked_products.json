@@ -1,17 +1,9 @@
 {
     "get_blocked_productsResult" : 
     [
-        {"Passage":3, "Position":2, "Height": 1},
-        {"Passage":3, "Position":3, "Height": 1},
-        {"Passage":3, "Position":4, "Height": 1},
-        {"Passage":3, "Position":5, "Height": 1},
-        {"Passage":3, "Position":62, "Height": 1},
-        {"Passage":3, "Position":72, "Height": 1},
-        {"Passage":3, "Position":82, "Height": 1},
-        {"Passage":3, "Position":92, "Height": 1},
-        {"Passage":3, "Position":12, "Height": 1},
-        {"Passage":3, "Position":2, "Height": 12},
-        {"Passage":3, "Position":2, "Height": 13},
-        {"Passage":3, "Position":2, "Height": 14}
+        "R.0101.1",
+        "R.2201.2",
+        "R.3301.3",
+        "R.4401.4"
     ]
 }

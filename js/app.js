@@ -24,22 +24,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'VisualizadorDelProcesoController', 
             templateUrl: 'js/pages/visualizador-del-proceso/index.html' 
         })      
-        .when('/datos-del-sga', { 
-            controller: 'DatosDelSGAController', 
-            templateUrl: 'js/pages/datos-del-sga/index.html' 
-        })    
         .when('/bloqueo-de-productos', { 
             controller: 'BloqueoDeProductosController', 
             templateUrl: 'js/pages/bloqueo-de-productos/index.html' 
-        })    
-        .when('/recepcion-de-productos', { 
-            controller: 'RecepcionDeProductosController', 
-            templateUrl: 'js/pages/recepcion-de-productos/index.html' 
-        })    
-        .when('/modo-manual', { 
-            controller: 'ModoManualProductosController', 
-            templateUrl: 'js/pages/modo-manual/index.html' 
-        })   
+        })  
         .when('/configuracion-de-parametros', { 
             controller: 'ConfiguracionDeParametrosController', 
             templateUrl: 'js/pages/configuracion-de-parametros/index.html' 

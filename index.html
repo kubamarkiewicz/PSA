@@ -12,10 +12,7 @@
     <link href="css/custom.css" rel="stylesheet">
     <link href="js/pages/login/login.css" rel="stylesheet">
     <link href="js/pages/visualizador-del-proceso/visualizador-del-proceso.css" rel="stylesheet">
-    <link href="js/pages/datos-del-sga/datos-del-sga.css" rel="stylesheet">
     <link href="js/pages/bloqueo-de-productos/bloqueo-de-productos.css" rel="stylesheet">
-    <link href="js/pages/modo-manual/modo-manual.css" rel="stylesheet">
-    <link href="js/pages/recepcion-de-productos/recepcion-de-productos.css" rel="stylesheet">
     <link href="js/pages/configuracion-de-parametros/configuracion-de-parametros.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -41,13 +38,13 @@
                     <md-button ng-href="#configuracion-de-parametros" md-colors="{background: 'blue'}">CONFIGURACIÓN DE PARÁMETROS</md-button>
                 </md-menu-item>
                 <md-menu-item ng-hide="!user_permissions['bloqueo-de-productos']">
-                    <md-button ng-href="#bloqueo-de-productos" md-colors="{background: 'blue'}">Bloqueo de productos</md-button>
+                    <md-button ng-href="#bloqueo-de-productos" md-colors="{background: 'blue'}">Bloqueo de posiciónes</md-button>
                 </md-menu-item>
-                <md-menu-item ng-hide="!user_permissions['recepcion-de-productos']">
-                    <md-button ng-href="#recepcion-de-productos" md-colors="{background: 'blue'}">Recepción de productos</md-button>
+                <md-menu-item ng-hide="!user_permissions['informes']">
+                    <md-button ng-href="#informes" md-colors="{background: 'blue'}">Informes</md-button>
                 </md-menu-item>
-                <md-menu-item ng-hide="!user_permissions['modo-manual']">
-                    <md-button ng-href="#modo-manual" md-colors="{background: 'blue'}">Modo manual</md-button>
+                <md-menu-item ng-hide="!user_permissions['maestro-articulos']">
+                    <md-button ng-href="#maestro-articulos" md-colors="{background: 'blue'}">Maestro artículos</md-button>
                 </md-menu-item>
                 <md-menu-item>
                     <md-button ng-click="logout()" md-colors="{background: 'blue'}">Salir</md-button>
@@ -93,10 +90,7 @@
     <script src="js/pages/login/login-controller.js"></script>
     <script src="js/pages/visualizador-del-proceso/visualizador-del-proceso-controller.js"></script>
     <script src="js/pages/visualizador-del-proceso/config.js"></script>
-    <script src="js/pages/datos-del-sga/datos-del-sga-controller.js"></script>
     <script src="js/pages/bloqueo-de-productos/bloqueo-de-productos-controller.js"></script>
-    <script src="js/pages/recepcion-de-productos/recepcion-de-productos-controller.js"></script>
-    <script src="js/pages/modo-manual/modo-manual-controller.js"></script>
     <script src="js/pages/configuracion-de-parametros/configuracion-de-parametros-controller.js"></script>
 
     <!-- Components -->

@@ -58,10 +58,11 @@ body.page-bloqueo-de-productos section.actions p label {
 	vertical-align: middle;/* line-height: 38px; */;
 }
 body.page-bloqueo-de-productos section.actions p md-input-container {
+	vertical-align: top;;;;
 }
 body.page-bloqueo-de-productos section.actions p input,
 body.page-bloqueo-de-productos section.actions p .md-select-value {
-	width: 100px;
+	width: 80px;;
 }
 body.page-bloqueo-de-productos section.actions p .md-button {
 	width: 165px;

@@ -1,110 +1,22 @@
 
-Todos los metodos usan HTTP GET
-
 
 LOGIN DE USUARIOS
  
 user_login (user, password)
-    return: boolean
-
- 
 user_has_access (user)
-    return:            //Object Access
-    {
-        "visualisador-del-proceso" : true,
-        "datos-del-sga" : true,
-        "configuracion-de-parametros" : true,
-        "bloqueos" : true,
-        "modo-manual" : true
-    }
 
 
 
 PANTALLA VISUALIZADOR DEL PROCESO
 
-get_alerts
-    return:             //List
-    [
-        {
-            title: string,
-            message: number
-        }
-    ]
-
-
 get_agvs()
-    return:             //List<AGV>
-    [
-        {
-            id: string,
-            x: number,
-            y: number,
-            orientation: number (degrees),
-            state: string
-        }
-    ]
-
 get_semaphores()
-    return:             //List<Semaphore>
-    [
-        {
-            id: string,
-            state: string
-        }
-    ]
-
 update_semaphore(id, state)
-
 get_transport_belts()
-    return:             //List<TransportBelt>
-    [
-        {
-            id: string,
-            state: string
-        }
-    ]
-
 update_transport_belt(id, state) 
-
 get_storage_positions()
-    return:             //List<StoragePosition>
-    [
-        {
-            id: string
-        }
-    ]
-
 get_storage_position_niches(storage_position_id)
-    return:             //List<StoragePositionNiche>
-    [
-        {
-            niche_id: string,
-            product: string
-        }
-    ]
-
-
-
-
-
-PANTALLA DATOS DEL SGA
-  
 get_alerts()
-    return: 			//array<Alert>
-    [
-        {
-            "title": "string",
-            "message": "string",
-            "color": "danger"   // possible values: danger, primary, success, info, warning, muted, white 
-        }
-	]
-
-get_blocked_products()
-    return: 			//array
-    [
-        "string"
-    ]
-
 
 
 
@@ -112,118 +24,16 @@ get_blocked_products()
 PANTALLA DE BLOQUEO DE PRODUCTOS
 
 get_blocked_products() 
-    return:             //array of objects
-    [
-        {
-            "Passage": int,
-            "Position": int,
-            "Height": int
-        }
-    ]
-
 block_products(productlist)
-    parameters: productlist - array of objects
-    [
-        {
-            "Passage": int,
-            "Position": int,
-            "Height": int
-        }
-    ]
-    return:     
-    {
-        "Result": bool,
-        "Message": string
-    }
-    
+    parameters: productlist // array of strings  en formato R.LLDD.H 
 unblock_products(productlist)
-    parameters: productlist - array of objects
-    [
-        {
-            "Passage": int,
-            "Position": int,
-            "Height": int
-        }
-    ]
-    return:     
-    {
-        "Result": bool,
-        "Message": string
-    }
-
-
-
-
-PANTALLA DE RECEPCIÓN DE PRODUCTOS
-
-receive_products(productlist)
-    parameters: productlist - string containig JSON array of strings eg.: ['aaa','bbb']
-    
-select_reader_for_receiving(id)
-
-get_reader_reading()
-    return:             //List
-    [
-        string product
-    ]
-
-receive_products_from_file(productlist)
-    
-
-
-
-
-PANTALLA MODO MANUAL
-
-get_actions()
-    return: [string]            //array of strings
-
-select_action(action, product, location) 
-    return:     
-    {
-        "Result": bool,
-        "Message": string
-    }
-
-manual_get_file_actions()
-upload_actions_file(action, actionlist)
-    return:     
-    {
-        "Result": bool,
-        "Message": string
-    }
-    
-manual_get_pdf_actions()
-manual_generate_pdf(action)
-    return:     
-    {
-        "Result": bool,
-        "Message": string
-    }
-    
-
-
-
-
+    parameters: productlist // array of strings  en formato R.LLDD.H
 
 
 
 PANTALLA CONFIGURACIÓN DE PARÁMETROS
 
-
 get_parameters()
-    return:             //Object
-    {
-        "parameter_name" : {  
-            "Options"   : array,
-            ["Values"    : array,]   // para TextBox, Checkbox
-            ["Value"     : string,]  // para RadioButton, NumericUpDown, Combobox
-            "Type"      : string     // RadioButton/TextBox/Checkbox/NumericUpDown/Combobox
-         }
-    }
-
-
-
 save_parameters(parameterlist)
 
 

@@ -29,7 +29,7 @@ window.config.webservice = {
         "informes_get_actions"          : "dummy-webservice/informes/get_actions.json",
         "informes_generate_informe"     : "dummy-webservice/informes/generate_informe.json",
 
-        "maestro_articles_get_articles" : "dummy-webservice/maestro_articles/get_articles.json",
+        "maestro_articles_get_articles" : "dummy-webservice/maestro-articles/get_articles.json",
         "maestro_articles_save_articles": "dummy-webservice/empty.json",
 
         "enter_Lockings"                : "dummy-webservice/empty.json",

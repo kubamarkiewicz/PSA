@@ -5,79 +5,82 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 	/* mapa *********************************************************************************/
 
-	$scope.zoom = 1;
-	$scope.minZoom = 1;
-	$scope.maxZoom = 6;
+    $scope.zoom = 1;
 
-	var mapaElement = $('#mapa');
+    var mapaElement = $('#mapa');
 
-	var defaultFocal = {
-		'clientX': mapaElement.parent().width()/2, 
-		'clientY': mapaElement.parent().height()/2
-	}
+    var centerFocal = {
+        'clientX': mapaElement.parent().width()/2, 
+        'clientY': mapaElement.parent().height()/2
+    }
+    var defaultFocal = centerFocal;
+
+    var defaultZoomRate = 1.2;
 	
-	$scope.zoomIn = function(focal, animate) 
-	{
-		$scope.zoom = 1.2 * $scope.zoom;
-		if ($scope.zoom > $scope.maxZoom) {
-			$scope.zoom = $scope.maxZoom;
-		}
-		mapaElement.panzoom("zoom", $scope.zoom, {
-			'animate':animate === undefined ? true : animate, 
-			'focal': focal === undefined ? defaultFocal : focal
-		});
+    $scope.zoomIn = function(focal, animate, zoomRate) 
+    {
+        $scope.zoom = (zoomRate ? zoomRate : defaultZoomRate) * $scope.zoom;
+        if ($scope.zoom > config.map.max_zoom) {
+            $scope.zoom = config.map.max_zoom;
+        }
+        mapaElement.panzoom("zoom", $scope.zoom, {
+            'animate':animate === undefined ? true : animate, 
+            'focal': focal === undefined ? defaultFocal : focal
+        });
 
         // close popups
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
-	}
-	
-	$scope.zoomOut = function(focal, animate) 
-	{
-		$scope.zoom = 1 / 1.2 * $scope.zoom;
-		if ($scope.zoom < $scope.minZoom) {
-			$scope.zoom = $scope.minZoom;
-		}
-		mapaElement.panzoom("zoom", $scope.zoom, {
-			'animate':animate === undefined ? true : animate, 
-			'focal': focal === undefined ? defaultFocal : focal
-		});
+    }
+    
+    $scope.zoomOut = function(focal, animate, zoomRate) 
+    {
+        if (focal) {
+            defaultFocal = focal;
+        }
+        $scope.zoom = 1 / (zoomRate ? zoomRate : defaultZoomRate) * $scope.zoom;
+        if ($scope.zoom < config.map.min_zoom) {
+            $scope.zoom = config.map.min_zoom;
+        }
+        mapaElement.panzoom("zoom", $scope.zoom, {
+            'animate':animate === undefined ? true : animate, 
+            'focal': focal === undefined ? defaultFocal : focal
+        });
 
         // close popups
         $('body.page-visualizador-del-proceso .popup').removeClass('open');
-	}
+    }
 
-	var $panzoom = mapaElement.panzoom({
+    var $panzoom = mapaElement.panzoom({
         contain: 'invert'
-	});
+    });
 
-	// scroll to zoom
-	$panzoom.parent().on('mousewheel.focal', function( e ) {
+    // scroll to zoom
+    $panzoom.parent().on('mousewheel.focal', function( e ) {
         e.preventDefault();
         var delta = e.delta || e.originalEvent.wheelDelta;
         var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
         if (zoomOut) {
-        	$scope.zoomOut(e, false);
+            $scope.zoomOut(e, false, 1.1);
         }
         else {
-        	$scope.zoomIn(e, false);
+            $scope.zoomIn(e, false, 1.1);
         }
     });
 
     // double click to zoom in
     mapaElement.dblclick(function(e) {
-    	$scope.zoomIn(e, true);
-    	$scope.zoomIn(e, true);
-	});
+        $scope.zoomIn(e, true, 1.44);
+    });
 
     // on map click
-    $scope.mapClick = function(event) 
-    {
+    $("#mapa").on('click touchend', function(event) {
         // close popups
         // $('body.page-visualizador-del-proceso .popup').removeClass('open');
         $scope.deselectAllObjects();
 
-        console.log($scope.pxToMetersX(event.offsetX) + ' : ' + $scope.pxToMetersY(event.offsetY));
-    }
+        // console.log($scope.pxToMetersX(event.offsetY) + ' : ' + $scope.pxToMetersY(event.offsetX));
+        console.log($scope.pxToPercentsX(event.offsetX) + ' : ' + $scope.pxToPercentsY(event.offsetY));
+    });
 
     var mainPos = $('body.page-visualizador-del-proceso > main').offset();
 

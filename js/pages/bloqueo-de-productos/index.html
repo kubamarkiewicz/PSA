@@ -18,17 +18,17 @@
 			
 			<h2>Selecciona los productos a {{action == 'block' ? 'bloquear' : 'desbloquear'}}</h2>
 
-			<form ng-submit="addProductToSelection()">
+			<form name="productForm" ng-submit="addProductToSelection()">
 				<p>
 					<!-- <label>Por teclado</label> -->
 					<md-input-container md-no-float>
-				        <input type="text" name="passage" ng-model="passage" placeholder="Pasillo">
+				        <input type="text" name="passage" ng-model="passage" placeholder="Pasillo" required maxlength="2">
 				    </md-input-container>
 					<md-input-container md-no-float>
-				        <input type="text" name="position" ng-model="position" placeholder="Posición">
+				        <input type="text" name="position" ng-model="position" placeholder="Posición" required maxlength="2">
 				    </md-input-container>
 					<md-input-container md-no-float>
-				        <input type="text" name="height" ng-model="height" placeholder="Altura">
+				        <input type="text" name="height" ng-model="height" placeholder="Altura" required maxlength="1">
 				    </md-input-container>
 				    <md-button type="submit" class="block-product"></md-button>
 				</p>

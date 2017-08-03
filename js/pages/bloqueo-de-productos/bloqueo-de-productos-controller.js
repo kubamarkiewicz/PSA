@@ -45,6 +45,10 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         $scope.selectedProducts.push(product);
         $scope.passage = $scope.position = $scope.height = '';
         $('input[name=passage]').focus();
+    
+        // reset form and disable error messages
+        $scope.productForm.$setPristine();
+        $scope.productForm.$setUntouched();
     }
 
     $scope.selectProduct = function(productId)

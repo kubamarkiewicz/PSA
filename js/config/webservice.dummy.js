@@ -26,14 +26,19 @@ window.config.webservice = {
         "get_parameters"                : "dummy-webservice/get_parameters.json",
         "save_parameters"               : "dummy-webservice/save_parameters.json",
 
+        "informes_get_actions"          : "dummy-webservice/informes_get_actions.json",
+        "informes_generate_informe"     : "dummy-webservice/informes_generate_informe.json",
+
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",
         "enter_Parameters"              : "dummy-webservice/empty.json",
         "enter_Login"                   : "dummy-webservice/empty.json",
+        "enter_Informes"                : "dummy-webservice/empty.json",
 
         "exit_Lockings"                 : "dummy-webservice/empty.json",
         "exit_Process"                  : "dummy-webservice/empty.json",
         "exit_Parameters"               : "dummy-webservice/empty.json",
+        "exit_Informes"                 : "dummy-webservice/empty.json"
 
     }
 

@@ -31,6 +31,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/configuracion-de-parametros', { 
             controller: 'ConfiguracionDeParametrosController', 
             templateUrl: 'js/pages/configuracion-de-parametros/index.html' 
+        })  
+        .when('/informes', { 
+            controller: 'InformesController', 
+            templateUrl: 'js/pages/informes/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 

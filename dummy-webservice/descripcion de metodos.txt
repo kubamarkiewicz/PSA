@@ -14,7 +14,6 @@ get_semaphores()
 update_semaphore(id, state)
 get_transport_belts()
 update_transport_belt(id, state) 
-get_storage_positions()
 get_storage_position_niches(storage_position_id)
 get_alerts()
 
@@ -35,5 +34,14 @@ PANTALLA CONFIGURACIÓN DE PARÁMETROS
 
 get_parameters()
 save_parameters(parameterlist)
+
+
+
+
+
+PANTALLA INFORMES
+
+informes_get_actions()
+informes_generate_informe(action)
 
 

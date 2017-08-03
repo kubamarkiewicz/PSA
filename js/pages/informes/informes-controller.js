@@ -19,24 +19,24 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
     $scope.getActionsData();
 
 
-    // generate notification 
+    // generate informe 
 
     $scope.generateInforme = function()
     {
-        if (!$scope.notificationAction) {
+        if (!$scope.action) {
             return;
         }
 
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.manual_generate_notification,
+            url     : config.webservice.urls.informes_generate_informe,
             params  : {
-                "action" : $scope.notificationAction
+                "action" : $scope.action
             }
          })
         .then(function(response) {
-            $rootScope.toast.content(response.data.generate_notificationResult.Message);
-            if (response.data.generate_notificationResult.Result === true) {
+            $rootScope.toast.content(response.data.generate_informeResult.Message);
+            if (response.data.generate_informeResult.Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }
             else {
@@ -45,11 +45,11 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
             $mdToast.show($rootScope.toast);
 
             // reset fields
-            // $scope.actionsData = '';
+            $scope.actionsData = '';
 
             // reset form and disable error messages
-            $scope.notificationForm.$setPristine();
-            $scope.notificationForm.$setUntouched();
+            $scope.informeForm.$setPristine();
+            $scope.informeForm.$setUntouched();
         });
     }
 

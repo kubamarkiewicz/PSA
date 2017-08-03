@@ -26,14 +26,19 @@ window.config.webservice = {
         "get_parameters"                : "http://192.168.0.82:8888/SAS/Parameters/api/get_parameters",
         "save_parameters"               : "http://192.168.0.82:8888/SAS/Parameters/api/save_parameters",
 
+        "informes_get_actions"          : "dummy-webservice/informes_get_actions.json",
+        "informes_generate_informe"     : "dummy-webservice/informes_generate_informe.json",
+
         "enter_Lockings"                : "http://192.168.0.82:8888/SAS/Lockings/api/enter_Lockings",
         "enter_Process"                 : "http://192.168.0.82:8888/SAS/Process/api/enter_Process",
         "enter_Parameters"              : "http://192.168.0.82:8888/SAS/Parameters/api/enter_Parameters",
         "enter_Login"                   : "http://192.168.0.82:8888/SAS/Login/api/enter_Login",
+        "enter_Informes"                : "dummy-webservice/empty.json",
 
         "exit_Lockings"                 : "http://192.168.0.82:8888/SAS/Lockings/api/exit_Lockings",
         "exit_Process"                  : "http://192.168.0.82:8888/SAS/Process/api/exit_Process",
-        "exit_Parameters"               : "http://192.168.0.82:8888/SAS/Parameters/api/exit_Parameters",
+        "exit_Parameters"               : "http://192.168.0.82:8888/SAS/Parameters/api/exit_Parameters",,
+        "exit_Informes"                 : "dummy-webservice/empty.json"
 
     }
 

@@ -45,7 +45,7 @@
 			<div class="list" flex>
 				<div class="item" ng-repeat="item in selectedProducts track by $index">
 					<div class="remove" ng-click="removeFromSelection(item)"><md-tooltip md-direction="top">Borrar</md-tooltip></div>
-					{{ item }}
+					{{ formatID(item) }}
 				</div>
 			</div>
 
@@ -62,7 +62,7 @@
 		<div class="list" ng-show="action">
 			<div class="item" ng-repeat="item in blockedProductsData track by $index">
 				<div class="unblock" ng-click="selectProduct(item)" ng-show="action == 'unblock'"><md-tooltip md-direction="top">Desbloquear</md-tooltip></div>
-				{{ item }}
+				{{ formatID(item) }}
 			</div>
 		</div>
 	</section>

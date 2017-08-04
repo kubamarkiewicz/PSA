@@ -99,6 +99,11 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
         }
     }
 
+    
+    $scope.formatID = function(item)
+    {
+        return item.substring(2, 4) + ' ' + item.substring(4, 6) + ' ' + item.substring(7, 8);
+    }
 
 
 

@@ -30,7 +30,8 @@ window.config.webservice = {
         "informes_generate_informe"     : "dummy-webservice/informes_generate_informe.json",
 
         "maestro_articles_get_articles" : "dummy-webservice/maestro-articles/get_articles.json",
-        "maestro_articles_save_articles": "dummy-webservice/maestro-articles/save_articles.json",
+        "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",
+        "maestro_articles_delete_article" : "dummy-webservice/maestro-articles/delete_article.json",
 
         "enter_Lockings"                : "http://192.168.0.82:8888/SAS/Lockings/api/enter_Lockings",
         "enter_Process"                 : "http://192.168.0.82:8888/SAS/Process/api/enter_Process",

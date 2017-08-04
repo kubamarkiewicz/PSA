@@ -49,6 +49,7 @@ informes_generate_informe(action, ref)
 PANTALLA MAESTRO ARTICULOS
 
 get_articles()
-save_articles(articlelist)
+save_article(article)
+delete_article(ref)
 
 

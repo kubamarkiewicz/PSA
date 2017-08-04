@@ -40,16 +40,18 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     {
         $('button.update').attr("disabled", true).addClass('loading');
 
+        // delete $scope.selectedItem.$$hashKey;
+
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.maestro_articles_save_articles,
+            url     : config.webservice.urls.maestro_articles_save_article,
             params  : {
-                "articlelist" : JSON.stringify($scope.gridOptions.data)
+                "article" : JSON.stringify($scope.selectedItem)
             }
          })
         .then(function(response) {
-            $rootScope.toast.content(response.data["save_articlesResult"].Message);
-            if (response.data["save_articlesResult"].Result === true) {
+            $rootScope.toast.content(response.data["save_articleResult"].Message);
+            if (response.data["save_articleResult"].Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }
             else {
@@ -75,26 +77,16 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
 
         $('button.delete').attr("disabled", true).addClass('loading');
 
-        // find and remove item
-        for (index in $scope.gridOptions.data) {
-            if ($scope.selectedItem.$$hashKey == $scope.gridOptions.data[index].$$hashKey) {
-                $scope.gridOptions.data.splice(index, 1);
-                break;
-            }
-        }
-        // console.log();
-        // console.log($scope.selectedItem);
-
         $http({
             method  : 'GET',
-            url     : config.webservice.urls.maestro_articles_save_articles,
+            url     : config.webservice.urls.maestro_articles_delete_article,
             params  : {
-                "articlelist" : JSON.stringify($scope.gridOptions.data)
+                "ref" : $scope.selectedItem.Ref
             }
          })
         .then(function(response) {
-            $rootScope.toast.content(response.data["save_articlesResult"].Message);
-            if (response.data["save_articlesResult"].Result === true) {
+            $rootScope.toast.content(response.data["delete_articleResult"].Message);
+            if (response.data["delete_articleResult"].Result === true) {
                 $rootScope.toast.toastClass('toast-success');
             }
             else {
@@ -114,16 +106,11 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     
     $scope.addRow = function()
     {
-        $scope.gridOptions.data.push({});
+        $scope.selectedItem = {};
 
-        // select row
-        $interval( function() {
-            $scope.gridApi.selection.selectRow($scope.gridOptions.data[$scope.gridOptions.data.length - 1]);
-            setTimeout(function(){ 
-                $('input[name=ref]').focus();
-            }, 30);
-            
-        }, 0, 1);
+        setTimeout(function(){ 
+            $('input[name=ref]').focus();
+        }, 30);
         
     }
 

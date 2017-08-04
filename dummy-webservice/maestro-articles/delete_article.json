@@ -1,5 +1,5 @@
 {
-    "save_articlesResult" :
+    "delete_articleResult" :
     {
     	"Result": true,
     	"Message": "Se han actualizado los productos"

@@ -1,54 +1,54 @@
 
-/* Page modo-manual *******************************************************************************/
+/* Page informes *******************************************************************************/
 
 
-body.page-modo-manual > main {
+body.page-informes > main {
 	padding: 50px 25px 25px 25px;
 	text-align: center;
 }
-body.page-modo-manual > main .container {
+body.page-informes > main .container {
 	text-align: left;
 	max-width: 1050px;
 	margin: 0 auto;
 }
-body.page-modo-manual md-tab-content {
+body.page-informes md-tab-content {
 	padding: 25px !important;
 } 
-body.page-modo-manual > main h2 {
-	border-bottom: 8px solid #0475b1;
+body.page-informes > main h2 {
+	border-bottom: 4px solid #0475b1;
 	padding-bottom: 8px;
 	margin-bottom: 40px;
 }
-body.page-modo-manual > main p {
+body.page-informes > main p {
 }
-body.page-modo-manual > main p label {
+body.page-informes > main p label {
 	display: block;
 	font-size: 20px;
 	min-width: 143px;
 	vertical-align: middle;
 	margin-bottom: 4px;
 }
-body.page-modo-manual > main p md-input-container {
+body.page-informes > main p md-input-container {
 	padding-left: 0;
 }
-body.page-modo-manual > main p input,
-body.page-modo-manual > main p .md-select-value {
+body.page-informes > main p input,
+body.page-informes > main p .md-select-value {
 	width: 380px;
 	margin-right: 15px;
 }
-body.page-modo-manual > main button.execute-action {
+body.page-informes > main button.execute-action {
 	display: block;
 }
 
-body.page-modo-manual > main p .message md-progress-circular {
+body.page-informes > main p .message md-progress-circular {
 	display: none;
 }
-body.page-modo-manual > main p.loading .message md-progress-circular {
+body.page-informes > main p.loading .message md-progress-circular {
 	display: inline-block;
 	margin-right: 15px;
 }
 
-body.page-modo-manual > main p.product-id button.clear {
+body.page-informes > main p.product-id button.clear {
 	background-image: url(../../../images/remove.gif);
     background-repeat: no-repeat;
     background-position: center center;
@@ -57,18 +57,18 @@ body.page-modo-manual > main p.product-id button.clear {
 	margin: 0;
 }
 
-body.page-modo-manual > main form.fileForm p md-input-container {
+body.page-informes > main form.fileForm p md-input-container {
 	width: 100%;
 }
 
-body.page-modo-manual > main form.notificationForm {
+body.page-informes > main form.notificationForm {
 }
-body.page-modo-manual > main form.notificationForm p.action {
+body.page-informes > main form.notificationForm p.action {
 }
-body.page-modo-manual > main form.notificationForm p md-input-container {
+body.page-informes > main form.notificationForm p md-input-container {
 	width: 100%;
 }
-body.page-modo-manual > main form.notificationForm p .md-button.md-warn.md-raised {
+body.page-informes > main form.notificationForm p .md-button.md-warn.md-raised {
 	margin-top: 0;
 }
 
@@ -80,8 +80,8 @@ body.page-modo-manual > main form.notificationForm p .md-button.md-warn.md-raise
 @media screen and (max-width: 1450px) {
 
 	
-	body.page-modo-manual > main p label {
-	font-size: 16px;
+	body.page-informes > main p label {
+		font-size: 16px;
 	}
 
 }

@@ -31,7 +31,8 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
             method  : 'GET',
             url     : config.webservice.urls.informes_generate_informe,
             params  : {
-                "action" : $scope.action
+                "action" : $scope.action.Action,
+                "ref" : $scope.ref
             }
          })
         .then(function(response) {
@@ -45,7 +46,7 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
             $mdToast.show($rootScope.toast);
 
             // reset fields
-            $scope.actionsData = '';
+            $scope.ref = '';
 
             // reset form and disable error messages
             $scope.informeForm.$setPristine();

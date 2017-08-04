@@ -41,7 +41,7 @@ save_parameters(parameterlist)
 PANTALLA INFORMES
 
 informes_get_actions()
-informes_generate_informe(action)
+informes_generate_informe(action, ref)
 
 
 

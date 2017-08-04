@@ -3,7 +3,9 @@ var app = angular.module("myApp", [
     "ngRoute",
     "ngMaterial",
     'ArtisterilIntervalService',
-    'ArtisterilAuthService'
+    'ArtisterilAuthService',
+    'ui.grid',
+    'ui.grid.selection'
 ]);
 
 // load configuration from files

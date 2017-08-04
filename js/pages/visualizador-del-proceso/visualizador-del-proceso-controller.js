@@ -79,7 +79,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         $scope.deselectAllObjects();
 
         // console.log($scope.pxToMetersX(event.offsetY) + ' : ' + $scope.pxToMetersY(event.offsetX));
-        console.log($scope.pxToPercentsX(event.offsetX) + ' : ' + $scope.pxToPercentsY(event.offsetY));
+        // console.log($scope.pxToPercentsX(event.offsetX) + ' : ' + $scope.pxToPercentsY(event.offsetY));
     });
 
     var mainPos = $('body.page-visualizador-del-proceso > main').offset();
@@ -100,12 +100,12 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     $scope.metersToPxX = function(x)
     {
-        return (parseFloat(config.map.offset_x) + parseFloat(x)) * parseFloat(mapImg.width()) / parseFloat(config.map.width);
+        return (parseFloat(x) - parseFloat(config.map.offset_x)) * parseFloat(mapImg.width()) / parseFloat(config.map.width);
     }
     
     $scope.metersToPxY = function(y) 
     {
-        return (parseFloat(config.map.offset_y) + parseFloat(y)) * parseFloat(mapImg.height()) / parseFloat(config.map.height);
+        return parseFloat(mapImg.height()) - (parseFloat(y) - parseFloat(config.map.offset_y)) * parseFloat(mapImg.height()) / parseFloat(config.map.height);
     }
 
     $scope.pxToMetersX = function(x)
@@ -116,6 +116,11 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     $scope.pxToMetersY = function(y) 
     {
         return parseFloat(y) * parseFloat(config.map.height) / parseFloat(mapImg.height()) - parseFloat(config.map.offset_y);
+    }
+
+    $scope.calculateRotation = function(angle) 
+    {
+        return 270 - parseFloat(angle);
     }
 
 

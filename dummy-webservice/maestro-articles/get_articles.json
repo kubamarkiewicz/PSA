@@ -2,214 +2,24 @@
     "get_articlesResult" :
 	[
 		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
+			"Ref"	: "1",
+			"Pasillo"	: "abc",
+			"Alveolo"	: "23",
+			"PiezasPorPallet"	: "122",
+			"MinPiezas"	: "123",
+			"MinPallets"	: "23",
+			"MaxPiezas"	: "123",
+			"MaxPallets"	: "123"
 		},
 		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
-		},
-		{
-			"Field1"	: "123",
-			"Field2"	: "abc",
-			"Field3"	: "456",
-			"Field4"	: "efg"
+			"Ref"	: "2",
+			"Pasillo"	: "df sdf s",
+			"Alveolo"	: "234",
+			"PiezasPorPallet"	: "12",
+			"MinPiezas"	: "13",
+			"MinPallets"	: "123",
+			"MaxPiezas"	: "13",
+			"MaxPallets"	: "23"
 		}
 	]
 }

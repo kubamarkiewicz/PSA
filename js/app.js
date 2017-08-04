@@ -184,7 +184,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
 
 
     $rootScope.toast = $mdToast.simple()
-        .hideDelay(3000);
+        .hideDelay(10000);
         // .position('bottom left');
         // .parent($('body > main'));
 

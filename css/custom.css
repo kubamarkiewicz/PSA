@@ -605,27 +605,23 @@ table.scroll-table tbody tr {
 .row {
 	display: flex;
 }
-.col-6 {
-	flex: 1;
-}
-.col-6:nth-child(1) {
-	margin-right: 15px;
-}
-.col-6:nth-child(2) {
-	margin-left: 15px;
-}
+
+.row .column, 
+.col-6, 
 .col-4 {
 	flex: 1;
-}
-.col-4:nth-child(1) {
-	margin-right: 15px;
-}
-.col-4:nth-child(2) {
 	margin-right: 15px;
 	margin-left: 15px;
 }
-.col-4:nth-child(3) {
-	margin-left: 15px;
+.row .column:first-child, 
+.col-6:first-child, 
+.col-4:first-child{
+	margin-left: 0;
+}
+.row .column:last-child, 
+.col-6:last-child, 
+.col-4:last-child {
+	margin-right: 0;
 }
 
 

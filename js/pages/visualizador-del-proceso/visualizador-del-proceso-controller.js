@@ -124,6 +124,21 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     }
 
 
+    $scope.calculateStorageX = function(x)
+    {
+        if (x) {
+            return (parseFloat(config.map.storage_offset_x) + parseFloat(x)) * parseFloat(mapImg.width()) / parseFloat(config.map.storage_scale_x);
+        }
+    }
+    
+    $scope.calculateStorageY = function(y) 
+    {
+        if (y) {
+            return (parseFloat(config.map.storage_offset_y) + parseFloat(y)) * parseFloat(mapImg.width()) / parseFloat(config.map.storage_scale_y);
+        }
+    }
+
+
 
     /* AGVs *********************************************************************************/
 
@@ -260,8 +275,11 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 	/* Storage Positions *********************************************************************************/
 
+    $scope.storagePositionsData =  [];
+
     $scope.loadStoragePositionsData = function()
     {
+        console.log('loadStoragePositionsData');
         $http({
             method  : 'GET',
             url     : config.webservice.urls.get_storage_positions
@@ -285,20 +303,20 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
     
 
-    $scope.openPositionPopup = function(event, position) 
+    $scope.openPositionPopup = function(event, id) 
     {
         event.stopPropagation();
         $scope.deselectAllObjects();
         var target = $(event.target);
         target.addClass('selected');
 
-    	$scope.selectedPosition = position;
+    	$scope.selectedPosition = $scope.storagePositionsData[id];
     	var popup = $('body.page-visualizador-del-proceso #position-popup');
         popup.addClass('open')
     		.css('left', target.offset().left + event.target.getBoundingClientRect().width + 'px')
     		.css('top', (target.offset().top - mainPos.top) + 'px');
 
-        $scope.loadStoragePositionNichesData(position.id);
+        $scope.loadStoragePositionNichesData(id);
     }
 
 

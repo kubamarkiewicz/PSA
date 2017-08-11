@@ -97,11 +97,11 @@
 
 		<!-- storage positions -->
 		<div 
-			ng-repeat="position in storagePositionsData"  
-			id="position-{{ position.id }}"
+			ng-repeat="(id, coordinates) in storagePositionsCoordinates"  
+			id="position-{{ id }}"
 			class="position" 
-			style="transform: translate({{ metersToPxX(storagePositionsCoordinates[position.id].x) }}px, {{ metersToPxY(storagePositionsCoordinates[position.id].y) }}px)"
-			ng-click="openPositionPopup($event, position)">
+			style="transform: translate({{ calculateStorageX(coordinates.x) }}px, {{ calculateStorageY(coordinates.y) }}px)"
+			ng-click="openPositionPopup($event, id)">
 		</div>
 
 		<!-- map images -->

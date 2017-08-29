@@ -9,14 +9,18 @@
 
     <!-- Le styles -->
     <link href="js/libraries/angular-material/angular-material.min.css" rel="stylesheet">
+    <link href="js/libraries/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+
+    <!-- Pages -->
     <link href="js/pages/login/login.css" rel="stylesheet">
     <link href="js/pages/visualizador-del-proceso/visualizador-del-proceso.css" rel="stylesheet">
     <link href="js/pages/bloqueo-de-productos/bloqueo-de-productos.css" rel="stylesheet">
     <link href="js/pages/configuracion-de-parametros/configuracion-de-parametros.css" rel="stylesheet">
     <link href="js/pages/informes/informes.css" rel="stylesheet">
     <link href="js/pages/maestro-articulos/maestro-articulos.css" rel="stylesheet">
-    <link href="js/libraries/angular-ui-grid/ui-grid.min.css" rel="stylesheet">
+    <link href="js/pages/ordenes-en-curso/ordenes-en-curso.css" rel="stylesheet">
+    <link href="js/pages/ordenes-completadas/ordenes-completadas.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -48,6 +52,12 @@
                 </md-menu-item>
                 <md-menu-item ng-hide="!user_permissions['maestro-articulos']">
                     <md-button ng-href="#maestro-articulos" md-colors="{background: 'blue'}">Maestro artículos</md-button>
+                </md-menu-item>
+                <md-menu-item ng-hide="!user_permissions['ordenes-en-curso']">
+                    <md-button ng-href="#ordenes-en-curso" md-colors="{background: 'blue'}">ÓRDENES EN CURSO</md-button>
+                </md-menu-item>
+                <md-menu-item ng-hide="!user_permissions['ordenes-completadas']">
+                    <md-button ng-href="#ordenes-completadas" md-colors="{background: 'blue'}">ÓRDENES COMPLETADAS</md-button>
                 </md-menu-item>
                 <md-menu-item>
                     <md-button ng-click="logout()" md-colors="{background: 'blue'}">Salir</md-button>
@@ -99,6 +109,8 @@
     <script src="js/pages/configuracion-de-parametros/configuracion-de-parametros-controller.js"></script>
     <script src="js/pages/informes/informes-controller.js"></script>
     <script src="js/pages/maestro-articulos/maestro-articulos-controller.js"></script>
+    <script src="js/pages/ordenes-en-curso/ordenes-en-curso-controller.js"></script>
+    <script src="js/pages/ordenes-completadas/ordenes-completadas-controller.js"></script>
 
     <!-- Services -->
     <script src="js/services/artisteril-auth-service.js"></script>

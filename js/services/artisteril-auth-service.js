@@ -29,6 +29,8 @@ var ArtisterilAuthService = angular.module('ArtisterilAuthService', [])
             $rootScope.user_permissions['modo-manual'] = response.data.user_has_accessResult['Modo_manual'];
             $rootScope.user_permissions['informes'] = response.data.user_has_accessResult['Informes'];
             $rootScope.user_permissions['maestro-articulos'] = response.data.user_has_accessResult['Maestro_articulos'];
+            $rootScope.user_permissions['ordenes-en-curso'] = response.data.user_has_accessResult['Ordenes_en_curso'];
+            $rootScope.user_permissions['ordenes-completadas'] = response.data.user_has_accessResult['Ordenes_completadas'];
         });
     };
 

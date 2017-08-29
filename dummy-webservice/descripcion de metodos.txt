@@ -1,55 +1,57 @@
 
-
 LOGIN DE USUARIOS
  
-user_login (user, password)
-user_has_access (user)
-
+	user_login (user, password)
+	user_has_access (user)
 
 
 PANTALLA VISUALIZADOR DEL PROCESO
 
-get_agvs()
-get_semaphores()
-update_semaphore(id, state)
-get_transport_belts()
-update_transport_belt(id, state) 
-get_storage_position_niches(storage_position_id)
-get_alerts()
-
-
+	get_agvs()
+	get_semaphores()
+	update_semaphore(id, state)
+	get_transport_belts()
+	update_transport_belt(id, state) 
+	get_storage_position_niches(storage_position_id)
+	get_alerts()
 
 
 PANTALLA DE BLOQUEO DE PRODUCTOS
 
-get_blocked_products() 
-block_products(productlist)
-    parameters: productlist // array of strings  en formato R.LLDD.H 
-unblock_products(productlist)
-    parameters: productlist // array of strings  en formato R.LLDD.H
-
+	get_blocked_products() 
+	block_products(productlist)
+	    parameters: productlist // array of strings  en formato R.LLDD.H 
+	unblock_products(productlist)
+	    parameters: productlist // array of strings  en formato R.LLDD.H
 
 
 PANTALLA CONFIGURACIÓN DE PARÁMETROS
 
-get_parameters()
-save_parameters(parameterlist)
-
-
+	get_parameters()
+	save_parameters(parameterlist)
 
 
 PANTALLA INFORMES
 
-informes_get_actions()
-informes_generate_informe(action, ref)
-
-
+	informes_get_actions()
+	informes_generate_informe(action, ref)
 
 
 PANTALLA MAESTRO ARTICULOS
 
-get_articles()
-save_article(article)
-delete_article(ref)
+	get_articles()
+	save_article(article)
+	delete_article(ref)
+
+
+ÓRDENES EN CURSO
+
+	get_orders()
+	delete_order(ref)
+
+
+ÓRDENES COMPLETADAS
+
+	get_orders()
 
 

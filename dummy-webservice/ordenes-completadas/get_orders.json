@@ -1,0 +1,26 @@
+
+{
+    "get_ordersResult" :
+	[
+		{
+			"Ref"				: "1",
+			"FechaGeneracion"	: "08/29/2017",
+			"HoraGeneracion"	: "10:15h",
+			"CodigoArticulo"	: "9681268889",
+			"Origen"			: "ST4001",
+			"Destino"			: "R.0302.6",
+			"AsignadoA"			: "",
+			"Estado"			: "PENDIENTE"
+		},
+		{
+			"Ref"				: "2",
+			"FechaGeneracion"	: "09/29/2017",
+			"HoraGeneracion"	: "10:15h",
+			"CodigoArticulo"	: "9681268888",
+			"Origen"			: "ST4002",
+			"Destino"			: "R.0302.7",
+			"AsignadoA"			: "AGV 2",
+			"Estado"			: "PICKED"
+		}
+	]
+}

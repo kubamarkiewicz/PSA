@@ -33,6 +33,11 @@ window.config.webservice = {
         "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",
         "maestro_articles_delete_article" : "dummy-webservice/maestro-articles/delete_article.json",
 
+        "ordenes_en_curso_get_orders"   : "dummy-webservice/ordenes-en-curso/get_orders.json",
+        "ordenes_en_curso_delete_order" : "dummy-webservice/ordenes-en-curso/delete_order.json",
+
+        "ordenes_completadas_get_orders"   : "dummy-webservice/ordenes-completadas/get_orders.json",
+
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",
         "enter_Parameters"              : "dummy-webservice/empty.json",

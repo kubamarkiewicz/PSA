@@ -255,6 +255,16 @@ color: inherit !important; }
 
 
 
+.ui-grid-header-cell {
+	background-color: #4b4b4b !important;
+	color: #ffffff;
+}
+.ui-grid-row.ui-grid-row-selected>[ui-grid-row]>.ui-grid-cell {
+	background-color: #0276af !important;
+	color: #ffffff;
+	
+}
+
 
 /***************************************************************************************************/
 /* Layout Divs                                                                                     */

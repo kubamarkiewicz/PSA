@@ -42,6 +42,14 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'MaestroArticulosController', 
             templateUrl: 'js/pages/maestro-articulos/index.html' 
         })   
+        .when('/ordenes-en-curso', { 
+            controller: 'OrdenesEnCursoController', 
+            templateUrl: 'js/pages/ordenes-en-curso/index.html' 
+        })   
+        .when('/ordenes-completadas', { 
+            controller: 'OrdenesCompletadasController', 
+            templateUrl: 'js/pages/ordenes-completadas/index.html' 
+        })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 
         }); 

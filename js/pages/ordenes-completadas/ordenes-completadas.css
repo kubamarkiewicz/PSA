@@ -1,0 +1,36 @@
+
+
+/* Page page-ordenes-completadas *******************************************************************************/
+
+
+body.page-ordenes-completadas .myGrid {
+	height: calc(100% - 45px);
+	font-size: 14px;
+}
+
+body.page-ordenes-completadas > main p {
+}
+body.page-ordenes-completadas > main p label {
+	display: block;
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+body.page-ordenes-completadas > main p md-input-container {
+	padding-left: 0;
+	width: 100%;
+}
+body.page-ordenes-completadas > main p input{
+	width: 100%;
+}
+
+
+/* mobile */
+@media screen and (max-width: 1900px) {
+
+	
+	body.page-ordenes-completadas > main p label {
+		font-size: 16px;
+	}
+	
+
+}

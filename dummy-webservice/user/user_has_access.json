@@ -1,10 +1,12 @@
 {
 	"user_has_accessResult" : 
 	{
-	    "Visualizador_del_proceso" : true,
-	    "Configuracion_de_parametros" : true,
-	    "Bloqueos" : true,
-	    "Informes" : true,
-	    "Maestro_articulos" : true
+	    "Visualizador_del_proceso" 		: true,
+	    "Configuracion_de_parametros" 	: true,
+	    "Bloqueos" 						: true,
+	    "Informes" 						: true,
+	    "Maestro_articulos" 			: true,
+	    "Ordenes_en_curso" 				: true,
+	    "Ordenes_completadas" 			: true
 	}
 }

@@ -38,8 +38,8 @@ window.config.webservice = {
 
         "ordenes_completadas_get_orders"   : "http://192.168.8.102:8888/PSA/CompletedOrders/api/get_orders",
 
-        "logs_get_log_cameras"          : "",
-        "logs_get_log_production"       : "",
+        "logs_get_log_cameras"          : "dummy-webservice/logs/get_log_cameras.json",
+        "logs_get_log_production"       : "dummy-webservice/logs/get_log_production.json",
 
         "enter_Lockings"                : "http://192.168.8.102:8888/PSA/Lockings/api/enter_Lockings",
         "enter_Process"                 : "http://192.168.8.102:8888/PSA/Process/api/enter_Process",

@@ -55,3 +55,7 @@ PANTALLA MAESTRO ARTICULOS
 	get_orders()
 
 
+LOGS
+
+	get_log_cameras()
+	get_log_production()

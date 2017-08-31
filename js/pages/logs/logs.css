@@ -1,0 +1,32 @@
+
+
+/* Page page-logs *******************************************************************************/
+
+
+
+
+body.page-logs > main {
+	padding: 25px 25px 25px 25px;
+	text-align: center;
+}
+body.page-logs > main .container {
+	text-align: left;
+	max-width: 1050px;
+	margin: 0 auto;
+}
+body.page-logs md-tab-content {
+	padding: 25px !important;
+} 
+body.page-logs md-input-container textarea {
+	line-height: 150%;
+	height: calc(100vh - 275px) !important;
+	overflow: auto;
+	font-family: monospace;
+} 
+
+
+/* mobile */
+@media screen and (max-width: 1900px) {
+
+
+}

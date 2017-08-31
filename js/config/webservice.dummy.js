@@ -38,16 +38,27 @@ window.config.webservice = {
 
         "ordenes_completadas_get_orders"   : "dummy-webservice/ordenes-completadas/get_orders.json",
 
+        "logs_get_log_cameras"          : "dummy-webservice/logs/get_log_cameras.json",
+        "logs_get_log_production"       : "dummy-webservice/logs/get_log_production.json",
+
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",
         "enter_Parameters"              : "dummy-webservice/empty.json",
         "enter_Login"                   : "dummy-webservice/empty.json",
         "enter_Informes"                : "dummy-webservice/empty.json",
+        "enter_MeastroArticulos"        : "dummy-webservice/empty.json",
+        "enter_CurrentOrders"           : "dummy-webservice/empty.json",
+        "enter_CompletedOrders"         : "dummy-webservice/empty.json",
+        "enter_Logs"                    : "dummy-webservice/empty.json",
 
         "exit_Lockings"                 : "dummy-webservice/empty.json",
         "exit_Process"                  : "dummy-webservice/empty.json",
         "exit_Parameters"               : "dummy-webservice/empty.json",
-        "exit_Informes"                 : "dummy-webservice/empty.json"
+        "exit_Informes"                 : "dummy-webservice/empty.json",
+        "exit_MeastroArticulos"         : "dummy-webservice/empty.json",
+        "exit_CurrentOrders"            : "dummy-webservice/empty.json",
+        "exit_CompletedOrders"          : "dummy-webservice/empty.json",
+        "exit_Logs"                     : "dummy-webservice/empty.json"
 
     }
 

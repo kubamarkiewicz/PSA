@@ -49,6 +49,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/ordenes-completadas', { 
             controller: 'OrdenesCompletadasController', 
             templateUrl: 'js/pages/ordenes-completadas/index.html' 
+        })    
+        .when('/logs', { 
+            controller: 'LogsController', 
+            templateUrl: 'js/pages/logs/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 

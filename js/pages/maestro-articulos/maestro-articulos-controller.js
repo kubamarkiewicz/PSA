@@ -46,7 +46,14 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             method  : 'GET',
             url     : config.webservice.urls.maestro_articles_save_article,
             params  : {
-                "article" : JSON.stringify($scope.selectedItem)
+                "Ref"               : $scope.selectedItem.Ref,
+                "Pasillo"           : $scope.selectedItem.Pasillo,
+                "Alveolo"           : $scope.selectedItem.Alveolo,
+                "PiezasPorPallet"   : $scope.selectedItem.PiezasPorPallet,
+                "MinPiezas"         : $scope.selectedItem.MinPiezas,
+                "MinPallets"        : $scope.selectedItem.MinPallets,
+                "MaxPiezas"         : $scope.selectedItem.MaxPiezas,
+                "MaxPallets"        : $scope.selectedItem.MaxPallets
             }
          })
         .then(function(response) {
@@ -81,7 +88,7 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             method  : 'GET',
             url     : config.webservice.urls.maestro_articles_delete_article,
             params  : {
-                "ref" : $scope.selectedItem.Ref
+                "Ref" : $scope.selectedItem.Ref
             }
          })
         .then(function(response) {

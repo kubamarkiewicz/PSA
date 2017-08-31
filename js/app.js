@@ -53,6 +53,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/logs', { 
             controller: 'LogsController', 
             templateUrl: 'js/pages/logs/index.html' 
+        })    
+        .when('/ubications', { 
+            controller: 'UbicationsController', 
+            templateUrl: 'js/pages/ubications/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 

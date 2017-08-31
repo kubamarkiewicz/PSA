@@ -36,10 +36,14 @@ window.config.webservice = {
         "ordenes_en_curso_get_orders"   : "dummy-webservice/ordenes-en-curso/get_orders.json",
         "ordenes_en_curso_delete_order" : "dummy-webservice/ordenes-en-curso/delete_order.json",
 
-        "ordenes_completadas_get_orders"   : "dummy-webservice/ordenes-completadas/get_orders.json",
+        "ordenes_completadas_get_orders": "dummy-webservice/ordenes-completadas/get_orders.json",
 
         "logs_get_log_cameras"          : "dummy-webservice/logs/get_log_cameras.json",
         "logs_get_log_production"       : "dummy-webservice/logs/get_log_production.json",
+
+        "ubications_get_ubications"     : "dummy-webservice/ubications/get_ubications.json",
+        "ubications_save_ubication"     : "dummy-webservice/ubications/save_ubication.json",
+        "ubications_delete_ubication"   : "dummy-webservice/ubications/delete_ubication.json",
 
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",

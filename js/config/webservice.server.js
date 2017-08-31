@@ -41,6 +41,10 @@ window.config.webservice = {
         "logs_get_log_cameras"          : "http://192.168.8.102:8888/PSA/Logs/api/get_log_cameras",
         "logs_get_log_production"       : "http://192.168.8.102:8888/PSA/Logs/api/get_log_production",
 
+        "ubications_get_ubications"     : "dummy-webservice/ubications/get_ubications.json",
+        "ubications_save_ubication"     : "dummy-webservice/ubications/save_ubication.json",
+        "ubications_delete_ubication"   : "dummy-webservice/ubications/delete_ubication.json",
+
         "enter_Lockings"                : "http://192.168.8.102:8888/PSA/Lockings/api/enter_Lockings",
         "enter_Process"                 : "http://192.168.8.102:8888/PSA/Process/api/enter_Process",
         "enter_Parameters"              : "http://192.168.8.102:8888/PSA/Parameters/api/enter_Parameters",
@@ -50,6 +54,7 @@ window.config.webservice = {
         "enter_CurrentOrders"           : "http://192.168.8.102:8888/PSA/OrdenesPendientes/api/enter_currentOrders",
         "enter_CompletedOrders"         : "http://192.168.8.102:8888/PSA/OrdenesCompletadas/api/enter_completedOrders",
         "enter_Logs"                    : "http://192.168.8.102:8888/PSA/Logs/api/enter_Logs",
+        "enter_Ubications"              : "http://192.168.8.102:8888/PSA/Logs/api/enter_Ubications",
 
         "exit_Lockings"                 : "http://192.168.8.102:8888/PSA/Lockings/api/exit_Lockings",
         "exit_Process"                  : "http://192.168.8.102:8888/PSA/Process/api/exit_Process",
@@ -58,7 +63,8 @@ window.config.webservice = {
         "exit_MeastroArticulos"         : "http://192.168.8.102:8888/PSA/MasterData/api/exit_MasterData",
         "exit_CurrentOrders"            : "http://192.168.8.102:8888/PSA/OrdenesPendientes/api/exit_currentOrders",
         "exit_CompletedOrders"          : "http://192.168.8.102:8888/PSA/OrdenesCompletadas/api/exit_completedOrders",
-        "exit_Logs"                     : "http://192.168.8.102:8888/PSA/Logs/api/exit_Logs"
+        "exit_Logs"                     : "http://192.168.8.102:8888/PSA/Logs/api/exit_Logs",
+        "exit_Ubications"               : "http://192.168.8.102:8888/PSA/Logs/api/exit_Ubications"
 
     }
 

@@ -1,0 +1,17 @@
+{
+    "get_ubicationsResult" :
+	[
+		{
+			"Pasillo"	: "1",
+			"Alveolo"	: "23",
+			"Altura"	: "5",
+			"Producto"	: "123"
+		},
+		{
+			"Pasillo"	: "3",
+			"Alveolo"	: "23",
+			"Altura"	: "4",
+			"Producto"	: "645645654"
+		}
+	]
+}

@@ -59,3 +59,11 @@ LOGS
 
 	get_log_cameras()
 	get_log_production()
+
+
+
+PANTALLA UBICACIONES
+
+	get_ubications()
+	save_ubication(Pasillo, Alveolo, Altura, Producto)
+	delete_ubication(Pasillo, Alveolo, Altura)

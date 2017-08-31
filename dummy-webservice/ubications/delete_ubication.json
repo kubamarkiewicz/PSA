@@ -1,0 +1,7 @@
+{
+    "delete_ubicationResult" :
+    {
+    	"Result": true,
+    	"Message": "Se han actualizado los productos"
+    }
+}

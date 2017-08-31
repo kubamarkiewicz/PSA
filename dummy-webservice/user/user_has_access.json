@@ -8,6 +8,7 @@
 	    "Maestro_articulos" 			: true,
 	    "Ordenes_en_curso" 				: true,
 	    "Ordenes_completadas" 			: true,
-	    "Logs" 							: true
+	    "Logs" 							: true,
+	    "Ubications" 					: true
 	}
 }

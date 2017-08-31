@@ -1,0 +1,36 @@
+
+
+/* Page page-ubications *******************************************************************************/
+
+
+body.page-ubications .myGrid {
+	height: calc(100% - 200px);
+	font-size: 14px;
+}
+
+body.page-ubications > main p {
+}
+body.page-ubications > main p label {
+	display: block;
+	font-size: 20px;
+	margin-bottom: 4px;
+}
+body.page-ubications > main p md-input-container {
+	padding-left: 0;
+	width: 100%;
+}
+body.page-ubications > main p input{
+	width: 100%;
+}
+
+
+/* mobile */
+@media screen and (max-width: 1900px) {
+
+	
+	body.page-ubications > main p label {
+		font-size: 16px;
+	}
+	
+
+}

@@ -128,30 +128,32 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
         // page title
         $rootScope.pageTitle = selectedItem.text();
 
-        // call enter exit web service methods
+        // call enter/exit web service methods
         // console.log(prev.originalPath);
         if (prev && prev.originalPath) {
             switch(prev.originalPath.substring(1)) {
                 case "": break;
                 case "visualizador-del-proceso"     : $http.get(config.webservice.urls.exit_Process); break;
-                case "datos-del-sga"                : $http.get(config.webservice.urls.exit_Data); break;
+                case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
                 case "bloqueo-de-productos"         : $http.get(config.webservice.urls.exit_Lockings); break;
-                case "recepcion-de-productos"       : $http.get(config.webservice.urls.exit_Reception); break;
-                case "modo-manual"                  : $http.get(config.webservice.urls.exit_Manual); break;
-                case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
-                case "configuracion-de-parametros"  : $http.get(config.webservice.urls.exit_Parameters); break;
+                case "informes"                     : $http.get(config.webservice.urls.exit_Informes); break;
+                case "maestro-articulos"            : $http.get(config.webservice.urls.exit_MeastroArticulos); break;
+                case "ordenes-en-curso"             : $http.get(config.webservice.urls.exit_CurrentOrders); break;
+                case "ordenes-completadas"          : $http.get(config.webservice.urls.exit_CompletedOrders); break;
+                case "logs"                         : $http.get(config.webservice.urls.exit_Logs); break;
             }
         }
         switch($rootScope.pageSlug) {
             case "": break;
+            case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
             case "visualizador-del-proceso"     : $http.get(config.webservice.urls.enter_Process); break;
-            case "datos-del-sga"                : $http.get(config.webservice.urls.enter_Data); break;
-            case "bloqueo-de-productos"         : $http.get(config.webservice.urls.enter_Lockings); break;
-            case "recepcion-de-productos"       : $http.get(config.webservice.urls.enter_Reception); break;
-            case "modo-manual"                  : $http.get(config.webservice.urls.enter_Manual); break;
             case "configuracion-de-parametros"  : $http.get(config.webservice.urls.enter_Parameters); break;
-            case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
-            case "login"                        : $http.get(config.webservice.urls.enter_Login); break;
+            case "bloqueo-de-productos"         : $http.get(config.webservice.urls.enter_Lockings); break;
+            case "informes"                     : $http.get(config.webservice.urls.enter_Informes); break;
+            case "maestro-articulos"            : $http.get(config.webservice.urls.enter_MeastroArticulos); break;
+            case "ordenes-en-curso"             : $http.get(config.webservice.urls.enter_CurrentOrders); break;
+            case "ordenes-completadas"          : $http.get(config.webservice.urls.enter_CompletedOrders); break;
+            case "logs"                         : $http.get(config.webservice.urls.enter_Logs); break;
         }
         
     });

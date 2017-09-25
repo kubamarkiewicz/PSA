@@ -2,12 +2,14 @@
     "get_ubicationsResult" :
 	[
 		{
+			"Id"		: "1",
 			"Pasillo"	: "1",
 			"Alveolo"	: "23",
 			"Altura"	: "5",
 			"Producto"	: "123"
 		},
 		{
+			"Id"		: "2",
 			"Pasillo"	: "3",
 			"Alveolo"	: "23",
 			"Altura"	: "4",

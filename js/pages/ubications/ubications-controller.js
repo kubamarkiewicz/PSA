@@ -46,6 +46,7 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
             method  : 'GET',
             url     : config.webservice.urls.ubications_save_ubication,
             params  : {
+                "Id"                : $scope.selectedItem.Id,
                 "Pasillo"           : $scope.selectedItem.Pasillo,
                 "Alveolo"           : $scope.selectedItem.Alveolo,
                 "Altura"            : $scope.selectedItem.Altura,
@@ -84,9 +85,7 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
             method  : 'GET',
             url     : config.webservice.urls.ubications_delete_ubication,
             params  : {                
-                "Pasillo"           : $scope.selectedItem.Pasillo,
-                "Alveolo"           : $scope.selectedItem.Alveolo,
-                "Altura"            : $scope.selectedItem.Altura
+                "Id"    : $scope.selectedItem.Id
             }
          })
         .then(function(response) {
@@ -111,7 +110,7 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
     
     $scope.addRow = function()
     {
-        $scope.selectedItem = {};
+        $scope.selectedItem = {"Id":"0"};
 
         setTimeout(function(){ 
             $('input[name=ref]').focus();

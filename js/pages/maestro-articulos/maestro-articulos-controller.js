@@ -20,6 +20,9 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
                 $scope.articleForm.$setPristine();
                 $scope.articleForm.$setUntouched();
             }
+            else {
+                $scope.selectedItem.New = false;
+            }
         });
     };
 
@@ -113,7 +116,7 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     
     $scope.addRow = function()
     {
-        $scope.selectedItem = {};
+        $scope.selectedItem = {"New":true};
 
         setTimeout(function(){ 
             $('input[name=ref]').focus();

@@ -4,6 +4,12 @@
 
     <div ui-grid="gridOptions" ui-grid-selection class="myGrid"></div>
 
+	<p>
+		<md-button class="md-raised md-primary add" ng-click="addRow()" ng-disabled="selectedItem.New">Añadir <md-progress-circular></md-progress-circular></md-button>
+		&nbsp;
+		<md-button class="md-raised md-warn delete" ng-disabled="!selectedItem || selectedItem.New" ng-click="deleteRow()">Suprimir <md-progress-circular></md-progress-circular></md-button>
+	</p>
+
     <form name="articleForm" ng-submit="updateRow()">
 
 		<div class="row">
@@ -13,7 +19,7 @@
 				<p>
 			    	<label>Ref</label>
 			    	<md-input-container md-no-float>
-				        <input type="text" name="ref" ng-model="selectedItem.Ref" ng-disabled="!selectedItem" required>
+				        <input type="text" name="ref" ng-model="selectedItem.Ref" ng-disabled="!selectedItem || !selectedItem.New" required>
 				    </md-input-container>
 				</p>
 				
@@ -81,6 +87,12 @@
 			</div><!-- /.column -->
 					
 			<div class="column">
+
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
 				
 				<p>
 			    	<md-button type="submit" class="md-raised md-primary btn-block update" ng-disabled="!selectedItem">Guardar cambios <md-progress-circular></md-progress-circular></md-button>
@@ -91,12 +103,6 @@
 		</div>
 
     </form>
-
-	<p>
-		<md-button class="md-raised md-primary add" ng-click="addRow()">Añadir <md-progress-circular></md-progress-circular></md-button>
-		&nbsp;
-		<md-button class="md-raised md-warn delete" ng-disabled="!selectedItem" ng-click="deleteRow()">Suprimir <md-progress-circular></md-progress-circular></md-button>
-	</p>
 
 
 

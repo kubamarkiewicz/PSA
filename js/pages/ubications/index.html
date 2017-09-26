@@ -4,6 +4,12 @@
 
     <div ui-grid="gridOptions" ui-grid-selection class="myGrid"></div>
 
+	<p>
+		<md-button class="md-raised md-primary add" ng-click="addRow()" ng-disabled="selectedItem.Id && selectedItem.Id == '0'">Añadir <md-progress-circular></md-progress-circular></md-button>
+		&nbsp;
+		<md-button class="md-raised md-warn delete" ng-disabled="!selectedItem || (selectedItem.Id && selectedItem.Id == '0')" ng-click="deleteRow()">Suprimir <md-progress-circular></md-progress-circular></md-button>
+	</p>
+
     <form name="ubicationForm" ng-submit="updateRow()">
 
 		<div class="row">
@@ -13,7 +19,7 @@
 				<p>
 			    	<label>Pasillo</label>
 			    	<md-input-container md-no-float>
-				        <input type="text" ng-model="selectedItem.Pasillo" ng-disabled="!selectedItem" required>
+				        <input type="text" ng-model="selectedItem.Pasillo" name="Pasillo" ng-disabled="!selectedItem" required>
 				    </md-input-container>
 				</p>
 
@@ -66,12 +72,6 @@
 		</div>
 
     </form>
-
-	<p>
-		<md-button class="md-raised md-primary add" ng-click="addRow()">Añadir <md-progress-circular></md-progress-circular></md-button>
-		&nbsp;
-		<md-button class="md-raised md-warn delete" ng-disabled="!selectedItem" ng-click="deleteRow()">Suprimir <md-progress-circular></md-progress-circular></md-button>
-	</p>
 
 
 

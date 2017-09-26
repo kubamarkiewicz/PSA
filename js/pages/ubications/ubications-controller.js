@@ -113,7 +113,7 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
         $scope.selectedItem = {"Id":"0"};
 
         setTimeout(function(){ 
-            $('input[name=ref]').focus();
+            $('input[name=Pasillo]').focus();
         }, 30);
         
     }

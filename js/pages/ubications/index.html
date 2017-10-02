@@ -2,12 +2,14 @@
 
 	<h2>Ubicaciones</h2>
 
-    <div ui-grid="gridOptions" ui-grid-selection class="myGrid"></div>
+    <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
 
 	<p>
 		<md-button class="md-raised md-primary add" ng-click="addRow()" ng-disabled="selectedItem.Id && selectedItem.Id == '0'">Añadir <md-progress-circular></md-progress-circular></md-button>
 		&nbsp;
 		<md-button class="md-raised md-warn delete" ng-disabled="!selectedItem || (selectedItem.Id && selectedItem.Id == '0')" ng-click="deleteRow()">Suprimir <md-progress-circular></md-progress-circular></md-button>
+		<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+		<!-- <md-button class="md-raised md-primary" ng-click="exportPdf()">Exportar PDF</md-button> -->
 	</p>
 
     <form name="ubicationForm" ng-submit="updateRow()">

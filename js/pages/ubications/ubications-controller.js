@@ -1,11 +1,59 @@
-app.controller('UbicationsController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval) {  
+app.controller('UbicationsController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval, exportUiGridService, uiGridExporterConstants, uiGridExporterService) {  
 
     $scope.gridOptions = { 
+        columnDefs: [
+            {field: 'Id', type: 'numberStr'}, 
+            {field: 'Pasillo', type: 'numberStr',
+                suppressRemoveSort: true,
+                sort: {
+                  direction: uiGridConstants.ASC,
+                  priority: 0
+                }
+            }, 
+            {field: 'Alveolo', type: 'numberStr',
+                suppressRemoveSort: true,
+                sort: {
+                  direction: uiGridConstants.ASC,
+                  priority: 1
+                }
+            }, 
+            {field: 'Altura', type: 'numberStr',
+                suppressRemoveSort: true,
+                sort: {
+                  direction: uiGridConstants.ASC,
+                  priority: 2
+                }
+            }, 
+            {field: 'Producto', type: 'numberStr'}
+        ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
         multiSelect: false, 
-        modifierKeysToMultiSelect: false
+        modifierKeysToMultiSelect: false,
+
+/*        enableGridMenu: false,
+        enableSelectAll: true,
+        exporterPdfDefaultStyle: {fontSize: 9},
+        exporterPdfTableStyle: {margin: [30, 30, 30, 30]},
+        exporterPdfTableHeaderStyle: {fontSize: 10, bold: true, italics: true, color: 'red'},
+        exporterPdfHeader: { text: "My Header", style: 'headerStyle' },
+        exporterPdfFooter: function ( currentPage, pageCount ) {
+            return { text: currentPage.toString() + ' of ' + pageCount.toString(), style: 'footerStyle' };
+        },
+        exporterPdfCustomFormatter: function ( docDefinition ) {
+            docDefinition.styles.headerStyle = { fontSize: 22, bold: true };
+            docDefinition.styles.footerStyle = { fontSize: 10, bold: true };
+            return docDefinition;
+        },
+        exporterPdfOrientation: 'portrait',
+        exporterPdfPageSize: 'LETTER',
+        exporterPdfMaxGridWidth: 500,*/
+        
+        enableFiltering: true
+
     };
+
+
 
     $scope.selectedItem = null;
 
@@ -19,6 +67,25 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
                 // reset form and disable error messages
                 $scope.ubicationForm.$setPristine();
                 $scope.ubicationForm.$setUntouched();
+            }
+        });
+
+        // Fix sort priority
+        $scope.gridApi.core.on.sortChanged($scope, function(grid, sortColumns) {
+            console.log(grid);
+            console.log(sortColumns);
+            for (i in sortColumns) {
+                switch (sortColumns[i].field) {
+                    case 'Pasillo':
+                        sortColumns[i].sort.priority = 0;
+                        break;
+                    case 'Alveolo':
+                        sortColumns[i].sort.priority = 1;
+                        break;
+                    case 'Altura':
+                        sortColumns[i].sort.priority = 2;
+                        break;
+                }
             }
         });
     };
@@ -118,7 +185,18 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
         
     }
 
+    $scope.exportPdf = function() 
+    {
+        var grid = $scope.gridApi.grid;
+        var rowTypes = uiGridExporterConstants.ALL;
+        var colTypes = uiGridExporterConstants.ALL;
+        uiGridExporterService.pdfExport(grid, rowTypes, colTypes);
+    };
 
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
+    };
 
 
 });

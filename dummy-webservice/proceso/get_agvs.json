@@ -2,18 +2,18 @@
     "get_agvsResult" :
 	[
 		{
-			"id"			: "1",
-			"x"				: 230,
-			"y"				: 150,
-			"orientation"	: 0,
-			"state" 		: "stopped"
+			"Id"			: "1",
+			"X"				: 230,
+			"Y"				: 150,
+			"Orientation"	: 0,
+			"State" 		: "stopped"
 		},
 		{
-			"id"			: "2",
-			"x"				: 330,
-			"y"				: 90,
-			"orientation"	: 90,
-			"state" 		: "working"
+			"Id"			: "2",
+			"X"				: 330,
+			"Y"				: 90,
+			"Orientation"	: 90,
+			"State" 		: "working"
 		}
 	]
 }

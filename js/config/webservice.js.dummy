@@ -12,7 +12,6 @@ window.config.webservice = {
 
         "get_alerts"                    : "dummy-webservice/proceso/get_alerts.json",
         "get_agvs"                      : "dummy-webservice/proceso/get_agvs.json",
-        "get_storage_positions"         : "dummy-webservice/proceso/get_storage_positions.json",
         "get_storage_position_niches"   : "dummy-webservice/proceso/get_storage_position_niches.json",
         "get_semaphores"                : "dummy-webservice/proceso/get_semaphores.json",
         "update_semaphore"              : "dummy-webservice/empty.json",

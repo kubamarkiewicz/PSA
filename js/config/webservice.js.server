@@ -12,7 +12,6 @@ window.config.webservice = {
 
         "get_alerts"                    : "http://192.168.8.102:8888/PSA/Data/api/get_alerts",
         "get_agvs"                      : "http://192.168.8.102:8888/PSA/Data/api/get_agvs.php",
-        "get_storage_positions"         : "http://192.168.8.102:8888/PSA/Data/api/get_storage_positions",
         "get_storage_position_niches"   : "http://192.168.8.102:8888/PSA/Data/api/get_storage_position_niches",
         "get_semaphores"                : "http://192.168.8.102:8888/PSA/Data/api/get_semaphores",
         "update_semaphore"              : "http://192.168.8.102:8888/PSA/Data/api/update_semaphore",

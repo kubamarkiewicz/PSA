@@ -156,7 +156,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             // add keys to array, otherwise animation does not work ...
             $scope.AGVData = {};
             for (i in response.data.get_agvsResult) {
-                $scope.AGVData[response.data.get_agvsResult[i].id] = response.data.get_agvsResult[i];
+                $scope.AGVData[response.data.get_agvsResult[i].Id] = response.data.get_agvsResult[i];
             }
         });
     }
@@ -193,7 +193,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             // add keys to array
             $scope.semaphoresData = {};
             for (i in response.data.get_semaphoresResult) {
-                $scope.semaphoresData[response.data.get_semaphoresResult[i].id] = response.data.get_semaphoresResult[i];
+                $scope.semaphoresData[response.data.get_semaphoresResult[i].Id] = response.data.get_semaphoresResult[i];
             }
         });
     }
@@ -241,7 +241,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             // add keys to array
             $scope.transportBeltsData = {};
             for (i in response.data.get_transport_beltsResult) {
-                $scope.transportBeltsData[response.data.get_transport_beltsResult[i].id] = response.data.get_transport_beltsResult[i];
+                $scope.transportBeltsData[response.data.get_transport_beltsResult[i].Id] = response.data.get_transport_beltsResult[i];
             }
         });
     }
@@ -275,22 +275,6 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
 
 	/* Storage Positions *********************************************************************************/
 
-    $scope.storagePositionsData =  [];
-
-    $scope.loadStoragePositionsData = function()
-    {
-        console.log('loadStoragePositionsData');
-        $http({
-            method  : 'GET',
-            url     : config.webservice.urls.get_storage_positions
-         })
-        .then(function(response) {
-            $scope.storagePositionsData = response.data.get_storage_positionsResult;
-        });
-    }
-    $scope.loadStoragePositionsData();
-
-
     // load storage positions coordinates
     $http({
         method  : 'GET',
@@ -301,7 +285,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     });
 
 
-    
+
 
     $scope.openPositionPopup = function(event, id) 
     {
@@ -310,7 +294,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
         var target = $(event.target);
         target.addClass('selected');
 
-    	$scope.selectedPosition = $scope.storagePositionsData[id];
+    	$scope.selectedPositionId = id;
     	var popup = $('body.page-visualizador-del-proceso #position-popup');
         popup.addClass('open')
     		.css('left', target.offset().left + event.target.getBoundingClientRect().width + 'px')

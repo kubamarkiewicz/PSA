@@ -2,7 +2,6 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
 
     $scope.gridOptions = { 
         columnDefs: [
-            {field: 'Id', type: 'numberStr'}, 
             {field: 'Pasillo', type: 'numberStr',
                 suppressRemoveSort: true,
                 sort: {

@@ -1,10 +1,20 @@
-app.controller('MaestroArticulosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval) {  
+app.controller('MaestroArticulosController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval, exportUiGridService, uiGridExporterConstants, uiGridExporterService) {  
 
     $scope.gridOptions = { 
+        columnDefs: [
+            {field: 'Ref', type: 'numberStr', sort: { direction: 'asc', priority: 0 }},
+            {field: 'Pasillo', type: 'numberStr'},
+            {field: 'Alveolo', type: 'numberStr'},
+            {field: 'PiezasPorPallet', type: 'numberStr'},
+            {field: 'MinPiezas', type: 'numberStr'},
+            {field: 'MaxPiezas', type: 'numberStr'},
+            {field: 'MinPallets', type: 'numberStr'},
+            {field: 'MaxPallets', type: 'numberStr'}
+        ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
-        multiSelect: false, 
-        modifierKeysToMultiSelect: false
+        modifierKeysToMultiSelect: false,
+        enableFiltering: true
     };
 
     $scope.selectedItem = null;
@@ -49,6 +59,7 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             method  : 'GET',
             url     : config.webservice.urls.maestro_articles_save_article,
             params  : {
+                "Id"                : $scope.selectedItem.Id,
                 "Ref"               : $scope.selectedItem.Ref,
                 "Pasillo"           : $scope.selectedItem.Pasillo,
                 "Alveolo"           : $scope.selectedItem.Alveolo,
@@ -91,7 +102,7 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             method  : 'GET',
             url     : config.webservice.urls.maestro_articles_delete_article,
             params  : {
-                "Ref" : $scope.selectedItem.Ref
+                "Id"    : $scope.selectedItem.Id
             }
          })
         .then(function(response) {
@@ -116,7 +127,9 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     
     $scope.addRow = function()
     {
-        $scope.selectedItem = {"New":true};
+        $scope.selectedItem = {"Id":"0"};
+
+        console.log(!$scope.selectedItem || ($scope.selectedItem.Id && $scope.selectedItem.Id == '0'));
 
         setTimeout(function(){ 
             $('input[name=ref]').focus();
@@ -125,6 +138,9 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     }
 
 
-
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
+    };
 
 });

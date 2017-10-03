@@ -2,7 +2,8 @@
     "get_articlesResult" :
 	[
 		{
-			"Ref"	: "1",
+        	"Id": "1",
+			"Ref"	: "11",
 			"Pasillo"	: "abc",
 			"Alveolo"	: "23",
 			"PiezasPorPallet"	: "122",
@@ -12,7 +13,8 @@
 			"MaxPallets"	: "123"
 		},
 		{
-			"Ref"	: "2",
+        	"Id": "2",
+			"Ref"	: "22",
 			"Pasillo"	: "df sdf s",
 			"Alveolo"	: "234",
 			"PiezasPorPallet"	: "12",

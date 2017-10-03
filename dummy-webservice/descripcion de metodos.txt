@@ -40,8 +40,8 @@ PANTALLA INFORMES
 PANTALLA MAESTRO ARTICULOS
 
 	get_articles()
-	save_article(Ref,Pasillo,Alveolo,PiezasPorPallet,MinPiezas,MinPallets,MaxPiezas,MaxPallets)
-	delete_article(Ref)
+	save_article(Id,Ref,Pasillo,Alveolo,PiezasPorPallet,MinPiezas,MinPallets,MaxPiezas,MaxPallets)
+	delete_article(Id)
 
 
 ÓRDENES EN CURSO

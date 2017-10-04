@@ -5,6 +5,7 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
     // get in actions
 
     $scope.actionsData = [];
+    $scope.fields = [];
 
     $scope.getActionsData = function()
     {
@@ -27,13 +28,16 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
             return;
         }
 
+        var params = [];
+        params['Action'] = $scope.action.Action;
+        for (field in $scope.fields) {
+            params[field] = $scope.fields[field];
+        }
+
         $http({
             method  : 'GET',
             url     : config.webservice.urls.informes_generate_informe,
-            params  : {
-                "action" : $scope.action.Action,
-                "ref" : $scope.ref
-            }
+            params  : params
          })
         .then(function(response) {
             $rootScope.toast.content(response.data.generate_informeResult.Message);
@@ -52,6 +56,12 @@ app.controller('InformesController', function($scope, $rootScope, $http, $routeP
             $scope.informeForm.$setPristine();
             $scope.informeForm.$setUntouched();
         });
+
+
+        $scope.actionChanged = function()
+        {
+            $scope.fields = [];
+        }
     }
 
 

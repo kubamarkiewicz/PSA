@@ -3,15 +3,14 @@
 	[
 	    {
 	    	"Action" : "Informe 1",
-	    	"Ref"	: true
+	    	"Fields" : ["Ref"]
 	    },
 	    {
 	    	"Action" : "Informe 2",
-	    	"Ref"	: false
+	    	"Fields" : ["Ref", "Fecha", "Otro campo"]
 	    },
 	    {
-	    	"Action" : "Informe 3",
-	    	"Ref"	: true
+	    	"Action" : "Informe 3"
 	    }
 	]
 }

@@ -68,7 +68,7 @@
 			ng-repeat="agv in AGVData"  
 			id="agv-{{ agv.Id }}"
 			class="agv" 
-			style="transform: translate({{ metersToPxX(agv.X) }}px, {{ metersToPxY(agv.Y) }}px) rotate({{ calculateRotation(agv.Orientation) }}deg)"
+			style="transform: translate({{ metersToPxX(agv.X / 1000) }}px, {{ metersToPxY(agv.Y / 1000) }}px) rotate({{ calculateRotation(agv.Orientation) }}deg)"
 			ng-click="openAGVPopup($event, agv)">
 			{{ agv.Id }}
 		</div>
@@ -78,7 +78,7 @@
 			ng-repeat="semaphore in semaphoresData"  
 			id="semaphore-{{ semaphore.Id }}"
 			class="semaphore" 
-			style="transform: translate({{ metersToPxX(semaphore.X) }}px, {{ metersToPxY(semaphore.Y) }}px)"
+			style="transform: translate({{ metersToPxX(semaphore.X / 1000) }}px, {{ metersToPxY(semaphore.Y / 1000) }}px)"
 			ng-click="openSemaphorePopup($event, semaphore)">
 		</div>
 		
@@ -87,7 +87,7 @@
 			ng-repeat="transportBelt in transportBeltsData"  
 			id="transport-belt-{{ transportBelt.Id }}"
 			class="transport-belt" 
-			style="transform: translate({{ metersToPxX(transportBelt.X) }}px, {{ metersToPxY(transportBelt.Y) }}px) rotate({{ calculateRotation(transportBelt.Orientation) }}deg)"
+			style="transform: translate({{ metersToPxX(transportBelt.X / 1000) }}px, {{ metersToPxY(transportBelt.Y / 1000) }}px) rotate({{ calculateRotation(transportBelt.Orientation) }}deg)"
 			ng-click="openTransportBeltPopup($event, transportBelt)">
 			CT{{ transportBelt.Id }}
 		</div>

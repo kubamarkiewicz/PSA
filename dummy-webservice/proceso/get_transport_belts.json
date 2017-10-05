@@ -4,15 +4,15 @@
 		{
 			"Id"			: "1",
 			"State" 		: "stopped",
-			"X"				: 250,
-			"Y"				: 150,
+			"X"				: 250000,
+			"Y"				: 150000,
 			"Orientation"	: 90
 		},
 		{
 			"Id"			: "2",
 			"State" 		: "working",
-			"X"				: 270,
-			"Y"				: 120,
+			"X"				: 270000,
+			"Y"				: 120000,
 			"Orientation"	: 0
 		}
 	]

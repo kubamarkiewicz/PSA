@@ -3,15 +3,15 @@
 	[
 		{
 			"Id"			: "1",
-			"X"				: 230,
-			"Y"				: 150,
+			"X"				: 230000,
+			"Y"				: 150000,
 			"Orientation"	: 0,
 			"State" 		: "stopped"
 		},
 		{
 			"Id"			: "2",
-			"X"				: 330,
-			"Y"				: 90,
+			"X"				: 330000,
+			"Y"				: 90000,
 			"Orientation"	: 90,
 			"State" 		: "working"
 		}

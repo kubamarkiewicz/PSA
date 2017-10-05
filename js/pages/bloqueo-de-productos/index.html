@@ -16,7 +16,7 @@
 
 		<section class="actions" ng-show="action">
 			
-			<h2>Selecciona las posiciónes a {{action == 'block' ? 'bloquear' : 'desbloquear'}}</h2>
+			<h2>Selecciona las posiciones a {{action == 'block' ? 'bloquear' : 'desbloquear'}}</h2>
 
 			<form name="productForm" ng-submit="addProductToSelection()">
 				<p>
@@ -40,7 +40,7 @@
 
 		<section flex class="selected-products" layout="column" ng-show="action">
 		
-			<h2>Posiciónes seleccionadas</h2>
+			<h2>Posiciones seleccionadas</h2>
 
 			<div class="list" flex>
 				<div class="item" ng-repeat="item in selectedProducts track by $index">
@@ -57,7 +57,7 @@
 
 	<section flex class="blocked-products">
 		
-		<h2 ng-show="action">Posiciónes bloqueadas</h2>
+		<h2 ng-show="action">Posiciones bloqueadas</h2>
 
 		<div class="list" ng-show="action">
 			<div class="item" ng-repeat="item in blockedProductsData track by $index">

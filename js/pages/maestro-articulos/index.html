@@ -89,11 +89,16 @@
 					
 			<div class="column">
 
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
+				<p>
+					<label>Proveedor</label>
+					<md-input-container md-no-float>
+				        <md-select ng-model="selectedItem.ProveedorId">
+				            <md-option ng-repeat="option in proveedoresData" ng-value="option.Id">
+				            	{{ option.Nombre }}
+				            </md-option>
+				      	</md-select>
+				    </md-input-container>
+				</p>
 				
 				<p>
 			    	<md-button type="submit" class="md-raised md-primary btn-block update" ng-disabled="!selectedItem">Guardar cambios <md-progress-circular></md-progress-circular></md-button>

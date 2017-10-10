@@ -3,7 +3,8 @@
     "get_ordersResult" :
 	[
 		{
-			"Ref"				: "1",
+			"Id"				: "1",
+			"Ref"				: "r1",
 			"FechaGeneracion"	: "08/29/2017",
 			"HoraGeneracion"	: "10:15h",
 			"CodigoArticulo"	: "9681268889",
@@ -13,7 +14,8 @@
 			"Estado"			: "PENDIENTE"
 		},
 		{
-			"Ref"				: "2",
+			"Id"				: "2",
+			"Ref"				: "r2",
 			"FechaGeneracion"	: "09/29/2017",
 			"HoraGeneracion"	: "10:15h",
 			"CodigoArticulo"	: "9681268888",

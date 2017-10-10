@@ -42,12 +42,13 @@ PANTALLA MAESTRO ARTICULOS
 	get_articles()
 	save_article(Id,Ref,Pasillo,Alveolo,PiezasPorPallet,MinPiezas,MinPallets,MaxPiezas,MaxPallets)
 	delete_article(Id)
+	get_proveedores()
 
 
 ÓRDENES EN CURSO
 
 	get_orders()
-	delete_order(ref)
+	delete_order(id)
 
 
 ÓRDENES COMPLETADAS

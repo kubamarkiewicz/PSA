@@ -1,0 +1,13 @@
+{
+    "get_proveedoresResult" :
+	[
+        {
+            "Id": "1",
+            "Nombre"   : "Proveedor 1."
+        },
+        {
+            "Id": "2",
+            "Nombre"   : "Proveedor 2."
+        }
+    ]
+}

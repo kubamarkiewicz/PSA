@@ -55,7 +55,7 @@ app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $
             method  : 'GET',
             url     : config.webservice.urls.ordenes_en_curso_delete_order,
             params  : {
-                "ref" : $scope.selectedItem.Ref
+                "Id" : $scope.selectedItem.Id
             }
          })
         .then(function(response) {

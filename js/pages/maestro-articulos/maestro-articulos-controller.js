@@ -9,12 +9,15 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             {field: 'MinPiezas', type: 'numberStr'},
             {field: 'MaxPiezas', type: 'numberStr'},
             {field: 'MinPallets', type: 'numberStr'},
-            {field: 'MaxPallets', type: 'numberStr'}
+            {field: 'MaxPallets', type: 'numberStr'},
+            {field: 'RefCofor', type: 'numberStr'},
+            {field: 'NombreSocial', type: 'numberStr'}
         ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
         modifierKeysToMultiSelect: false,
-        enableFiltering: true
+        enableFiltering: true,
+        multiSelect: false,
     };
 
     $scope.selectedItem = null;
@@ -67,7 +70,8 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
                 "MinPiezas"         : $scope.selectedItem.MinPiezas,
                 "MinPallets"        : $scope.selectedItem.MinPallets,
                 "MaxPiezas"         : $scope.selectedItem.MaxPiezas,
-                "MaxPallets"        : $scope.selectedItem.MaxPallets
+                "MaxPallets"        : $scope.selectedItem.MaxPallets,
+                "ProveedorId"       : $scope.selectedItem.ProveedorId
             }
          })
         .then(function(response) {
@@ -142,5 +146,18 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     {
         exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
     };
+
+
+    $scope.loadProveedoresData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.maestro_articles_get_proveedores
+        })
+        .then(function(response) {
+            $scope.proveedoresData = response.data.get_proveedoresResult;
+        });
+    }
+    $scope.loadProveedoresData();
 
 });

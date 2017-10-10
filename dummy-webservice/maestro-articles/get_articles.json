@@ -10,7 +10,10 @@
 			"MinPiezas"	: "123",
 			"MinPallets"	: "23",
 			"MaxPiezas"	: "123",
-			"MaxPallets"	: "123"
+			"MaxPallets"	: "123",
+			"ProveedorId" : "1",
+			"RefCofor" : "123",
+			"NombreSocial" : "Nombre 1"
 		},
 		{
         	"Id": "2",
@@ -21,7 +24,10 @@
 			"MinPiezas"	: "13",
 			"MinPallets"	: "123",
 			"MaxPiezas"	: "13",
-			"MaxPallets"	: "23"
+			"MaxPallets"	: "23",
+			"ProveedorId" : "2",
+			"RefCofor" : "223",
+			"NombreSocial" : "Nombre 2"
 		}
 	]
 }

@@ -9,9 +9,7 @@ PANTALLA VISUALIZADOR DEL PROCESO
 
 	get_agvs()
 	get_semaphores()
-	update_semaphore(id, state)
 	get_transport_belts()
-	update_transport_belt(id, state) 
 	get_storage_position_niches(storage_position_id)
 	get_alerts()
 
@@ -33,8 +31,11 @@ PANTALLA CONFIGURACIÓN DE PARÁMETROS
 
 PANTALLA INFORMES
 
-	informes_get_actions()
-	informes_generate_informe(Action, Field_1, Field_2, ...)
+	get_ocupacion_de_estanterias()
+	get_stock_por_referencia(Ref)
+	get_stock_por_proveedor(ProveedorId)
+	get_movimientos_por_referencia(Ref, Fecha)
+	get_movimientos_por_hora(Ref, ProveedorId, Fecha)
 
 
 PANTALLA MAESTRO ARTICULOS

@@ -39,6 +39,14 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'InformesController', 
             templateUrl: 'js/pages/informes/index.html' 
         })   
+        .when('/informes/ocupacion-de-estanterias', { 
+            controller: 'OcupacionDeEstanteriasController', 
+            templateUrl: 'js/pages/informes/ocupacion-de-estanterias.html' 
+        })   
+        .when('/informes/stock-por-referencia', { 
+            controller: 'StockPorReferenciaController', 
+            templateUrl: 'js/pages/informes/stock-por-referencia.html' 
+        })   
         .when('/maestro-articulos', { 
             controller: 'MaestroArticulosController', 
             templateUrl: 'js/pages/maestro-articulos/index.html' 
@@ -113,11 +121,16 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
 
     $rootScope.$on('$routeChangeStart', function (event, next, prev) 
     {
-        // get page slug
+        // find page slug
         var prevSlug = $rootScope.pageSlug = 'datos-del-sga';
         if (next.originalPath && next.originalPath.substring(1)) {
             $rootScope.pageSlug = next.originalPath.substring(1);
+            // substring until first slash
+            if ($rootScope.pageSlug.indexOf('/') != -1) {
+                $rootScope.pageSlug = $rootScope.pageSlug.substr(0, $rootScope.pageSlug.indexOf('/'));
+            }
         }
+        console.log($rootScope.pageSlug);
 
         // auth
         ArtisterilAuthService.auth($rootScope.pageSlug);

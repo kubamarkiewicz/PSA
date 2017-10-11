@@ -1,0 +1,13 @@
+{
+	"get_movimientos_por_referenciaResult" :
+	[
+	    {
+	    	"Movimiento"	 		: "Almacenar",
+	    	"Fecha"			 		: "01/08/2017 17:00:00"
+	    },
+	    {
+	    	"Movimiento"	 		: "Reponer",
+	    	"Fecha"			 		: "06/08/2017 9:11:11"
+	    }
+	]
+}

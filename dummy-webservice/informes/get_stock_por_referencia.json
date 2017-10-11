@@ -1,0 +1,15 @@
+{
+	"get_stock_por_referenciaResult" :
+	[
+	    {
+	    	"Pasillo"	 		: "1",
+	    	"Alveolo"	 		: "2",
+	    	"Altura"		 	: "3"
+	    },
+	    {
+	    	"Pasillo"	 		: "2",
+	    	"Alveolo"	 		: "3",
+	    	"Altura"		 	: "4"
+	    }
+	]
+}

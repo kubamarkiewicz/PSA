@@ -25,8 +25,11 @@ window.config.webservice = {
         "get_parameters"                : "dummy-webservice/parameters/get_parameters.json",
         "save_parameters"               : "dummy-webservice/parameters/save_parameters.json",
 
-        "informes_get_actions"          : "dummy-webservice/informes/get_actions.json",
-        "informes_generate_informe"     : "dummy-webservice/informes/generate_informe.json",
+        "informes_get_ocupacion_de_estanterias"     : "dummy-webservice/informes/get_ocupacion_de_estanterias.json",
+        "informes_get_stock_por_referencia"         : "dummy-webservice/informes/get_stock_por_referencia.json",
+        "informes_get_stock_por_proveedor"          : "dummy-webservice/informes/get_stock_por_proveedor.json",
+        "informes_get_movimientos_por_referencia"   : "dummy-webservice/informes/get_movimientos_por_referencia.json",
+        "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/generate_informe.json",
 
         "maestro_articles_get_articles" : "dummy-webservice/maestro-articles/get_articles.json",
         "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",

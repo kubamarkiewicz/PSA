@@ -3,85 +3,35 @@
 
 
 body.page-informes > main {
-	padding: 50px 25px 25px 25px;
-	text-align: center;
 }
 body.page-informes > main .container {
 	text-align: left;
-	max-width: 1050px;
+	max-width: none;;
 	margin: 0 auto;
 }
-body.page-informes md-tab-content {
-	padding: 25px !important;
-} 
-body.page-informes > main h2 {
-	border-bottom: 4px solid #0475b1;
-	padding-bottom: 8px;
-	margin-bottom: 40px;
-}
-body.page-informes > main p {
-}
-body.page-informes > main p label {
-	display: block;
-	font-size: 20px;
-	min-width: 143px;
-	vertical-align: middle;
-	margin-bottom: 4px;
-}
-body.page-informes > main p md-input-container {
-	padding-left: 0;
-}
-body.page-informes > main p input,
-body.page-informes > main p .md-select-value {
-	width: 380px;
-	margin-right: 15px;
-}
-body.page-informes > main button.execute-action {
-	display: block;
-}
 
-body.page-informes > main p .message md-progress-circular {
-	display: none;
+
+
+body.page-informes > main md-tab-item {
+	padding: 0;
 }
-body.page-informes > main p.loading .message md-progress-circular {
+body.page-informes > main md-tab-item a {
+	padding: 12px 24px;
 	display: inline-block;
-	margin-right: 15px;
+	text-decoration: none;
+	color: inherit;
+	font-size: 16px;;;;
 }
 
-body.page-informes > main p.product-id button.clear {
-	background-image: url(../../../images/remove.gif);
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 21px;
-    min-width: 21px;
-	margin: 0;
+body.page-informes .myGrid {
+	font-size: 14px;
+	height: calc(100% - 131px) !important;
 }
-
-body.page-informes > main form.fileForm p md-input-container {
-	width: 100%;
-}
-
-body.page-informes > main form.notificationForm {
-}
-body.page-informes > main form.notificationForm p.action {
-}
-body.page-informes > main form.notificationForm p md-input-container {
-	width: 100%;
-}
-body.page-informes > main form.notificationForm p .md-button.md-warn.md-raised {
-	margin-top: 0;
-}
-
-
-
 
 
 /* mobile */
 @media screen and (max-width: 1450px) {
 
 	
-	body.page-informes > main p label {
-		font-size: 16px;
-	}
 
 }

@@ -25,8 +25,11 @@ window.config.webservice = {
         "get_parameters"                : "http://192.168.8.102:8888/PSA/Parameters/api/get_parameters",
         "save_parameters"               : "http://192.168.8.102:8888/PSA/Parameters/api/save_parameters",
 
-        "informes_get_actions"          : "http://192.168.8.102:8888/PSA/Informs/api/get_actions",
-        "informes_generate_informe"     : "http://192.168.8.102:8888/PSA/Informs/api/generate_informe",
+        "informes_get_ocupacion_de_estanterias"     : "dummy-webservice/informes/get_ocupacion_de_estanterias.json",
+        "informes_get_stock_por_referencia"         : "dummy-webservice/informes/get_stock_por_referencia.json",
+        "informes_get_stock_por_proveedor"          : "dummy-webservice/informes/get_stock_por_proveedor.json",
+        "informes_get_movimientos_por_referencia"   : "dummy-webservice/informes/get_movimientos_por_referencia.json",
+        "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/generate_informe.json",
 
         "maestro_articles_get_articles" : "http://192.168.8.102:8888/PSA/MasterData/api/get_articles",
         "maestro_articles_save_article" : "http://192.168.8.102:8888/PSA/MasterData/api/save_article",

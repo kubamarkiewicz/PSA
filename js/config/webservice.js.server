@@ -29,7 +29,7 @@ window.config.webservice = {
         "informes_get_stock_por_referencia"         : "dummy-webservice/informes/get_stock_por_referencia.json",
         "informes_get_stock_por_proveedor"          : "dummy-webservice/informes/get_stock_por_proveedor.json",
         "informes_get_movimientos_por_referencia"   : "dummy-webservice/informes/get_movimientos_por_referencia.json",
-        "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/generate_informe.json",
+        "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/get_movimientos_por_hora.json",
 
         "maestro_articles_get_articles" : "http://192.168.8.102:8888/PSA/MasterData/api/get_articles",
         "maestro_articles_save_article" : "http://192.168.8.102:8888/PSA/MasterData/api/save_article",

@@ -10,7 +10,6 @@ body.page-informes > main > section {
 }
 
 
-
 body.page-informes > main md-tab-item {
 	padding: 0;
 }
@@ -22,10 +21,23 @@ body.page-informes > main md-tab-item a {
 	font-size: 16px;
 }
 
+
+body.page-informes .input-wrap {
+	display: inline-block;
+	margin-right: 12px;;
+}
+body.page-informes .input-wrap label {
+	display: block;
+	padding-left: 4px;;
+}
+
+
+
 body.page-informes .myGrid {
 	font-size: 14px;
 	height: calc(100% - 131px) !important;
 }
+
 
 
 
@@ -38,8 +50,8 @@ body.page-informes section.stock-por-referencia .myGrid {
 	height: calc(100% - 102px) !important;
 }
 
-body.page-informes section.stock-por-referencia .myForm label {
-	display: inline-block;
+body.page-informes .myForm label {
+	/*display: inline-block;*/
 	text-transform: uppercase;
 	font-size: 16px;
 	vertical-align: middle;
@@ -53,10 +65,20 @@ body.page-informes section.stock-por-referencia .layout-row label {
     margin-bottom: 4px;
 }
 body.page-informes section.stock-por-referencia .container {
-	max-width: 1000px;;
+	max-width: 1000px;
 }
 
 
+body.page-informes section.movimientos-por-referencia .myGrid {
+	height: calc(100% - 206px) !important;
+	width: 400px;
+}
+
+
+body.page-informes section.movimientos-por-hora .myGrid {
+	height: calc(100% - 206px) !important;
+	width: 600px;
+}
 
 
 

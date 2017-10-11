@@ -35,7 +35,7 @@ PANTALLA INFORMES
 	get_stock_por_referencia(Ref)
 	get_stock_por_proveedor(Cofor)
 	get_movimientos_por_referencia(Ref, Fecha)
-	get_movimientos_por_hora(Ref, ProveedorId, Fecha)
+	get_movimientos_por_hora(Ref, Cofor, Fecha)
 
 
 PANTALLA MAESTRO ARTICULOS

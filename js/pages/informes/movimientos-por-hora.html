@@ -1,0 +1,42 @@
+
+<section class="container movimientos-por-hora">
+
+	<ng-include src="'js/pages/informes/partial-tabs.html'"></ng-include> 
+
+	<form class="myForm" ng-submit="loadData()">
+
+		<div class="input-wrap">
+			<label>Referencia</label>
+			<md-input-container md-no-float>
+		        <input type="text" ng-model="ref">
+		    </md-input-container>
+		</div>
+
+		<div class="input-wrap">
+			<label>COFOR de proveedor</label>
+			<md-input-container md-no-float>
+		        <input type="text" ng-model="cofor">
+		    </md-input-container>
+		</div>
+
+		<div class="input-wrap">
+			<label>Fecha</label>
+			<md-input-container md-no-float>
+		        <md-datepicker ng-model="fecha" md-open-on-focus></md-datepicker>
+		    </md-input-container>
+		</div>
+
+	    <md-button type="submit" class="md-raised md-primary">Mostrar</md-button>
+   	</form>
+
+	<br>
+
+	
+
+	<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+
+	<p>
+		<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+	</p>
+	
+</section>

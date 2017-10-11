@@ -4,10 +4,9 @@
 
 body.page-informes > main {
 }
-body.page-informes > main .container {
-	text-align: left;
-	max-width: none;;
-	margin: 0 auto;
+body.page-informes > main > section {
+	height: 100%;
+	position: relative;
 }
 
 
@@ -20,7 +19,7 @@ body.page-informes > main md-tab-item a {
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
-	font-size: 16px;;;;
+	font-size: 16px;
 }
 
 body.page-informes .myGrid {
@@ -29,27 +28,38 @@ body.page-informes .myGrid {
 }
 
 
-body.page-informes label {
-	display: inline-block;
-	text-transform: uppercase;
-	font-size: 20px;
-	vertical-align: middle;/* line-height: 38px; */;
+
+
+body.page-informes section.ocupacion-de-estanterias .myGrid {
+	height: calc(100% - 131px) !important;
 }
 
+body.page-informes section.stock-por-referencia .myGrid {
+	height: calc(100% - 102px) !important;
+}
 
-
-/* mobile */
-body.page-informes label {
+body.page-informes section.stock-por-referencia .myForm label {
 	display: inline-block;
 	text-transform: uppercase;
 	font-size: 16px;
-	min-width: 143px;
 	vertical-align: middle;
 	padding-right: 6px;;
-
-	
-
 }
+
+
+body.page-informes section.stock-por-referencia .layout-row label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+body.page-informes section.stock-por-referencia .container {
+	max-width: 1000px;;
+}
+
+
+
+
+
 
 
 /* mobile */

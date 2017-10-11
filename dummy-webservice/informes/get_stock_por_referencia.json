@@ -1,15 +1,22 @@
 {
 	"get_stock_por_referenciaResult" :
-	[
-	    {
-	    	"Pasillo"	 		: "1",
-	    	"Alveolo"	 		: "2",
-	    	"Altura"		 	: "3"
-	    },
-	    {
-	    	"Pasillo"	 		: "2",
-	    	"Alveolo"	 		: "3",
-	    	"Altura"		 	: "4"
-	    }
-	]
+	{
+		"StockPiezas"	 		: "2",
+    	"StockPallets"		 	: "3",
+    	"MinPiezas"			 	: "13",
+    	"MaxPiezas"			 	: "23",
+    	"CMJ"				 	: "33",
+    	"Posiciones"			: [
+		    {
+		    	"Pasillo"	 		: "1",
+		    	"Alveolo"	 		: "2",
+		    	"Altura"		 	: "3"
+		    },
+		    {
+		    	"Pasillo"	 		: "2",
+		    	"Alveolo"	 		: "3",
+		    	"Altura"		 	: "4"
+		    }
+		]
+	}
 }

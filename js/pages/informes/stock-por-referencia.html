@@ -1,11 +1,97 @@
 
-<div class="container">
-
+<section class="container stock-por-referencia">
 
 	<ng-include src="'js/pages/informes/partial-tabs.html'"></ng-include> 
 
+	<div class="container">
+		
 
-	stock-por-referencia
+
+		<form class="myForm" ng-submit="loadData()">
+			<label>Referencia</label>
+			<md-input-container md-no-float>
+		        <input type="text" ng-model="ref" required>
+		    </md-input-container>
+		    <md-button type="submit" class="md-raised md-primary">Mostrar</md-button>
+	   	</form>
+
+		<br>
+
+		<div layout="row" layout-wrap>
+			
+		    <div flex="50">
+
+				<div layout="row" layout-wrap>
+					
+		    		<div flex="50">
+
+				    	<p>
+							<label>Stock por piezas</label>
+					    	<md-input-container md-no-float>
+						        <input type="text" ng-model="StockPiezas" readonly>
+						    </md-input-container>
+				    	</p>
+
+				    	<p>
+							<label>Min de piezas</label>
+					    	<md-input-container md-no-float>
+						        <input type="text" ng-model="MinPiezas" readonly>
+						    </md-input-container>
+						</p>
 
 
-</div>
+				    	<p>
+							<label>CMJ</label>
+					    	<md-input-container md-no-float>
+						        <input type="text" ng-model="CMJ" readonly>
+						    </md-input-container>
+				    	</p>
+						
+				    </div>
+
+
+					
+		    		<div flex="50">
+
+				    	<p>
+							<label>Stock por pallets</label>
+					    	<md-input-container md-no-float>
+						        <input type="text" ng-model="StockPallets" readonly>
+						    </md-input-container>
+				    	</p>
+						
+				    	<p>
+							<label>Max de piezas</label>
+					    	<md-input-container md-no-float>
+						        <input type="text" ng-model="MaxPiezas" readonly>
+						    </md-input-container>
+				    	</p>
+
+		    		</div>
+
+				</div>
+
+
+			</div>
+
+
+			
+		    <div flex="50">
+
+		    	<p><label>Posiciones</label></p>
+
+				<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+
+				<p>
+					<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+				</p>
+
+		    </div>
+
+		</div>
+
+
+		
+	</div>
+	
+</section>

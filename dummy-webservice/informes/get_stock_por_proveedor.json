@@ -6,7 +6,6 @@
 	    	"StockPiezas"	 		: "2",
 	    	"StockPallets"		 	: "3",
 	    	"MaxPiezas"			 	: "23",
-	    	"MaxPiezas"			 	: "23",
 	    	"MinPiezas"			 	: "13",
 	    	"CMJ"				 	: "33"
 	    },
@@ -14,7 +13,6 @@
 	    	"Ref"			 		: "2",
 	    	"StockPiezas"	 		: "3",
 	    	"StockPallets"		 	: "4",
-	    	"MaxPiezas"			 	: "24",
 	    	"MaxPiezas"			 	: "24",
 	    	"MinPiezas"			 	: "14",
 	    	"CMJ"				 	: "34"

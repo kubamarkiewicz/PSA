@@ -47,6 +47,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'StockPorReferenciaController', 
             templateUrl: 'js/pages/informes/stock-por-referencia.html' 
         })   
+        .when('/informes/stock-por-proveedor', { 
+            controller: 'StockPorProveedorController', 
+            templateUrl: 'js/pages/informes/stock-por-proveedor.html' 
+        })   
         .when('/maestro-articulos', { 
             controller: 'MaestroArticulosController', 
             templateUrl: 'js/pages/maestro-articulos/index.html' 
@@ -143,7 +147,7 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
         .addClass("page-"+$rootScope.pageSlug);
 
         // select menu item
-        var selectedItem = $('#menu-dropdown .md-button[href="#' + $rootScope.pageSlug + '"]');
+        var selectedItem = $('#menu-dropdown .md-button[href^="#' + $rootScope.pageSlug + '"]');
         $('#menu-dropdown .md-button').not(selectedItem).removeClass('selected');
         selectedItem.addClass('selected');
 

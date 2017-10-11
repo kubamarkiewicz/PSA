@@ -1,0 +1,30 @@
+
+
+	<ng-include src="'js/pages/informes/partial-tabs.html'"></ng-include> 
+
+
+	<div layout="row" layout-wrap>
+	    <div flex="50">
+
+			<form class="myForm" ng-submit="loadData()">
+				<label>COFOR del proveedor</label>
+				<md-input-container md-no-float>
+			        <input type="text" ng-model="cofor" required>
+			    </md-input-container>
+			    <md-button type="submit" class="md-raised md-primary">Mostrar</md-button>
+		   	</form>
+
+	    </div>
+	    <div flex="50" layout="row" layout-align="end start">
+	    	
+			<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+
+	    </div>
+	</div>
+
+
+   	<br>
+
+    <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+
+

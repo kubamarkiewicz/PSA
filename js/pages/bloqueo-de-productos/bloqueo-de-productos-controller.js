@@ -106,5 +106,17 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
     }
 
 
+    $("input[name=passage]").change(function(){
+        var positionInput = $("input[name=position]");
+        if (($(this).val() >= 9) && ($(this).val() <= 16)) {
+            positionInput.attr('max', '22');
+        }
+        else {
+            positionInput.attr('max', '18');
+        }
+        positionInput.val('');
+    });
+
+
 
 });

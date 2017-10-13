@@ -61,8 +61,8 @@ body.page-bloqueo-de-productos section.actions p md-input-container {
 	vertical-align: top;;;;
 }
 body.page-bloqueo-de-productos section.actions p input,
-body.page-bloqueo-de-productos section.actions p .md-select-value {
-	width: 80px;;
+body.page-bloqueo-de-productos section.actions p .md-select-value {;
+	width: 92px;
 }
 body.page-bloqueo-de-productos section.actions p .md-button {
 	width: 165px;

@@ -22,13 +22,13 @@
 				<p>
 					<!-- <label>Por teclado</label> -->
 					<md-input-container md-no-float>
-				        <input type="text" name="passage" ng-model="passage" placeholder="Pasillo" required maxlength="2">
+				        <input type="number" min="1" max="24" name="passage" ng-model="passage" placeholder="Pasillo" required>
 				    </md-input-container>
 					<md-input-container md-no-float>
-				        <input type="text" name="position" ng-model="position" placeholder="Posición" required maxlength="2">
+				        <input type="number" min="1" max="22" name="position" ng-model="position" placeholder="Posición" required>
 				    </md-input-container>
 					<md-input-container md-no-float>
-				        <input type="text" name="height" ng-model="height" placeholder="Altura" required maxlength="1">
+				        <input type="number" min="3" max="6" name="height" ng-model="height" placeholder="Altura" required>
 				    </md-input-container>
 				    <md-button type="submit" class="block-product"><md-tooltip md-direction="top">Seleccionar</md-tooltip></md-button>
 				</p>

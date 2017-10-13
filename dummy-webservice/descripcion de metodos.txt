@@ -69,3 +69,5 @@ PANTALLA UBICACIONES
 	get_ubications()
 	save_ubication(Id, Pasillo, Alveolo, Altura, Producto)
 	delete_ubication(Id)
+
+	

@@ -32,6 +32,26 @@ body.page-informes .input-wrap label {
 }
 
 
+body.page-informes dl {
+	margin: 0;;
+}
+body.page-informes dt {
+	float: left;
+	font-size: 16px;
+	text-transform: uppercase;
+	clear: left;
+	padding: 5px 0 0 3px;;;;;
+}
+body.page-informes dd {
+	margin-left: 170px;
+	background-color: rgba(255,255,255,1);
+	/* clear: left; */;
+	padding: 6px 8px;
+	margin-bottom: 9px;
+	font-size: 14px;
+	min-height: 32px;;;;;;
+}
+
 
 body.page-informes .myGrid {
 	font-size: 14px;
@@ -47,7 +67,7 @@ body.page-informes section.ocupacion-de-estanterias .myGrid {
 }
 
 body.page-informes section.stock-por-referencia .myGrid {
-	height: calc(100% - 102px) !important;
+	height: calc(100vh - 394px) !important;
 }
 
 body.page-informes .myForm label {
@@ -59,19 +79,20 @@ body.page-informes .myForm label {
 }
 
 
-body.page-informes section.stock-por-referencia .layout-row label {
+body.page-informes section.stock-por-referencia .layout-row label,
+body.page-informes section.movimientos-por-referencia .layout-row label {
     display: block;
     font-size: 16px;
     margin-bottom: 4px;
+	text-transform: uppercase;
 }
 body.page-informes section.stock-por-referencia .container {
-	max-width: 1000px;
+	/*max-width: 1000px;*/
 }
 
 
 body.page-informes section.movimientos-por-referencia .myGrid {
-	height: calc(100% - 206px) !important;
-	width: 400px;
+	height: calc(100vh - 383px) !important;
 }
 
 

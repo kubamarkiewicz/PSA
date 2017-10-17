@@ -16,71 +16,41 @@
 	   	</form>
 
 		<br>
+		<br>
 
 		<div layout="row" layout-wrap>
 			
+
 		    <div flex="50">
 
-				<div layout="row" layout-wrap>
+		    	<dl>
+					<dt>Stock por piezas</dt>
+					<dd>{{ StockPiezas }}</dd>
 					
-		    		<div flex="50">
-
-				    	<p>
-							<label>Stock por piezas</label>
-					    	<md-input-container md-no-float>
-						        <input type="text" ng-model="StockPiezas" readonly>
-						    </md-input-container>
-				    	</p>
-
-				    	<p>
-							<label>Min de piezas</label>
-					    	<md-input-container md-no-float>
-						        <input type="text" ng-model="MinPiezas" readonly>
-						    </md-input-container>
-						</p>
-
-
-				    	<p>
-							<label>CMJ</label>
-					    	<md-input-container md-no-float>
-						        <input type="text" ng-model="CMJ" readonly>
-						    </md-input-container>
-				    	</p>
-						
-				    </div>
-
-
+					<dt>Stock por pallets</dt>
+					<dd>{{ StockPallets }}</dd>
 					
-		    		<div flex="50">
+					<dt>Min de piezas</dt>
+					<dd>{{ MinPiezas }}</dd>
+					
+					<dt>Max de piezas</dt>
+					<dd>{{ MaxPiezas }}</dd>
+					
+					<dt>CMJ</dt>
+					<dd>{{ CMJ }}</dd>
 
-				    	<p>
-							<label>Stock por pallets</label>
-					    	<md-input-container md-no-float>
-						        <input type="text" ng-model="StockPallets" readonly>
-						    </md-input-container>
-				    	</p>
-						
-				    	<p>
-							<label>Max de piezas</label>
-					    	<md-input-container md-no-float>
-						        <input type="text" ng-model="MaxPiezas" readonly>
-						    </md-input-container>
-				    	</p>
-
-		    		</div>
-
-				</div>
-
+				</dl>
 
 			</div>
-
 
 			
 		    <div flex="50">
 
-		    	<p><label>Posiciones</label></p>
+		    	<label>Posiciones</label>
 
-				<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+				<p>
+					<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+				</p>
 
 				<p>
 					<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>

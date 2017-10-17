@@ -82,6 +82,10 @@ hr {
 	border-color: #0276af;
 	overflow: hidden;
 }
+hr.thin {
+	border-width: 0 0 1px 0;
+	border-color: rgba(0,0,0,0.12);
+}
 
 
 /* mobile */
@@ -116,7 +120,12 @@ md-tab-item {
 md-tab-item.md-active {
     color: rgba(0,0,0,0.87) !important;
 }
-
+.layout-row > .flex-50:nth-child(1) {
+	padding-right: 20px;
+}
+.layout-row > .flex-50:nth-child(2) {
+	padding-left: 20px;
+}
 
 /***************************************************************************************************/
 /* Forms                                                                                           */

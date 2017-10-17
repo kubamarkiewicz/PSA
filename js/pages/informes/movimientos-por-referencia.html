@@ -23,13 +23,32 @@
    	</form>
 
 	<br>
+	<br>
 
-	
+	<div layout="row" layout-wrap>
+			
+	    <div flex="50">
 
-	<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+	    	<dl>
+				<dt>Entradas</dt>
+				<dd>{{ data.Entradas }}</dd>
+				
+				<dt>Salidas</dt>
+				<dd>{{ data.Salidas }}</dd>
+			</dl>
 
-	<p>
-		<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
-	</p>
+	    </div>
+
+	    <div flex="50">
+
+			<div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+
+			<p>
+				<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+			</p>
+
+		</div>
+
+	</div>
 	
 </section>

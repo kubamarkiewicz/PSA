@@ -3,7 +3,8 @@ app.controller('MovimientosPorReferenciaController', function($scope, $rootScope
 	$scope.selectedIndex = 3;
 
     $scope.ref = '';
-	$scope.fecha = '';
+    $scope.fecha = '';
+	$scope.data = '';
 
     $scope.loadData = function()
     {
@@ -26,7 +27,8 @@ app.controller('MovimientosPorReferenciaController', function($scope, $rootScope
             }
 	    })
 	    .then(function(response) {
-	    	$scope.gridOptions.data = response.data.get_movimientos_por_referenciaResult;
+            $scope.data = response.data.get_movimientos_por_referenciaResult;
+	    	$scope.gridOptions.data = $scope.data.Movimientos;
 	    });
     }
     // $scope.loadData();

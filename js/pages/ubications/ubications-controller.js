@@ -23,7 +23,8 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
                   priority: 2
                 }
             }, 
-            {field: 'Producto', type: 'numberStr'}
+            {field: 'Producto', type: 'numberStr'}, 
+            {field: 'Piezas', type: 'numberStr'}
         ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
@@ -96,7 +97,8 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
                 "Pasillo"           : $scope.selectedItem.Pasillo,
                 "Alveolo"           : $scope.selectedItem.Alveolo,
                 "Altura"            : $scope.selectedItem.Altura,
-                "Producto"          : $scope.selectedItem.Producto
+                "Producto"          : $scope.selectedItem.Producto,
+                "Piezas"            : $scope.selectedItem.Piezas
             }
          })
         .then(function(response) {

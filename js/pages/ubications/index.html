@@ -63,6 +63,17 @@
 			<div class="column">
 				
 				<p>
+			    	<label>Piezas</label>
+			    	<md-input-container md-no-float>
+				        <input type="text" ng-model="selectedItem.Piezas">
+				    </md-input-container>
+				</p>
+
+			</div><!-- /.column -->
+					
+			<div class="column">
+				
+				<p>
 			    	<md-button type="submit" class="md-raised md-primary btn-block update" ng-disabled="!selectedItem">Guardar cambios <md-progress-circular></md-progress-circular></md-button>
 				</p>
 

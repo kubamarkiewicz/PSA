@@ -35,6 +35,7 @@ window.config.webservice = {
         "maestro_articles_save_article" : "http://192.168.8.102:8888/PSA/MasterData/api/save_article",
         "maestro_articles_delete_article" : "http://192.168.8.102:8888/PSA/MasterData/api/delete_article",
         "maestro_articles_get_proveedores" : "http://192.168.8.102:8888/PSA/MasterData/api/get_proveedores",
+        "maestro_articles_import_excel" : "dummy-webservice/maestro-articles/import_excel.json",
 
         "ordenes_en_curso_get_orders"   : "http://192.168.8.102:8888/PSA/OrdenesPendientes/api/get_orders",
         "ordenes_en_curso_delete_order" : "http://192.168.8.102:8888/PSA/OrdenesPendientes/api/delete_order",

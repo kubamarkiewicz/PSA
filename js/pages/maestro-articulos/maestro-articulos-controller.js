@@ -142,12 +142,6 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
     }
 
 
-    $scope.exportExcel = function() 
-    {
-        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
-    };
-
-
     $scope.loadProveedoresData = function()
     {
         $http({
@@ -159,5 +153,151 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
         });
     }
     $scope.loadProveedoresData();
+
+
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
+    };
+
+
+
+
+    /*global XLSX */
+    var X = XLSX;
+
+    var do_file = (function() 
+    {
+        var rABS = false;
+        var use_worker = false;
+
+        var xw = function xw(data, cb) {
+            var worker = new Worker(XW.worker);
+            worker.onmessage = function(e) {
+                switch(e.data.t) {
+                    case 'ready': break;
+                    case 'e': console.error(e.data.d); break;
+                    case XW.msg: cb(JSON.parse(e.data.d)); break;
+                }
+            };
+            worker.postMessage({d:data,b:rABS?'binary':'array'});
+        };
+
+        return function do_file(files) 
+        {
+            rABS = false;
+            use_worker = false;
+            var f = files[0];
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                if(typeof console !== 'undefined') console.log("onload", new Date(), rABS, use_worker);
+                var data = e.target.result;
+                if(!rABS) data = new Uint8Array(data);
+                if(use_worker) xw(data, process_wb);
+                else process_wb(X.read(data, {type: rABS ? 'binary' : 'array'}));
+            };
+            reader.readAsArrayBuffer(f);
+        };
+    })();
+
+
+    var process_wb = (function() {
+        var OUT = document.getElementById('out');
+        var HTMLOUT = document.getElementById('htmlout');
+
+        var get_format = (function() {
+            var radios = document.getElementsByName( "format" );
+            return function() {
+                for(var i = 0; i < radios.length; ++i) if(radios[i].checked || radios.length === 1) return radios[i].value;
+            };
+        })();
+
+        var to_json = function to_json(workbook) {
+            var result = {};
+            workbook.SheetNames.forEach(function(sheetName) {
+                var roa = X.utils.sheet_to_json(workbook.Sheets[sheetName]);
+                if(roa.length) result[sheetName] = roa;
+            });
+            return JSON.stringify(result, 2, 2);
+        };
+
+        var to_csv = function to_csv(workbook) {
+            var result = [];
+            workbook.SheetNames.forEach(function(sheetName) {
+                var csv = X.utils.sheet_to_csv(workbook.Sheets[sheetName]);
+                if(csv.length){
+                    result.push("SHEET: " + sheetName);
+                    result.push("");
+                    result.push(csv);
+                }
+            });
+            return result.join("\n");
+        };
+
+        var to_fmla = function to_fmla(workbook) {
+            var result = [];
+            workbook.SheetNames.forEach(function(sheetName) {
+                var formulae = X.utils.get_formulae(workbook.Sheets[sheetName]);
+                if(formulae.length){
+                    result.push("SHEET: " + sheetName);
+                    result.push("");
+                    result.push(formulae.join("\n"));
+                }
+            });
+            return result.join("\n");
+        };
+
+        var to_html = function to_html(workbook) {
+            HTMLOUT.innerHTML = "";
+            workbook.SheetNames.forEach(function(sheetName) {
+                var htmlstr = X.write(workbook, {sheet:sheetName, type:'binary', bookType:'html'});
+                HTMLOUT.innerHTML += htmlstr;
+            });
+            return "";
+        };
+
+        return function process_wb(wb) {
+            global_wb = wb;
+            var output = to_json(wb);
+            // console.log(output);
+            $.post({
+                url     : config.webservice.urls.maestro_articles_import_excel,
+                data    : {
+                    excel: output
+                }
+            })
+            .done(function(data) {
+                $('#importButton').attr("disabled", false).removeClass('loading');
+
+                $rootScope.toast.content(data["import_excelResult"].Message);
+                if (data["import_excelResult"].Result === true) {
+                    $rootScope.toast.toastClass('toast-success');
+                }
+                else {
+                    $rootScope.toast.toastClass('toast-error');
+                }
+                $mdToast.show($rootScope.toast);
+            });
+            $('#fileInput').val('');
+        };
+    })();
+
+
+    $scope.selectFile = function()
+    {
+        $('#importButton').attr("disabled", true).addClass('loading');
+        $('#fileInput').click();
+    }
+
+    var xlf = document.getElementById('fileInput');
+    if(!xlf.addEventListener) return;
+    xlf.addEventListener('change', handleFile, false);
+
+
+    function handleFile(e) 
+    { 
+        do_file(e.target.files); 
+    }
+
 
 });

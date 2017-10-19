@@ -35,6 +35,7 @@ window.config.webservice = {
         "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",
         "maestro_articles_delete_article" : "dummy-webservice/maestro-articles/delete_article.json",
         "maestro_articles_get_proveedores" : "dummy-webservice/maestro-articles/get_proveedores.json",
+        "maestro_articles_import_excel" : "dummy-webservice/maestro-articles/import_excel.json",
 
         "ordenes_en_curso_get_orders"   : "dummy-webservice/ordenes-en-curso/get_orders.json",
         "ordenes_en_curso_delete_order" : "dummy-webservice/ordenes-en-curso/delete_order.json",

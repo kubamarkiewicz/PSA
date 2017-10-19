@@ -44,7 +44,7 @@ PANTALLA MAESTRO ARTICULOS
 	save_article(Id,Ref,Pasillo,Alveolo,PiezasPorPallet,MinPiezas,MinPallets,MaxPiezas,MaxPallets)
 	delete_article(Id)
 	get_proveedores()
-	import_excel(excel) 
+	POST (!) import_excel(excel) 
 		excel - JSON string
 
 

@@ -277,6 +277,8 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
                     $rootScope.toast.toastClass('toast-error');
                 }
                 $mdToast.show($rootScope.toast);
+
+                $scope.loadArticlesData();
             });
             $('#fileInput').val('');
         };

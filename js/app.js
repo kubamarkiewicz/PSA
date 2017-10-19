@@ -35,10 +35,6 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'ConfiguracionDeParametrosController', 
             templateUrl: 'js/pages/configuracion-de-parametros/index.html' 
         })  
-        .when('/informes', { 
-            controller: 'InformesController', 
-            templateUrl: 'js/pages/informes/index.html' 
-        })   
         .when('/informes/ocupacion-de-estanterias', { 
             controller: 'OcupacionDeEstanteriasController', 
             templateUrl: 'js/pages/informes/ocupacion-de-estanterias.html' 

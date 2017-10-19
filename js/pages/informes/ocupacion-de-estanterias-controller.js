@@ -38,7 +38,7 @@ app.controller('OcupacionDeEstanteriasController', function($scope, $rootScope, 
 
     $scope.exportExcel = function() 
     {
-        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
     };
 
 

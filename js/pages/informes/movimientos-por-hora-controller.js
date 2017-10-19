@@ -61,7 +61,7 @@ app.controller('MovimientosPorHoraController', function($scope, $rootScope, $htt
 
     $scope.exportExcel = function() 
     {
-        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'all', 'all');
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
     };
 
 

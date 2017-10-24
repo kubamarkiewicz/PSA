@@ -339,4 +339,20 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
     // $scope.getAlertsData();
 
 
+    $scope.onCheck = function(id)
+    {
+        console.log(id);
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.check_alert,
+            params  : {
+                'Id' : id
+            }
+         })
+        .then(function(response) {
+            $scope.getAlertsData();
+        });
+    }
+
+
 });

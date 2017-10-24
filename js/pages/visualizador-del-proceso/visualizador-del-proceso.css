@@ -239,6 +239,11 @@ body.page-visualizador-del-proceso main section.alerts .alert h3 {
 	padding: 0;
 	margin: 0 0 6px 0;;
 }
+body.page-visualizador-del-proceso main section.alerts .alert h3 md-checkbox {
+	margin-bottom: 0px;
+	float: left;;;;
+	
+}
 body.page-visualizador-del-proceso main section.alerts .alert main {
 }
 

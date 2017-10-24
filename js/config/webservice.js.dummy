@@ -11,6 +11,7 @@ window.config.webservice = {
         "user_has_access"               : "dummy-webservice/user/user_has_access.json",
 
         "get_alerts"                    : "dummy-webservice/proceso/get_alerts.json",
+        "check_alert"                   : "dummy-webservice/empty.json",
         "get_agvs"                      : "dummy-webservice/proceso/get_agvs.json",
         "get_storage_position_niches"   : "dummy-webservice/proceso/get_storage_position_niches.json",
         "get_semaphores"                : "dummy-webservice/proceso/get_semaphores.json",

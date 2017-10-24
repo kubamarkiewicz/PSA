@@ -12,6 +12,7 @@ PANTALLA VISUALIZADOR DEL PROCESO
 	get_transport_belts()
 	get_storage_position_niches(storage_position_id)
 	get_alerts()
+	check_alert(Id)
 
 
 PANTALLA DE BLOQUEO DE PRODUCTOS

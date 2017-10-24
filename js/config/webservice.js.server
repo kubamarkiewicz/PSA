@@ -11,6 +11,7 @@ window.config.webservice = {
         "user_has_access"               : "http://192.168.8.102:8888/PSA/Login/api/user_has_access",
 
         "get_alerts"                    : "http://192.168.8.102:8888/PSA/Data/api/get_alerts",
+        "check_alert"                   : "dummy-webservice/empty.json",
         "get_agvs"                      : "http://192.168.8.102:8888/PSA/Data/api/get_agvs.php",
         "get_storage_position_niches"   : "http://192.168.8.102:8888/PSA/Data/api/get_storage_position_niches",
         "get_semaphores"                : "http://192.168.8.102:8888/PSA/Data/api/get_semaphores",

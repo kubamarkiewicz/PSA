@@ -2,44 +2,60 @@
 	"get_alertsResult" : 
 	[
 		{
+			"Id": "1",
 			"Title": "Lorem ipsum",
 			"Message": "dolor sit amet, consectetur adipiscing elit",
-			"Color": "danger"
+			"Color": "danger",
+			"Checked":false
 		},
 		{
-			"Title": "Sed do eiusmod tempor",
+			"Id": "2",
+			"Title": "Sed do eiusmod do eiusmod tempor",
 			"Message": "incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
-			"Color": "danger"
+			"Color": "primary",
+			"Checked":true
 		},
 		{
+			"Id": "3",
 			"Title": "Quis nostrud exercitation",
 			"Message": "ullamco laboris nisi ut aliquip ex ea commodo consequat",
-			"Color": "danger"
+			"Color": "success",
+			"Checked":true
 		},
 		{
+			"Id": "4",
 			"Title": "eu fugiat nulla pariatur",
 			"Message": "Excepteur sint occaecat cupidatat non proident",
-			"Color": "danger"
+			"Color": "info",
+			"Checked":false
 		},
 		{
+			"Id": "45",
 			"Title": "sunt in culpa qui",
 			"Message": "officia deserunt mollit anim id est laborum.",
-			"Color": "danger"
+			"Color": "warning",
+			"Checked":false
 		},
 		{
+			"Id": "23",
 			"Title": "Magna aliqua",
 			"Message": "Ut enim ad minim veniam, quis nostrud exercitation",
-			"Color": "danger"
+			"Color": "muted",
+			"Checked":false
 		},
 		{
+			"Id": "224",
 			"Title": "Consectetur adipiscing elit",
 			"Message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
-			"Color": "danger"
+			"Color": "white",
+			"Checked":true
 		},
 		{
+			"Id": "235",
 			"Title": "Consectetur adipiscing danger",
 			"Message": "eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat",
-			"Color": "danger"
+			"Color": "danger",
+			"Checked":false
 		}
 	]
 }

@@ -38,9 +38,13 @@ app.controller('BloqueoDeProductosController', function($scope, $rootScope, $htt
 
     $scope.addProductToSelection = function()
     {
+        $scope.passage = $scope.passage.toString();
+        $scope.position = $scope.position.toString();
+        $scope.height = $scope.height.toString();
         if ($scope.passage.length == 1) $scope.passage = "0" + $scope.passage;
         if ($scope.position.length == 1) $scope.position = "0" + $scope.position;
         $scope.selectedProducts.push("R." + $scope.passage + $scope.position + "." + $scope.height);
+        console.log($scope.selectedProducts);
         $scope.passage = $scope.position = $scope.height = '';
         $('input[name=passage]').focus();
     

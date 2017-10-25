@@ -1,0 +1,534 @@
+{
+    "get_ubicationsResult": [
+    {
+        "Altura": "4",
+        "Alveolo": "1",
+        "Id": "265",
+        "Pasillo": "3",
+        "Producto": "9670356480",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "15",
+        "Id": "266",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "02/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "15",
+        "Id": "267",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "03/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "1",
+        "Id": "268",
+        "Pasillo": "3",
+        "Producto": "9670356480",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "15",
+        "Id": "269",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "16",
+        "Id": "270",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "16",
+        "Id": "271",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "16",
+        "Id": "272",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "16",
+        "Id": "273",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "17",
+        "Id": "274",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "17",
+        "Id": "275",
+        "Pasillo": "3",
+        "Producto": "9808788780",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "17",
+        "Id": "276",
+        "Pasillo": "3",
+        "Producto": "9672387280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "17",
+        "Id": "277",
+        "Pasillo": "3",
+        "Producto": "9808788780",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "7",
+        "Id": "281",
+        "Pasillo": "3",
+        "Producto": "9812211480",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "12",
+        "Id": "282",
+        "Pasillo": "3",
+        "Producto": "9678625280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "14",
+        "Id": "284",
+        "Pasillo": "3",
+        "Producto": "9676998580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "1",
+        "Id": "287",
+        "Pasillo": "4",
+        "Producto": "9815859880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "1",
+        "Id": "288",
+        "Pasillo": "4",
+        "Producto": "9815859880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "4",
+        "Id": "291",
+        "Pasillo": "4",
+        "Producto": "9677496080",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "4",
+        "Id": "292",
+        "Pasillo": "4",
+        "Producto": "9677496080",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "4",
+        "Id": "293",
+        "Pasillo": "4",
+        "Producto": "9677496080",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "14",
+        "Id": "294",
+        "Pasillo": "4",
+        "Producto": "9675552680",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "8",
+        "Id": "297",
+        "Pasillo": "4",
+        "Producto": "9813058280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "8",
+        "Id": "298",
+        "Pasillo": "4",
+        "Producto": "9813058280",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "7",
+        "Id": "299",
+        "Pasillo": "4",
+        "Producto": "9807738980",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "10",
+        "Id": "300",
+        "Pasillo": "4",
+        "Producto": "9689044080",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "9",
+        "Id": "303",
+        "Pasillo": "4",
+        "Producto": "9689044180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "11",
+        "Id": "306",
+        "Pasillo": "4",
+        "Producto": "9689059780",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "8",
+        "Id": "311",
+        "Pasillo": "3",
+        "Producto": "9808243580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "6",
+        "Id": "312",
+        "Pasillo": "3",
+        "Producto": "9676704980",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "18",
+        "Id": "314",
+        "Pasillo": "4",
+        "Producto": "9675721580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "13",
+        "Id": "316",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "12",
+        "Id": "318",
+        "Pasillo": "4",
+        "Producto": "9689059580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "18",
+        "Id": "320",
+        "Pasillo": "4",
+        "Producto": "9675721580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "11",
+        "Id": "322",
+        "Pasillo": "4",
+        "Producto": "9689059780",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "13",
+        "Id": "324",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "2",
+        "Id": "326",
+        "Pasillo": "3",
+        "Producto": "9675341980",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "13",
+        "Id": "327",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "12",
+        "Id": "328",
+        "Pasillo": "4",
+        "Producto": "9689059580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "18",
+        "Id": "329",
+        "Pasillo": "4",
+        "Producto": "9675721580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "16",
+        "Id": "330",
+        "Pasillo": "4",
+        "Producto": "9689078580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "14",
+        "Id": "331",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "15",
+        "Id": "332",
+        "Pasillo": "4",
+        "Producto": "9807738880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "14",
+        "Id": "333",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "14",
+        "Id": "334",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "15",
+        "Id": "335",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "1",
+        "Id": "336",
+        "Pasillo": "4",
+        "Producto": "9815859880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "15",
+        "Id": "337",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "12",
+        "Id": "338",
+        "Pasillo": "4",
+        "Producto": "9689059580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "15",
+        "Id": "339",
+        "Pasillo": "4",
+        "Producto": "9807738880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "2",
+        "Id": "340",
+        "Pasillo": "4",
+        "Producto": "9815859880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "9",
+        "Id": "341",
+        "Pasillo": "4",
+        "Producto": "9689044180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "13",
+        "Id": "342",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "4",
+        "Alveolo": "16",
+        "Id": "343",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "5",
+        "Alveolo": "16",
+        "Id": "344",
+        "Pasillo": "4",
+        "Producto": "9807738880",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "6",
+        "Alveolo": "16",
+        "Id": "345",
+        "Pasillo": "4",
+        "Producto": "9675859180",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "17",
+        "Id": "346",
+        "Pasillo": "4",
+        "Producto": "9689078580",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "2",
+        "Alveolo": "2",
+        "Id": "350",
+        "Pasillo": "15",
+        "Producto": "Locked",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    },
+    {
+        "Altura": "3",
+        "Alveolo": "2",
+        "Id": "351",
+        "Pasillo": "15",
+        "Producto": "Locked",
+        "Piezas": "2",
+        "FechaDeAlmacenamiento": "01/08/2017 17:00:00"
+    }]
+}

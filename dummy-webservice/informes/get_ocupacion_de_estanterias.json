@@ -2,13 +2,13 @@
 	"get_ocupacion_de_estanteriasResult" :
 	[
 	    {
-	    	"Estanteria" 		: "1",
+	    	"Pasillo" 			: "1",
 	    	"HuecosOcupados" 	: "3",
 	    	"Ocupacion" 		: "2",
 	    	"HuecosLibres" 		: "4"
 	    },
 	    {
-	    	"Estanteria" 		: "2",
+	    	"Pasillo" 			: "2",
 	    	"HuecosOcupados" 	: "4",
 	    	"Ocupacion" 		: "3",
 	    	"HuecosLibres" 		: "5"

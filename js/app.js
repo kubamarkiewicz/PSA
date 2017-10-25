@@ -55,6 +55,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'MovimientosPorHoraController', 
             templateUrl: 'js/pages/informes/movimientos-por-hora.html' 
         })   
+        .when('/informes/ubications', { 
+            controller: 'UbicationsInformeController', 
+            templateUrl: 'js/pages/informes/ubications.html' 
+        })   
         .when('/maestro-articulos', { 
             controller: 'MaestroArticulosController', 
             templateUrl: 'js/pages/maestro-articulos/index.html' 

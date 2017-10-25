@@ -37,6 +37,7 @@ PANTALLA INFORMES
 	get_stock_por_proveedor(Cofor)
 	get_movimientos_por_referencia(Ref, Fecha)
 	get_movimientos_por_hora(Ref, Cofor, Fecha)
+	get_ubications()
 
 
 PANTALLA MAESTRO ARTICULOS

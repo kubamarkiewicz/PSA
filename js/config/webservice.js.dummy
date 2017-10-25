@@ -31,6 +31,7 @@ window.config.webservice = {
         "informes_get_stock_por_proveedor"          : "dummy-webservice/informes/get_stock_por_proveedor.json",
         "informes_get_movimientos_por_referencia"   : "dummy-webservice/informes/get_movimientos_por_referencia.json",
         "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/get_movimientos_por_hora.json",
+        "informes_get_ubications"                   : "dummy-webservice/informes/get_ubications.json",
 
         "maestro_articles_get_articles" : "dummy-webservice/maestro-articles/get_articles.json",
         "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",

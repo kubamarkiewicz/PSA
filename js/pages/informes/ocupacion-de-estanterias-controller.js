@@ -5,7 +5,7 @@ app.controller('OcupacionDeEstanteriasController', function($scope, $rootScope, 
 
     $scope.gridOptions = { 
         columnDefs: [
-            {field: 'Estanteria', type: 'numberStr'},
+            {field: 'Pasillo', type: 'numberStr'},
             {field: 'Ocupacion', type: 'numberStr'},
             {field: 'HuecosOcupados', type: 'numberStr'},
             {field: 'HuecosLibres', type: 'numberStr'}

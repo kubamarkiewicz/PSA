@@ -23,6 +23,7 @@
     <link href="js/pages/ordenes-completadas/ordenes-completadas.css" rel="stylesheet">
     <link href="js/pages/logs/logs.css" rel="stylesheet">
     <link href="js/pages/ubications/ubications.css" rel="stylesheet">
+    <link href="js/pages/camaras/camaras.css" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -66,6 +67,9 @@
                 </md-menu-item>
                 <md-menu-item ng-hide="!user_permissions['ubications']">
                     <md-button ng-href="#ubications" md-colors="{background: 'blue'}">Ubicaciones</md-button>
+                </md-menu-item>
+                <md-menu-item ng-hide="!user_permissions['camaras']">
+                    <md-button ng-href="#camaras" md-colors="{background: 'blue'}">Camaras</md-button>
                 </md-menu-item>
                 <md-menu-item>
                     <md-button ng-click="logout()" md-colors="{background: 'blue'}">Salir</md-button>
@@ -121,11 +125,14 @@
     <script src="js/pages/informes/movimientos-por-referencia-controller.js"></script>
     <script src="js/pages/informes/movimientos-por-hora-controller.js"></script>
     <script src="js/pages/informes/ubications-informe-controller.js"></script>
+    <script src="js/pages/informes/ubications-informe-controller.js"></script>
+    <script src="js/pages/informes/alertas-controller.js"></script>
     <script src="js/pages/maestro-articulos/maestro-articulos-controller.js"></script>
     <script src="js/pages/ordenes-en-curso/ordenes-en-curso-controller.js"></script>
     <script src="js/pages/ordenes-completadas/ordenes-completadas-controller.js"></script>
     <script src="js/pages/logs/logs-controller.js"></script>
     <script src="js/pages/ubications/ubications-controller.js"></script>
+    <script src="js/pages/camaras/camaras-controller.js"></script>
 
     <!-- Services -->
     <script src="js/services/artisteril-auth-service.js"></script>

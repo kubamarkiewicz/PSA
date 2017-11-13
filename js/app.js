@@ -59,6 +59,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
             controller: 'UbicationsInformeController', 
             templateUrl: 'js/pages/informes/ubications.html' 
         })   
+        .when('/informes/alertas', { 
+            controller: 'AlertasController', 
+            templateUrl: 'js/pages/informes/alertas.html' 
+        })   
         .when('/maestro-articulos', { 
             controller: 'MaestroArticulosController', 
             templateUrl: 'js/pages/maestro-articulos/index.html' 
@@ -78,6 +82,10 @@ app.config(function ($routeProvider, $locationProvider, $mdThemingProvider) {
         .when('/ubications', { 
             controller: 'UbicationsController', 
             templateUrl: 'js/pages/ubications/index.html' 
+        })    
+        .when('/camaras', { 
+            controller: 'CamarasController', 
+            templateUrl: 'js/pages/camaras/index.html' 
         })   
         .otherwise({ 
             redirectTo: '/visualizador-del-proceso' 

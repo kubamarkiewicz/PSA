@@ -1,0 +1,30 @@
+
+
+/* Page page-camaras *******************************************************************************/
+
+
+
+body.page-camaras > main h2 {
+    border-bottom: 4px solid #0276af;
+    font-weight: 500;
+    padding-bottom: 4px;
+    margin-bottom: 35px;
+}
+body.page-camaras > main label {
+	display: block;
+	font-size: 14px;
+	margin-bottom: 4px;
+	margin-top: 8px;
+}
+body.page-camaras > main .md-input {
+}
+
+
+/* mobile */
+@media screen and (max-width: 1900px) {
+
+	
+
+	
+
+}

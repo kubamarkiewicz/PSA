@@ -18,7 +18,7 @@ body.page-informes > main md-tab-item a {
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
-	font-size: 14px;
+	font-size: 13px;
 }
 
 
@@ -103,6 +103,9 @@ body.page-informes section.movimientos-por-hora .myGrid {
 
 
 
+body.page-informes section.alertas .myGrid {
+	height: calc(100% - 83px) !important;
+}
 
 
 /* mobile */

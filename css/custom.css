@@ -180,6 +180,7 @@ md-tab-item.md-active {
 }
 md-input-container {
 	margin: 0;
+	padding: 2px 0;;
 }
 md-input-container .md-errors-spacer {
 	display: none;
@@ -272,6 +273,15 @@ color: inherit !important; }
 	background-color: #0276af !important;
 	color: #ffffff;
 	
+}
+
+div.value {
+	font-size: 14px;
+	border-width: 1px;
+    background-color: #ffffff;
+    font-size: 20px;
+    height: 38px;
+    padding: 2px 12px 1px;
 }
 
 
@@ -769,13 +779,13 @@ i.ui-grid-icon-cancel:before {
 		margin-top: 70px;
 	}
 	#menu-dropdown md-menu-item {
-		min-height: 66px;
+		min-height: 55px;
 	}
 	#menu-dropdown .md-button {
-		height: 66px;
-		line-height: 66px;
+		height: 55px;
 		font-size: 24px;
 	    padding: 0 35px;
+		line-height: 55px;
 	}
 
 	body > header h1 {

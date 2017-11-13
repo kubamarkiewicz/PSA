@@ -32,6 +32,7 @@ window.config.webservice = {
         "informes_get_movimientos_por_referencia"   : "dummy-webservice/informes/get_movimientos_por_referencia.json",
         "informes_get_movimientos_por_hora"         : "dummy-webservice/informes/get_movimientos_por_hora.json",
         "informes_get_ubications"                   : "dummy-webservice/informes/get_ubications.json",
+        "informes_get_alertas"                      : "dummy-webservice/informes/get_alertas.json",
 
         "maestro_articles_get_articles" : "dummy-webservice/maestro-articles/get_articles.json",
         "maestro_articles_save_article" : "dummy-webservice/maestro-articles/save_article.json",
@@ -50,6 +51,8 @@ window.config.webservice = {
         "ubications_get_ubications"     : "dummy-webservice/ubications/get_ubications.json",
         "ubications_save_ubication"     : "dummy-webservice/ubications/save_ubication.json",
         "ubications_delete_ubication"   : "dummy-webservice/ubications/delete_ubication.json",
+
+        "camaras_get_camaras"           : "dummy-webservice/camaras/get_camaras.json",
 
         "enter_Lockings"                : "dummy-webservice/empty.json",
         "enter_Process"                 : "dummy-webservice/empty.json",

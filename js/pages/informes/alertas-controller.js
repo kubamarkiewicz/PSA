@@ -36,5 +36,11 @@ app.controller('AlertasController', function($scope, $rootScope, $http, $routePa
     $scope.loadData();
 
 
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
+    };
+
+
 
 });

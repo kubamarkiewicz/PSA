@@ -335,7 +335,7 @@ app.controller('VisualizadorDelProcesoController', function($scope, $rootScope, 
             $scope.alertsData = response.data.get_alertsResult;
         });
     }
-    ArtisterilIntervalService.start($scope.getAlertsData, 60000);
+    ArtisterilIntervalService.start($scope.getAlertsData, 300000);
     // $scope.getAlertsData();
 
 

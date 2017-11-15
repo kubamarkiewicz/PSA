@@ -13,6 +13,18 @@ app.controller('OrdenesCompletadasController', function($scope, $rootScope, $htt
     $scope.loadOrdersData();
 
     $scope.gridOptions = { 
+        columnDefs: [
+            {field: 'Id', type: 'numberStr'}, 
+            {field: 'Asignado', type: 'numberStr'}, 
+            {field: 'Dispositivo', type: 'numberStr'}, 
+            {field: 'Producto', type: 'numberStr'}, 
+            {field: 'Origen', type: 'numberStr'}, 
+            {field: 'Destino', type: 'numberStr'}, 
+            {field: 'Estado', type: 'numberStr'}, 
+            {field: 'EnviadoTram', type: 'numberStr'}, 
+            {field: 'Fecha', type: 'numberStr'}, 
+            {field: 'Hora', type: 'numberStr'}
+        ],
         enableRowSelection: false, 
         enableRowHeaderSelection: false, 
         multiSelect: false, 

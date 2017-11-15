@@ -3,24 +3,28 @@
     "get_ordersResult" :
 	[
 		{
-			"Ref"				: "1",
-			"FechaGeneracion"	: "08/29/2017",
-			"HoraGeneracion"	: "10:15h",
-			"CodigoArticulo"	: "9681268889",
-			"Origen"			: "ST4001",
-			"Destino"			: "R.0302.6",
-			"AsignadoA"			: "",
-			"Estado"			: "PENDIENTE"
+			"Id": 				"1",
+			"Asignado": 		"AGV 2",
+			"Dispositivo": 		"123",	
+			"Producto": 		"9681268889",	
+			"Origen": 			"ST4001",
+			"Destino": 			"R.0302.6",
+			"Estado": 			"PICKED",
+			"EnviadoTram": 		"ABC",		
+			"Fecha": 			"08/29/2017",
+			"Hora": 			"12:12:12"
 		},
 		{
-			"Ref"				: "2",
-			"FechaGeneracion"	: "09/29/2017",
-			"HoraGeneracion"	: "10:15h",
-			"CodigoArticulo"	: "9681268888",
-			"Origen"			: "ST4002",
-			"Destino"			: "R.0302.7",
-			"AsignadoA"			: "AGV 2",
-			"Estado"			: "PICKED"
+			"Id": 				"2",
+			"Asignado": 		"AGV 2",
+			"Dispositivo": 		"123",	
+			"Producto": 		"9681268889",	
+			"Origen": 			"ST4001",
+			"Destino": 			"R.0302.6",
+			"Estado": 			"PICKED",
+			"Enviado Tram": 	"ABC",		
+			"Fecha": 			"08/29/2017",
+			"Hora": 			"12:12:12"
 		}
 	]
 }

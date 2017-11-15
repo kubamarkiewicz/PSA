@@ -12,7 +12,19 @@ app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $
     }
     $scope.loadOrdersData();
 
-    $scope.gridOptions = { 
+    $scope.gridOptions = {         
+        columnDefs: [
+            {field: 'Id', type: 'numberStr'}, 
+            {field: 'Asignado', type: 'numberStr'}, 
+            {field: 'Dispositivo', type: 'numberStr'}, 
+            {field: 'Producto', type: 'numberStr'}, 
+            {field: 'Origen', type: 'numberStr'}, 
+            {field: 'Destino', type: 'numberStr'}, 
+            {field: 'Estado', type: 'numberStr'}, 
+            {field: 'EnviadoTram', type: 'numberStr'}, 
+            {field: 'Fecha', type: 'numberStr'}, 
+            {field: 'Hora', type: 'numberStr'}
+        ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
         multiSelect: false, 

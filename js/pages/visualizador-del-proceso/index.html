@@ -71,7 +71,7 @@
 		<div 
 			ng-repeat="agv in AGVData"  
 			id="agv-{{ agv.Id }}"
-			class="agv" 
+			class="agv {{ agv.Color }}" 
 			style="transform: translate({{ metersToPxX(agv.X / 1000) }}px, {{ metersToPxY(agv.Y / 1000) }}px) rotate({{ calculateRotation(agv.Orientation) }}deg)"
 			ng-click="openAGVPopup($event, agv)">
 			{{ agv.Id }}

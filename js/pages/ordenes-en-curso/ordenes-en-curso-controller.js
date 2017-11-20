@@ -48,14 +48,14 @@ app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $
         if (!$scope.selectedItem) {
             return;
         }
-        if ($scope.selectedItem.Estado != "PENDIENTE") {
+/*        if ($scope.selectedItem.Estado != "PENDIENTE") {
             alert("Solo se pueder borrar las órdenes en estado PENDIENTE");
             return;
         }
         if ($scope.selectedItem.AsignadoA) {
             alert("No se pueder borrar las órdenes asignadas");
             return;
-        }
+        }*/
 
         if (!confirm("Estas seguro que quieres borrar esta órden?")) {
             return;

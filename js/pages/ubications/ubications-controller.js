@@ -166,14 +166,6 @@ app.controller('UbicationsController', function($scope, $rootScope, $http, $rout
         
     }
 
-    $scope.exportPdf = function() 
-    {
-        var grid = $scope.gridApi.grid;
-        var rowTypes = uiGridExporterConstants.ALL;
-        var colTypes = uiGridExporterConstants.ALL;
-        uiGridExporterService.pdfExport(grid, rowTypes, colTypes);
-    };
-
     $scope.exportExcel = function() 
     {
         exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');

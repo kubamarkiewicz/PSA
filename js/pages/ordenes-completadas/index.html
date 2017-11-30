@@ -2,7 +2,24 @@
 
 	<h2>Órdenes de trabajo completadas</h2>
 
-    <div ui-grid="gridOptions" ui-grid-selection class="myGrid"></div>
+    <div ui-grid="gridOptions" ui-grid-selection ui-grid-exporter class="myGrid"></div>
+
+
+	
+	<div layout="row" layout-wrap>
+	    <div flex="50">
+
+	    	
+			
+	    </div>
+	    <div flex="50" layout="row" layout-align="end start">
+
+			<p>
+				<md-button class="md-raised md-primary" ng-click="exportExcel()">Exportar Excel</md-button>
+			</p>
+
+		</div>
+	</div>
 
 
 

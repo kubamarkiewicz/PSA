@@ -1,4 +1,4 @@
-app.controller('OrdenesCompletadasController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval) {  
+app.controller('OrdenesCompletadasController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval, exportUiGridService, uiGridExporterConstants, uiGridExporterService) {  
 
     $scope.loadOrdersData = function()
     {
@@ -28,7 +28,19 @@ app.controller('OrdenesCompletadasController', function($scope, $rootScope, $htt
         enableRowSelection: false, 
         enableRowHeaderSelection: false, 
         multiSelect: false, 
-        modifierKeysToMultiSelect: false
+        modifierKeysToMultiSelect: false,  
+        enableFiltering: true
+    };
+
+    $scope.gridOptions.onRegisterApi = function(gridApi)
+    {
+        //set gridApi on scope
+        $scope.gridApi = gridApi;
+    };
+
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
     };
 
 });

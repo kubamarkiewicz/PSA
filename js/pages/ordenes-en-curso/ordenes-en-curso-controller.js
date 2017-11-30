@@ -1,4 +1,4 @@
-app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval) {  
+app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $routeParams, config, ArtisterilIntervalService, $mdToast, uiGridConstants, $interval, exportUiGridService, uiGridExporterConstants, uiGridExporterService) {  
 
     $scope.loadOrdersData = function()
     {
@@ -28,7 +28,8 @@ app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
         multiSelect: false, 
-        modifierKeysToMultiSelect: false
+        modifierKeysToMultiSelect: false,  
+        enableFiltering: true
     };
 
     $scope.selectedItem = null;
@@ -84,6 +85,11 @@ app.controller('OrdenesEnCursoController', function($scope, $rootScope, $http, $
             $scope.loadOrdersData();
         });
     }
+
+    $scope.exportExcel = function() 
+    {
+        exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
+    };
 
 
 });

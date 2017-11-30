@@ -22,6 +22,7 @@ var ArtisterilAuthService = angular.module('ArtisterilAuthService', [])
             // set permissions
             $rootScope.user_permissions = {};
             $rootScope.user_permissions['visualizador-del-proceso'] = response.data.user_has_accessResult['Visualizador_del_proceso'];
+            $rootScope.user_permissions['tratar-alertas'] = response.data.user_has_accessResult['Tratar_alertas'];
             $rootScope.user_permissions['datos-del-sga'] = response.data.user_has_accessResult['Datos_del_sga'];
             $rootScope.user_permissions['configuracion-de-parametros'] = response.data.user_has_accessResult['Configuracion_de_parametros'];
             $rootScope.user_permissions['bloqueo-de-productos'] = response.data.user_has_accessResult['Bloqueos'];

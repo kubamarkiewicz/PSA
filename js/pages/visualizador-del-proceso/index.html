@@ -10,8 +10,8 @@
 		<div ng-repeat="item in alertsData" class="alert alert-{{ item.Color }}" >
 			<h3>
 				<span>
-					<md-checkbox ng-model="item.Checked" ng-disabled="item.Checked" ng-change="onCheck(item.Id)"></md-checkbox>
-					<md-tooltip md-direction="top" ng-hide="item.Checked">Marcar como tratado</md-tooltip> 
+					<md-checkbox ng-model="item.Checked" ng-disabled="item.Checked || !user_permissions['tratar-alertas']" ng-change="onCheck(item.Id)"></md-checkbox>
+					<md-tooltip md-direction="top" ng-hide="item.Checked || !user_permissions['tratar-alertas']">Marcar como tratado</md-tooltip> 
 				</span>{{ item.Title }}</h3>
 			<main>{{ item.Message }}</main>
 		</div>

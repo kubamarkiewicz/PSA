@@ -13,7 +13,9 @@
 			"MaxPallets"	: "123",
 			"ProveedorId" : "1",
 			"RefCofor" : "123",
-			"NombreSocial" : "Nombre 1"
+			"NombreSocial" : "Nombre 1",
+			"Cmj" : "123",
+			"BloqueoAutomatico" : "Si"
 		},
 		{
         	"Id": "2",
@@ -27,7 +29,9 @@
 			"MaxPallets"	: "23",
 			"ProveedorId" : "2",
 			"RefCofor" : "223",
-			"NombreSocial" : "Nombre 2"
+			"NombreSocial" : "Nombre 2",
+			"Cmj" : "123",
+			"BloqueoAutomatico" : "No"
 		}
 	]
 }

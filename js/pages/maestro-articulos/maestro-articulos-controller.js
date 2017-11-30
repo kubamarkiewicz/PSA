@@ -11,7 +11,9 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             {field: 'MinPallets', type: 'numberStr'},
             {field: 'MaxPallets', type: 'numberStr'},
             {field: 'RefCofor', type: 'numberStr'},
-            {field: 'NombreSocial', type: 'numberStr'}
+            {field: 'NombreSocial', type: 'numberStr'},
+            {field: 'Cmj', type: 'numberStr', displayName: 'CMJ'},
+            {field: 'BloqueoAutomatico', type: 'numberStr', displayName: 'Bloqueo Automático'}
         ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
@@ -71,7 +73,9 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
                 "MinPallets"        : $scope.selectedItem.MinPallets,
                 "MaxPiezas"         : $scope.selectedItem.MaxPiezas,
                 "MaxPallets"        : $scope.selectedItem.MaxPallets,
-                "ProveedorId"       : $scope.selectedItem.ProveedorId
+                "ProveedorId"       : $scope.selectedItem.ProveedorId,
+                "Cmj"               : $scope.selectedItem.Cmj,
+                "BloqueoAutomatico" : $scope.selectedItem.BloqueoAutomatico
             }
          })
         .then(function(response) {

@@ -115,6 +115,27 @@
 				</p>
 				
 				<p>
+			    	<label>CMJ</label>
+			    	<md-input-container md-no-float>
+				        <input type="number" string-to-number ng-model="selectedItem.Cmj" ng-disabled="!selectedItem">
+				    </md-input-container>
+				</p>
+
+			</div><!-- /.column -->
+					
+			<div class="column">
+
+				<p>
+					<label>Bloqueo Automático</label>
+					<md-input-container md-no-float>
+				        <md-select ng-model="selectedItem.BloqueoAutomatico">
+				            <md-option value="No">No</md-option>
+				            <md-option value="Si">Si</md-option>
+				      	</md-select>
+				    </md-input-container>
+				</p>
+				
+				<p>
 			    	<md-button type="submit" class="md-raised md-primary btn-block update" ng-disabled="!selectedItem">Guardar cambios <md-progress-circular></md-progress-circular></md-button>
 				</p>
 

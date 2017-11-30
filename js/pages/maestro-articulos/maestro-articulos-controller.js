@@ -13,7 +13,8 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
             {field: 'RefCofor', type: 'numberStr'},
             {field: 'NombreSocial', type: 'numberStr'},
             {field: 'Cmj', type: 'numberStr', displayName: 'CMJ'},
-            {field: 'BloqueoAutomatico', type: 'numberStr', displayName: 'Bloqueo Automático'}
+            {field: 'BloqueoAutomatico', type: 'numberStr', displayName: 'Bloqueo Automático'},
+            {field: 'TipoPalletName', type: 'numberStr', displayName: 'Tipo Pallet'}
         ],
         enableRowSelection: true, 
         enableRowHeaderSelection: false, 
@@ -49,6 +50,7 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
         })
         .then(function(response) {
             $scope.gridOptions.data = response.data.get_articlesResult;
+            $scope.displayTiposPalletData();
         });
     }
     $scope.loadArticlesData();
@@ -75,7 +77,8 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
                 "MaxPallets"        : $scope.selectedItem.MaxPallets,
                 "ProveedorId"       : $scope.selectedItem.ProveedorId,
                 "Cmj"               : $scope.selectedItem.Cmj,
-                "BloqueoAutomatico" : $scope.selectedItem.BloqueoAutomatico
+                "BloqueoAutomatico" : $scope.selectedItem.BloqueoAutomatico,
+                "TipoPallet"        : $scope.selectedItem.TipoPallet
             }
          })
         .then(function(response) {
@@ -157,6 +160,39 @@ app.controller('MaestroArticulosController', function($scope, $rootScope, $http,
         });
     }
     $scope.loadProveedoresData();
+
+
+
+    $scope.loadTiposPalletData = function()
+    {
+        $http({
+            method  : 'GET',
+            url     : config.webservice.urls.maestro_articles_get_tipos_pallet
+        })
+        .then(function(response) {
+            $scope.tiposPalletData = response.data.get_tipos_palletResult;
+            $scope.displayTiposPalletData();
+        });
+    }
+    $scope.loadTiposPalletData();
+
+
+    $scope.displayTiposPalletData = function() 
+    {
+        if (!$scope.tiposPalletData) {
+            return;
+        }
+
+        var tipos = {};
+        for (i in $scope.tiposPalletData) {
+            tipos[$scope.tiposPalletData[i].Id] = $scope.tiposPalletData[i];
+        }
+
+        // display tipos pallet names in the grid
+        for (i in $scope.gridOptions.data) {
+            $scope.gridOptions.data[i].TipoPalletName = tipos[$scope.gridOptions.data[i]['TipoPallet']]['Nombre'];
+        }
+    }
 
 
     $scope.exportExcel = function() 

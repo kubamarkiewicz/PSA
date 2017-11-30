@@ -1,0 +1,13 @@
+{
+    "get_tipos_palletResult" :
+	[
+        {
+            "Id": "1",
+            "Nombre"   : "tipo 1"
+        },
+        {
+            "Id": "2",
+            "Nombre"   : "tipo 2"
+        }
+    ]
+}

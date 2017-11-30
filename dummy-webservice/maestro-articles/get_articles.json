@@ -15,7 +15,8 @@
 			"RefCofor" : "123",
 			"NombreSocial" : "Nombre 1",
 			"Cmj" : "123",
-			"BloqueoAutomatico" : "Si"
+			"BloqueoAutomatico" : "Si",
+			"TipoPallet" : "1"
 		},
 		{
         	"Id": "2",
@@ -31,7 +32,8 @@
 			"RefCofor" : "223",
 			"NombreSocial" : "Nombre 2",
 			"Cmj" : "123",
-			"BloqueoAutomatico" : "No"
+			"BloqueoAutomatico" : "No",
+			"TipoPallet" : "2"
 		}
 	]
 }

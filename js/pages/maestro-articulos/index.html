@@ -134,6 +134,21 @@
 				      	</md-select>
 				    </md-input-container>
 				</p>
+
+				<p>
+					<label>Tipo Pallet</label>
+					<md-input-container md-no-float>
+				        <md-select ng-model="selectedItem.TipoPallet">
+				            <md-option ng-repeat="option in tiposPalletData" ng-value="option.Id">
+				            	{{ option.Nombre }}
+				            </md-option>
+				      	</md-select>
+				    </md-input-container>
+				</p>
+
+			</div><!-- /.column -->
+					
+			<div class="column">
 				
 				<p>
 			    	<md-button type="submit" class="md-raised md-primary btn-block update" ng-disabled="!selectedItem">Guardar cambios <md-progress-circular></md-progress-circular></md-button>

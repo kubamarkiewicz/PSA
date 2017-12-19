@@ -3,27 +3,20 @@ app.controller('MovimientosPorReferenciaController', function($scope, $rootScope
 	$scope.selectedIndex = 3;
 
     $scope.ref = '';
-    $scope.fecha = '';
+    $scope.fechaDesde = '';
+    $scope.fechaHasta = '';
 	$scope.data = '';
+
 
     $scope.loadData = function()
     {
-        console.log($scope.fecha);
-
-        var date = '';
-        if ($scope.fecha) {
-            var day = ("0" + $scope.fecha.getDate()).slice(-2);
-            var monthIndex = ("0" + ($scope.fecha.getMonth() + 1)).slice(-2);
-            var year = $scope.fecha.getFullYear();
-            date = day + '/' + monthIndex + '/' + year;
-        }
-
 	    $http({
 	        method  : 'GET',
 	        url     : config.webservice.urls.informes_get_movimientos_por_referencia,
             params  : {
                 "Ref" : $scope.ref,
-                "Fecha" : date
+                "FechaDesde" : $rootScope.formatDateFromDatepickerForWebservice($scope.fechaDesde),
+                "FechaHasta" : $rootScope.formatDateFromDatepickerForWebservice($scope.fechaHasta)
             }
 	    })
 	    .then(function(response) {
@@ -62,6 +55,7 @@ app.controller('MovimientosPorReferenciaController', function($scope, $rootScope
     {
         exportUiGridService.exportToExcel('sheet 1', $scope.gridApi, 'visible', 'visible');
     };
+
 
 
 });

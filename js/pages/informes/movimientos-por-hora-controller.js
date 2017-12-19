@@ -4,27 +4,19 @@ app.controller('MovimientosPorHoraController', function($scope, $rootScope, $htt
 
     $scope.ref = '';
     $scope.cofor = '';
-	$scope.fecha = '';
+    $scope.fechaDesde = '';
+    $scope.fechaHasta = '';
 
     $scope.loadData = function()
     {
-        console.log($scope.fecha);
-
-        var date = '';
-        if ($scope.fecha) {
-            var day = ("0" + $scope.fecha.getDate()).slice(-2);
-            var monthIndex = ("0" + ($scope.fecha.getMonth() + 1)).slice(-2);
-            var year = $scope.fecha.getFullYear();
-            date = day + '/' + monthIndex + '/' + year;
-        }
-
 	    $http({
 	        method  : 'GET',
 	        url     : config.webservice.urls.informes_get_movimientos_por_hora,
             params  : {
                 "Ref" : $scope.ref,
                 "Cofor" : $scope.cofor,
-                "Fecha" : date
+                "FechaDesde" : $rootScope.formatDateFromDatepickerForWebservice($scope.fechaDesde),
+                "FechaHasta" : $rootScope.formatDateFromDatepickerForWebservice($scope.fechaHasta)
             }
 	    })
 	    .then(function(response) {

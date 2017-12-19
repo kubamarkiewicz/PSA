@@ -270,6 +270,22 @@ app.run(function($rootScope, $sce, $http, $location, $interval, ArtisterilAuthSe
         }
     }
 
+
+
+
+
+
+    $rootScope.formatDateFromDatepickerForWebservice = function(date)
+    {
+        if (!date) {
+            return '';
+        }
+        var day = ("0" + date.getDate()).slice(-2);
+        var monthIndex = ("0" + (date.getMonth() + 1)).slice(-2);
+        var year = date.getFullYear();
+        return day + '/' + monthIndex + '/' + year;
+    }
+
 });
 
   
@@ -322,3 +338,4 @@ app.directive('stringToNumber', function() {
         }
     };
 });
+

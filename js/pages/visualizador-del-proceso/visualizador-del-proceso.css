@@ -152,7 +152,6 @@ body.page-visualizador-del-proceso #avg-popup {
 
 
 body.page-visualizador-del-proceso .position {
-    position: absolute;
     width: 1.15%;
     height: 1.75%;
     z-index: 10;
@@ -161,10 +160,15 @@ body.page-visualizador-del-proceso .position {
 	transition: all .05s ease-out;
     opacity: 0.2;
     mix-blend-mode: overlay;
+    position: absolute;
 }
 body.page-visualizador-del-proceso .position:hover,
 body.page-visualizador-del-proceso .position.selected {
 	opacity: 0.5;
+}
+body.page-visualizador-del-proceso .position.short {
+    width: 0.54%;
+    height: 1.6%;
 }
 
 body.page-visualizador-del-proceso .semaphore {

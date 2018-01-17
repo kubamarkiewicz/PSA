@@ -100,13 +100,13 @@
 		<div 
 			ng-repeat="(id, coordinates) in storagePositionsCoordinates"  
 			id="position-{{ id }}"
-			class="position" 
+			class="position {{ coordinates.class }}" 
 			style="transform: translate({{ calculateStorageX(coordinates.X) }}px, {{ calculateStorageY(coordinates.Y) }}px)"
 			ng-click="openPositionPopup($event, id)">
 		</div>
 
 		<!-- map images -->
-		<img id="map-image" src="js/pages/visualizador-del-proceso/map/AGV PSA Vigo_ESTIRADO_v5.svg" alt="">
+		<img id="map-image" src="js/pages/visualizador-del-proceso/map/AGV PSA Vigo_v8_copia.svg" alt="">
 
 	</div> 
 

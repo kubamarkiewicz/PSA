@@ -35,8 +35,8 @@ PANTALLA INFORMES
 	get_ocupacion_de_estanterias()
 	get_stock_por_referencia(Ref)
 	get_stock_por_proveedor(Cofor)
-	get_movimientos_por_referencia(Ref, Fecha)
-	get_movimientos_por_hora(Ref, Cofor, Fecha)
+	get_movimientos_por_referencia(Ref, FechaDesde, FechaHasta)
+	get_movimientos_por_hora(Ref, Cofor, FechaDesde, FechaHasta)
 	get_ubications()
 
 

@@ -1,13 +1,14 @@
 
+
 LOGIN DE USUARIOS
  
 	user_login (user, password)
 	user_has_access (user)
 
 
-PANTALLA VISUALIZADOR DEL PROCESO
+VISUALIZADOR DEL PROCESO
 
-	get_agvs()
+	get_agvs() // possible colors: rojo, violeta, amarillo, verde
 	get_semaphores()
 	get_transport_belts()
 	get_storage_position_niches(storage_position_id)
@@ -15,7 +16,7 @@ PANTALLA VISUALIZADOR DEL PROCESO
 	check_alert(Id)
 
 
-PANTALLA DE BLOQUEO DE PRODUCTOS
+DE BLOQUEO DE PRODUCTOS
 
 	get_blocked_products() 
 	block_products(productlist)
@@ -24,13 +25,13 @@ PANTALLA DE BLOQUEO DE PRODUCTOS
 	    parameters: productlist // array of strings  en formato R.LLDD.H
 
 
-PANTALLA CONFIGURACIÓN DE PARÁMETROS
+CONFIGURACIÓN DE PARÁMETROS
 
 	get_parameters()
 	save_parameters(parameterlist)
 
 
-PANTALLA INFORMES
+INFORMES
 
 	get_ocupacion_de_estanterias()
 	get_stock_por_referencia(Ref)
@@ -40,7 +41,7 @@ PANTALLA INFORMES
 	get_ubications()
 
 
-PANTALLA MAESTRO ARTICULOS
+MAESTRO ARTICULOS
 
 	get_articles()
 	save_article(Id,Ref,Pasillo,Alveolo,PiezasPorPallet,MinPiezas,MinPallets,MaxPiezas,MaxPallets)
@@ -68,7 +69,7 @@ LOGS
 
 
 
-PANTALLA UBICACIONES
+UBICACIONES
 
 	get_ubications()
 	save_ubication(Id, Pasillo, Alveolo, Altura, Producto)
@@ -76,7 +77,7 @@ PANTALLA UBICACIONES
 
 
 
-PANTALLA CAMARAS
+CAMARAS
 
 	get_camaras()
 

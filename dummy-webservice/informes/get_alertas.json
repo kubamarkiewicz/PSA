@@ -4,25 +4,29 @@
             "Tipo": "Sin Stock",
             "Producto": "9670356480",
             "FechaAlerta": "01/08/2017 17:00:00",
-            "FechaTratada": ""
+            "FechaTratada": "",
+            "StockPiezas": "111"
         },
         {
             "Tipo": "Producto por encima de piezas",
             "Producto": "9865478541",
             "FechaAlerta": "01/08/2017 17:00:00",
-            "FechaTratada": "02/08/2017 18:00:00"
+            "FechaTratada": "02/08/2017 18:00:00",
+            "StockPiezas": "222"
         },
         {
             "Tipo": "Sin Stock",
             "Producto": "9670356480",
             "FechaAlerta": "01/08/2017 17:00:00",
-            "FechaTratada": ""
+            "FechaTratada": "",
+            "StockPiezas": "333"
         },
         {
             "Tipo": "Producto por encima de piezas",
             "Producto": "9670356480",
             "FechaAlerta": "01/08/2017 17:00:00",
-            "FechaTratada": "02/08/2017 18:00:00"
+            "FechaTratada": "02/08/2017 18:00:00",
+            "StockPiezas": "444"
         }
     ]
 }

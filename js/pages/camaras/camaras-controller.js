@@ -13,7 +13,7 @@ app.controller('CamarasController', function($scope, $rootScope, $http, $routePa
         });
     }
     // $scope.loadCamarasData();
-    ArtisterilIntervalService.start($scope.loadCamarasData, 60000);
+    ArtisterilIntervalService.start($scope.loadCamarasData, 30000);
 
 
 });

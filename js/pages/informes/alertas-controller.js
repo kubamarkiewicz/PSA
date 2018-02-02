@@ -7,6 +7,7 @@ app.controller('AlertasController', function($scope, $rootScope, $http, $routePa
         columnDefs: [
             {field: 'Tipo', type: 'numberStr', displayName: 'Tipo Alerta'},
             {field: 'Producto', type: 'numberStr'},
+            {field: 'StockPiezas', type: 'numberStr'},
             {field: 'FechaAlerta', type: 'numberStr'},
             {field: 'FechaTratada', type: 'numberStr'}
         ],
